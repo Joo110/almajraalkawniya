@@ -1,0 +1,28 @@
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { Spinner } from './ui/index';
+
+interface ProtectedRouteProps {
+  children: React.ReactNode;
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
+  const { token, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-charcoal-900 flex items-center justify-center">
+        <Spinner />
+      </div>
+    );
+  }
+
+  if (!token) {
+    return <Navigate to="/admin/login" replace />;
+  }
+
+  return <>{children}</>;
+};
+
+export default ProtectedRoute;

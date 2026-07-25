@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /admin/login
+
+# Sitemap
+Sitemap: https://almajraalkawniya.com/sitemap.xml
