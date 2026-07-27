@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner } from '../../components/ui/index';
+import TamaraBadge from '../../components/ui/Tamarabadge';
 import { useProgramBySlug } from '../../hooks/usePrograms';
 
 type ItineraryItem = {
@@ -261,6 +262,8 @@ const ProgramDetailPage: React.FC = () => {
                       {Number(program.price || 0).toLocaleString('ar-SA')} ريال
                     </span>
                   </div>
+
+                  <TamaraBadge itemType="Program" itemId={program.id} />
 
                   <a
                     href={whatsappLink}
