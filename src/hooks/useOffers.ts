@@ -82,10 +82,10 @@ export function useAdminOffers(pageSize = 10) {
     await fetchAll(data?.pageNumber ?? 1);
   };
 
-  const update = async (id: string, payload: Partial<CreateOfferRequest>) => {
-    await offersService.adminUpdate(id, payload);
-    await fetchAll(data?.pageNumber ?? 1);
-  };
+const update = async (id: string, payload: CreateOfferRequest) => {
+  await offersService.adminUpdate(id, payload);
+  await fetchAll(data?.pageNumber ?? 1);
+};
 
   const remove = async (id: string) => {
     await offersService.adminDelete(id);

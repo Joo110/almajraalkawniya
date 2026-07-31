@@ -8,6 +8,23 @@ import { useDestinationBySlug } from '../../hooks/useDestinations';
 import { usePrograms } from '../../hooks/usePrograms';
 
 const WHATSAPP_NUMBER = '966544817995';
+const DEFAULT_DESTINATION_IMAGE = 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80';
+
+// الحقل بيرجع من الباك إند بأسماء/حالات مختلفة حسب الـ endpoint
+// (coverImage / CoverImage / image / Image)، فبندوّر عليه بكل
+// الاحتمالات قبل ما نستسلم للصورة الافتراضية الثابتة
+function resolveDestinationImage(destination: unknown): string {
+  const raw = (destination || {}) as Record<string, unknown>;
+  const resolved =
+    (raw.coverImage as string | undefined) ||
+    (raw.CoverImage as string | undefined) ||
+    (raw.image as string | undefined) ||
+    (raw.Image as string | undefined) ||
+    (raw.imageUrl as string | undefined) ||
+    (raw.ImageUrl as string | undefined);
+
+  return resolved || DEFAULT_DESTINATION_IMAGE;
+}
 
 const DestinationDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -45,13 +62,15 @@ const DestinationDetailPage: React.FC = () => {
     );
   }
 
+  const destinationImage = resolveDestinationImage(destination);
+
   return (
     <PublicLayout>
       <div className="bg-white text-stone-800 min-h-screen">
         {/* HERO */}
         <section className="relative h-[75vh] flex items-end overflow-hidden">
           <img
-            src={destination.coverImage || 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80'}
+            src={destinationImage}
             alt={destination.name}
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -191,7 +210,7 @@ const DestinationDetailPage: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-sand-700/80 to-sand-900/90" />
               <div
                 className="absolute inset-0 opacity-10 bg-cover bg-center"
-                style={{ backgroundImage: `url(${destination.coverImage || 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&q=80'})` }}
+                style={{ backgroundImage: `url(${destinationImage})` }}
               />
               <div className="relative px-8 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-8" dir="rtl">
                 <div>

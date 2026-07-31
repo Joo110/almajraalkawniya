@@ -21,6 +21,14 @@ const typeOptions = [
   { value: OfferType.Bundle, label: 'باقة خاصة' },
 ];
 
+// يحوّل أي خطأ (axios أو Error عادي زي أخطاء التحقق المحلي) لرسالة نصية واضحة
+function getErrorMessage(err: unknown): string {
+  if (err instanceof Error && !('isAxiosError' in (err as any))) {
+    return err.message;
+  }
+  return extractApiError(err);
+}
+
 const AdminOffersPage: React.FC = () => {
   const {
     offers, loading, error, create, update, remove,
@@ -65,7 +73,7 @@ const AdminOffersPage: React.FC = () => {
       }
       setModalOpen(false);
     } catch (err) {
-      toast.error(extractApiError(err));
+      toast.error(getErrorMessage(err));
     } finally {
       setSaving(false);
     }
@@ -77,17 +85,29 @@ const AdminOffersPage: React.FC = () => {
       await remove(deleteId);
       toast.success('تم حذف العرض');
     } catch (err) {
-      toast.error(extractApiError(err));
+      toast.error(getErrorMessage(err));
     }
     setDeleteId(null);
   };
 
   const handleToggleActive = async (o: Offer) => {
     try {
-      await update(o.id, { isActive: !o.isActive });
+      // الباك إند لا يدعم التحديث الجزئي (Partial Update) — الـ Validator
+      // بيتحقق من كل الحقول دايمًا زي ما بيحصل بالظبط وقت الإنشاء، فلازم
+      // نبعت الـ object كامل مع كل الحقول، مش بس الحقل اللي اتغير (isActive)
+      const fullData: CreateOfferRequest = {
+        title: o.title,
+        type: o.type,
+        value: o.value,
+        description: o.description,
+        startDate: o.startDate,
+        endDate: o.endDate,
+        isActive: !o.isActive,
+      };
+      await update(o.id, fullData);
       toast.success(o.isActive ? 'تم تعطيل العرض' : 'تم تفعيل العرض');
     } catch (err) {
-      toast.error(extractApiError(err));
+      toast.error(getErrorMessage(err));
     }
   };
 

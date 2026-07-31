@@ -23,6 +23,7 @@ import Terms from './pages/public/Terms';
 import Refundpolicy from './pages/public/Refundpolicy';
 import Bankaccounts from './pages/public/Bankaccounts';
 import SiteDocumentation from './pages/public/Sitedocumentation';
+import PartnersPage from './pages/public/PartnersPage';
 
 // Admin Pages — Lazy Loading:
 // دول بيتحمّلوا فقط لما حد يفتح مسار /admin فعليًا، مش ضمن الـ bundle
@@ -63,6 +64,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/where-to-travel" element={<WhereToTravelPage />} />
             <Route path="/site-documentation" element={<SiteDocumentation />} />
+            <Route path="/partners" element={<PartnersPage />} />
             {/* الصفحات القانونية والمالية */}
             <Route path="/terms" element={<Terms />} />
             <Route path="/refund-policy" element={<Refundpolicy />} />

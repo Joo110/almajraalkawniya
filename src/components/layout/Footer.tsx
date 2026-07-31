@@ -117,12 +117,12 @@ const Footer: React.FC = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-sand-500 mt-0.5 flex-shrink-0" />
                 <a
-                  href="https://maps.app.goo.gl/YOUR_LOCATION_LINK"
+                  href="https://maps.app.goo.gl/Uah4tmngpQmNrDYP6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-white/60 hover:text-sand-400 text-sm transition-colors duration-200"
                 >
-                  مكة المكرمة — حي التنعيم
+                      الرياض حي السويدي شارع الملك عبدالعزيز بن عبدالرحمن سعود الفرعي  رقم المبنى 6249 الرمز البريد 13342
                 </a>
               </li>
               <li className="flex items-center gap-3">

@@ -71,8 +71,7 @@ function isItineraryItem(item: unknown): item is ItineraryItem {
 }
 
 const DEFAULT_COVER =
-  'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80';
-
+  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80';
 const ProgramDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { program, loading, error } = useProgramBySlug(slug || '');

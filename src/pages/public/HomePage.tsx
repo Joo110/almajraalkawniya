@@ -21,27 +21,27 @@ const PHONE_URL = `tel:+${PHONE_NUMBER}`;
 // في حجم الملف كبير جدًا).
 const HERO_SLIDES = [
   {
-    img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&q=70&auto=format',
+    img: '/maldivesImg.jpg',
     label: 'المالديف',
     sublabel: 'جنة المياه الفيروزية',
   },
   {
-    img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1400&q=70&auto=format',
+    img: '/parisImg.jpg',
     label: 'باريس',
     sublabel: 'مدينة الحب والأضواء',
   },
   {
-    img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&q=70&auto=format',
+    img: '/dubaiImg.jpg',
     label: 'دبي',
     sublabel: 'قمة الفخامة العصرية',
   },
   {
-    img: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1400&q=70&auto=format',
+    img: '/switzerlandImg.jpg',
     label: 'سويسرا',
     sublabel: 'طبيعة تخطف الأنفاس',
   },
   {
-    img: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1400&q=70&auto=format',
+    img: '/indonesiaImg.jpg',
     label: 'إندونيسيا',
     sublabel: 'مغامرات استوائية',
   },
@@ -90,17 +90,17 @@ const HeroSlideshow: React.FC = () => {
     return () => clearInterval(timer);
   }, [current]);
 
-
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    // will-change-transform + transform-gpu لإجبار المتصفح يستخدم الـ GPU
+    // بدل الـ CPU للـ layer ده، وده بيقلل الـ lag وقت الـ scroll بشكل كبير
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden transform-gpu">
       {HERO_SLIDES.map((slide, idx) => {
         const isActive = idx === current;
         const isPrev = idx === prev;
         return (
           <div
             key={idx}
-            className="absolute inset-0 transition-opacity duration-[900ms] ease-in-out"
+            className="absolute inset-0 transition-opacity duration-[900ms] ease-in-out will-change-[opacity] transform-gpu"
             style={{
               opacity: isActive ? 1 : isPrev ? 0 : 0,
               zIndex: isActive ? 2 : isPrev ? 1 : 0,
@@ -111,10 +111,11 @@ const HeroSlideshow: React.FC = () => {
                 src={slide.img}
                 alt={slide.label}
                 loading={idx === 0 ? 'eager' : 'lazy'}
-                // @ts-ignore - fetchPriority مدعومة في المتصفحات الحديثة ومش لسه في types
-                fetchpriority={idx === 0 ? 'high' : 'auto'}
+                fetchPriority={idx === 0 ? 'high' : 'auto'}
                 decoding="async"
-                className={`w-full h-full object-cover transition-transform duration-[6000ms] ease-out ${isActive ? 'scale-110' : 'scale-100'}`}
+                // will-change-transform + transform-gpu بيثبتوا الصورة على layer منفصل
+                // فبيقلل إعادة الـ paint وقت الـ scroll أو الـ animation
+                className={`w-full h-full object-cover transition-transform duration-[6000ms] ease-out will-change-transform transform-gpu ${isActive ? 'scale-110' : 'scale-100'}`}
               />
             )}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
@@ -123,11 +124,14 @@ const HeroSlideshow: React.FC = () => {
         );
       })}
 
-      <div className="absolute top-1/4 left-10 w-64 h-64 bg-sand-500/10 rounded-full blur-3xl animate-float z-10" />
-      <div className="absolute bottom-1/3 right-10 w-48 h-48 bg-ocean-500/10 rounded-full blur-3xl animate-float z-10" style={{ animationDelay: '3s' }} />
+      {/* تقليل شدة الـ blur من blur-3xl لـ blur-2xl + إضافة transform-gpu وwill-change
+          عشان الـ blur الثقيل ده كان بيتسبب في إعادة رسم (repaint) مكلفة جدًا
+          مع كل فريم أثناء الـ scroll، خصوصًا إنه شغال جوه animation مستمر (animate-float) */}
+      <div className="absolute top-1/4 left-10 w-64 h-64 bg-sand-500/10 rounded-full blur-2xl animate-float z-10 will-change-transform transform-gpu" />
+      <div className="absolute bottom-1/3 right-10 w-48 h-48 bg-ocean-500/10 rounded-full blur-2xl animate-float z-10 will-change-transform transform-gpu" style={{ animationDelay: '3s' }} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center" dir="rtl">
-        
+
 
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-6">
           اكتشف <span className="text-gradient">العالم</span><br />
@@ -138,16 +142,18 @@ const HeroSlideshow: React.FC = () => {
           رحلات مصممة بعناية لتمنحك ذكريات تدوم العمر كله
         </p>
 
-       
+
         {/* ── عنوان المنشأة، الرقم الضريبي، رقم السجل التجاري ── */}
+        {/* تقليل الـ backdrop-blur من md لـ sm، لأن الـ backdrop-filter من أثقل
+            خصائص الـ CSS على الأداء، وتكراره في 3 عناصر متجاورة كان بيضاعف التكلفة */}
         <div className="inline-flex flex-col sm:flex-row items-stretch justify-center gap-px mb-10 overflow-hidden rounded-2xl border border-white/10">
           {/* العنوان */}
-          <div className="flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-6 py-3 w-full sm:w-auto">
+          <div className="flex items-center gap-2.5 bg-black/40 backdrop-blur-sm px-6 py-3 w-full sm:w-auto">
             <MapPin className="w-4 h-4 text-sand-400 flex-shrink-0" />
             <div className="text-right">
               <p className="font-sans text-white/50 text-[10px] uppercase tracking-widest leading-none mb-0.5">عنوان المنشأة</p>
               <p className="font-sans text-white text-sm font-medium leading-tight">
-                ابن بشر 5224، حي التنعيم، مكة المكرمة 24416
+                 الرياض حي السويدي
               </p>
             </div>
           </div>
@@ -157,7 +163,7 @@ const HeroSlideshow: React.FC = () => {
           <div className="block sm:hidden h-px bg-white/10" />
 
           {/* الرقم الضريبي */}
-          <div className="flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-6 py-3 w-full sm:w-auto">
+          <div className="flex items-center gap-2.5 bg-black/40 backdrop-blur-sm px-6 py-3 w-full sm:w-auto">
             <FileText className="w-4 h-4 text-sand-400 flex-shrink-0" />
             <div className="text-right">
               <p className="font-sans text-white/50 text-[10px] uppercase tracking-widest leading-none mb-0.5">الرقم الضريبي</p>
@@ -172,7 +178,7 @@ const HeroSlideshow: React.FC = () => {
           <div className="block sm:hidden h-px bg-white/10" />
 
           {/* رقم السجل التجاري */}
-          <div className="flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-6 py-3 w-full sm:w-auto">
+          <div className="flex items-center gap-2.5 bg-black/40 backdrop-blur-sm px-6 py-3 w-full sm:w-auto">
             <Hash className="w-4 h-4 text-sand-400 flex-shrink-0" />
             <div className="text-right">
               <p className="font-sans text-white/50 text-[10px] uppercase tracking-widest leading-none mb-0.5">رقم السجل التجاري</p>
@@ -190,9 +196,9 @@ const HeroSlideshow: React.FC = () => {
           </Link>
         </div>
       </div>
-      
-     
-      
+
+
+
       <style>{`
         @keyframes fadeSlideUp {
           from { opacity: 0; transform: translateY(10px); }
@@ -276,7 +282,7 @@ const HomePage: React.FC = () => {
     <PublicLayout>
       <HeroSlideshow />
 
-     
+
       <section className="py-24 bg-white" dir="rtl">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-end justify-between mb-12">

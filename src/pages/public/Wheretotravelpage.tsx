@@ -122,16 +122,30 @@ const questions: Question[] = [
   },
 ];
 
-const normalizeDestination = (d: DestinationLike): DestinationResult => ({
-  name: d.name,
-  country: d.country || '',
-  img: d.image || d.img || 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
-  tags: Array.isArray(d.tags) ? d.tags : [],
-  description: d.description || '',
-  bestFor: d.bestFor || '',
-  priceRange: d.priceRange || '',
-  slug: d.slug || String(d.id || d.name).toLowerCase().replace(/\s+/g, '-'),
-});
+const normalizeDestination = (d: DestinationLike): DestinationResult => {
+  // الحقل بيرجع من الباك إند بأسماء/حالات مختلفة حسب الـ endpoint
+  // (coverImage / CoverImage / image / Image / img)، فبندوّر عليه بكل
+  // الاحتمالات قبل ما نستسلم للصورة الافتراضية الثابتة
+  const raw = d as Record<string, unknown>;
+  const resolvedImage =
+    d.image ||
+    d.img ||
+    (raw.coverImage as string | undefined) ||
+    (raw.CoverImage as string | undefined) ||
+    (raw.Image as string | undefined) ||
+    (raw.Img as string | undefined);
+
+  return {
+    name: d.name,
+    country: d.country || '',
+    img: resolvedImage || 'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80',
+    tags: Array.isArray(d.tags) ? d.tags : [],
+    description: d.description || '',
+    bestFor: d.bestFor || '',
+    priceRange: d.priceRange || '',
+    slug: d.slug || String(d.id || d.name).toLowerCase().replace(/\s+/g, '-'),
+  };
+};
 
 const getRecommendations = (destinations: DestinationResult[], answers: Record<number, string>): DestinationResult[] => {
   const selectedTags = Object.values(answers);

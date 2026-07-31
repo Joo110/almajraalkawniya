@@ -18,15 +18,16 @@ const Navbar: React.FC = () => {
   }, [location]);
 
   const links = [
-    { to: '/', label: 'الرئيسية' },
-    { to: '/about', label: 'من نحن' },
-    { to: '/where-to-travel', label: 'وين أسافر؟', special: true },
-    { to: '/destinations', label: 'الوجهات' },
-    { to: '/programs', label: 'البرامج' },
-    { to: '/offers', label: 'العروض' },
-    { to: '/blog', label: 'المدونة' },
-    { to: '/contact', label: 'تواصل معنا' },
-  ];
+  { to: '/', label: 'الرئيسية' },
+  { to: '/about', label: 'من نحن' },
+  { to: '/where-to-travel', label: 'وين أسافر؟', special: true },
+  { to: '/destinations', label: 'الوجهات' },
+  { to: '/programs', label: 'البرامج' },
+  { to: '/offers', label: 'العروض' },
+  { to: '/partners', label: 'شركاؤنا الآخرين' },
+  { to: '/blog', label: 'المدونة' },
+  { to: '/contact', label: 'تواصل معنا' },
+];
 
   return (
     <nav

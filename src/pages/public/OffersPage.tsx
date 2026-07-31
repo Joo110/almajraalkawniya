@@ -1,21 +1,28 @@
 import React from 'react';
-import { Tag, Calendar, Percent, DollarSign, Package } from 'lucide-react';
+import { Calendar, MessageCircle, ArrowLeft } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner, ErrorBox, Badge } from '../../components/ui/index';
 import { useOffers } from '../../hooks/useOffers';
 import { Offer, OfferType } from '../../types';
 
+const WHATSAPP_NUMBER = '966544817995';
+
+const buildWhatsappLink = (title: string) => {
+  const message = `مرحبًا، أرغب بالاستفسار عن عرض "${title}"`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+};
+
 const offerTypeLabel = (type: OfferType | string) => {
   switch ((type || '').toString().toLowerCase()) {
     case 'percentage':
-      return { label: 'خصم نسبي', color: 'green' as const, icon: <Percent className="w-4 h-4" /> };
+      return { label: 'خصم نسبي', color: 'green' as const };
     case 'fixed':
     case 'value':
-      return { label: 'خصم ثابت', color: 'blue' as const, icon: <DollarSign className="w-4 h-4" /> };
+      return { label: 'خصم ثابت', color: 'blue' as const };
     case 'bundle':
-      return { label: 'باقة خاصة', color: 'gold' as const, icon: <Package className="w-4 h-4" /> };
+      return { label: 'باقة خاصة', color: 'gold' as const };
     default:
-      return { label: 'عرض', color: 'gold' as const, icon: <Tag className="w-4 h-4" /> };
+      return { label: 'عرض', color: 'gold' as const };
   }
 };
 
@@ -96,14 +103,11 @@ const OffersPage: React.FC = () => {
                   return (
                     <div
                       key={i}
-                      className="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md hover:border-sand-300 transition-all duration-300 card-hover"
+                      className="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md hover:border-sand-300 transition-all duration-300 card-hover flex flex-col"
                     >
                       <div className="bg-gradient-to-br from-sand-100 to-sand-50 p-6 border-b border-stone-200">
-                        <div className="flex items-center justify-between mb-4">
+                        <div className="mb-4">
                           <Badge label={typeInfo.label} color={typeInfo.color} />
-                          <div className="w-12 h-12 rounded-xl bg-sand-500/15 flex items-center justify-center text-sand-500">
-                            {typeInfo.icon}
-                          </div>
                         </div>
                         <h3 className="font-display text-2xl font-bold text-stone-900 mb-2">
                           {o.title}
@@ -114,14 +118,24 @@ const OffersPage: React.FC = () => {
                             : `${o.value.toLocaleString('ar-SA')} ريال`}
                         </div>
                       </div>
-                      <div className="p-6">
+                      <div className="p-6 flex flex-col flex-1">
                         <p className="font-sans text-stone-600 text-sm mb-4 leading-relaxed">
                           {o.desc}
                         </p>
-                        <div className="flex items-center gap-2 text-stone-500 text-xs">
+                        <div className="flex items-center gap-2 text-stone-500 text-xs mb-5">
                           <Calendar className="w-3.5 h-3.5" />
                           <span>ينتهي: {o.end}</span>
                         </div>
+                        <a
+                          href={buildWhatsappLink(o.title)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-auto inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-sans text-sm font-semibold py-2.5 rounded-xl transition-colors"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          احجز عبر واتساب
+                          <ArrowLeft className="w-4 h-4" />
+                        </a>
                       </div>
                     </div>
                   );
@@ -138,14 +152,11 @@ const OffersPage: React.FC = () => {
                   return (
                     <div
                       key={o.id}
-                      className="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md hover:border-sand-300 transition-all duration-300 card-hover"
+                      className="bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md hover:border-sand-300 transition-all duration-300 card-hover flex flex-col"
                     >
                       <div className="bg-gradient-to-br from-sand-100 to-sand-50 p-6 border-b border-stone-200">
-                        <div className="flex items-center justify-between mb-4">
+                        <div className="mb-4">
                           <Badge label={typeInfo.label} color={typeInfo.color} />
-                          <div className="w-12 h-12 rounded-xl bg-sand-500/15 flex items-center justify-center text-sand-500">
-                            {typeInfo.icon}
-                          </div>
                         </div>
                         <h3 className="font-display text-2xl font-bold text-stone-900 mb-2">
                           {o.title}
@@ -156,12 +167,12 @@ const OffersPage: React.FC = () => {
                             : `${o.value.toLocaleString('ar-SA')} ريال`}
                         </div>
                       </div>
-                      <div className="p-6">
+                      <div className="p-6 flex flex-col flex-1">
                         <p className="font-sans text-stone-600 text-sm mb-4 leading-relaxed">
                           {description}
                         </p>
 
-                        <div className="flex flex-col gap-2 text-stone-500 text-xs">
+                        <div className="flex flex-col gap-2 text-stone-500 text-xs mb-5">
                           {startDate && (
                             <div className="flex items-center gap-2">
                               <Calendar className="w-3.5 h-3.5" />
@@ -175,6 +186,17 @@ const OffersPage: React.FC = () => {
                             </div>
                           )}
                         </div>
+
+                        <a
+                          href={buildWhatsappLink(o.title)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-auto inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-sans text-sm font-semibold py-2.5 rounded-xl transition-colors"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          احجز عبر واتساب
+                          <ArrowLeft className="w-4 h-4" />
+                        </a>
                       </div>
                     </div>
                   );
