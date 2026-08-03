@@ -24,6 +24,7 @@ import Refundpolicy from './pages/public/Refundpolicy';
 import Bankaccounts from './pages/public/Bankaccounts';
 import SiteDocumentation from './pages/public/Sitedocumentation';
 import PartnersPage from './pages/public/PartnersPage';
+import Ibandocumentation from './pages/public/Ibandocumentation';
 
 // Admin Pages — Lazy Loading:
 // دول بيتحمّلوا فقط لما حد يفتح مسار /admin فعليًا، مش ضمن الـ bundle
@@ -58,6 +59,7 @@ const App: React.FC = () => {
             <Route path="/programs" element={<ProgramsPage />} />
             <Route path="/programs/:slug" element={<ProgramDetailPage />} />
             <Route path="/offers" element={<OffersPage />} />
+            <Route path="/iban-documentation" element={<Ibandocumentation />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<ArticleDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />

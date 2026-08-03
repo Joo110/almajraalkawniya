@@ -94,6 +94,7 @@ const Footer: React.FC = () => {
                 { to: '/refund-policy', label: 'سياسة الاسترجاع' },
                 { to: '/bank-accounts', label: 'الحسابات البنكية' },
                 { to: '/site-documentation', label: 'توثيق الموقع' },
+                { to: '/iban-documentation', label: 'خطاب الآيبان' },
                 { to: '/blog', label: 'المدونة' },
               ].map((l) => (
                 <li key={l.to}>
