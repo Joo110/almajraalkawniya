@@ -44,3 +44,48 @@ export async function createTamaraCheckout(
   });
   return res.data;
 }
+
+export interface TabbyPreview {
+  totalAmount: number;
+  currency: string;
+  instalments: number;
+  amountPerInstalment: number;
+}
+
+export interface TabbyCheckoutCustomer {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+}
+
+export interface TabbyCheckoutResult {
+  checkoutUrl: string;
+  orderId: string;
+}
+
+export async function getTabbyPreview(
+  itemType: 'Program' | 'Offer',
+  itemId: string
+): Promise<TabbyPreview> {
+  const res = await api.get('/api/payments/tabby/preview', {
+    params: { itemType, itemId },
+  });
+  return res.data;
+}
+
+export async function createTabbyCheckout(
+  itemType: 'Program' | 'Offer',
+  itemId: string,
+  customer: TabbyCheckoutCustomer
+): Promise<TabbyCheckoutResult> {
+  const res = await api.post('/api/payments/tabby/checkout', {
+    itemType,
+    itemId,
+    customerFirstName: customer.firstName,
+    customerLastName: customer.lastName,
+    customerPhone: customer.phone,
+    customerEmail: customer.email,
+  });
+  return res.data;
+}

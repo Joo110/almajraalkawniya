@@ -11,6 +11,7 @@ import {
 import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner } from '../../components/ui/index';
 import TamaraBadge from '../../components/ui/Tamarabadge';
+import TabbyBadge from '../../components/ui/Tabbybadge';
 import { useProgramBySlug } from '../../hooks/usePrograms';
 
 type ItineraryItem = {
@@ -71,7 +72,8 @@ function isItineraryItem(item: unknown): item is ItineraryItem {
 }
 
 const DEFAULT_COVER =
-  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80';
+  'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80';
+
 const ProgramDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { program, loading, error } = useProgramBySlug(slug || '');
@@ -263,12 +265,13 @@ const ProgramDetailPage: React.FC = () => {
                   </div>
 
                   <TamaraBadge itemType="Program" itemId={program.id} />
+                  <TabbyBadge itemType="Program" itemId={program.id} />
 
                   <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-primary w-full py-4 text-center inline-flex items-center justify-center gap-2"
+                    className="btn-primary w-full py-4 text-center inline-flex items-center justify-center gap-2 mt-4"
                   >
                     <MessageCircle className="w-4 h-4" />
                     احجز عبر واتساب
