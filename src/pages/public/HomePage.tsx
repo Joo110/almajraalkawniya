@@ -47,6 +47,8 @@ const HeroSlideshow: React.FC = () => {
   // مرة واحدة من أول ما الصفحة تفتح — كل صورة بتتحمّل أول ما دورها يجي.
   const [loadedSlides, setLoadedSlides] = useState<Set<number>>(() => new Set([0]));
 
+const HERO_SLIDES = heroSlides;
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTransitioning(true);
@@ -69,8 +71,8 @@ const HeroSlideshow: React.FC = () => {
       }, 100);
     }, 5000);
     return () => clearInterval(timer);
-  }, [current]);
-  const HERO_SLIDES = heroSlides;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, HERO_SLIDES.length]);
 
   return (
     // will-change-transform + transform-gpu لإجبار المتصفح يستخدم الـ GPU
@@ -201,7 +203,7 @@ const HomePage: React.FC = () => {
   const today = new Date().toISOString().split('T')[0];
 
   /* ── SEO: عنوان الصفحة والوصف التعريفي ── */
-  useEffect(() => {
+ useEffect(() => {
     // Title
     document.title = t('homePage.pageTitle');
 
@@ -218,8 +220,8 @@ const HomePage: React.FC = () => {
       // استعادة عنوان افتراضي عند مغادرة الصفحة إن أردت
       // document.title = 'المجرة الكونية';
     };
-  }, []);
-
+  }, [t]);
+  
   const [leadForm, setLeadForm] = useState({
     name: '',
     email: '',
