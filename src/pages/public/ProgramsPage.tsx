@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import ProgramCard from '../../components/ui/ProgramCard';
@@ -12,6 +13,7 @@ type ProgramWithStatus = Program & {
 };
 
 const ProgramsPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { programs, loading, error } = usePrograms();
   const [search, setSearch] = useState('');
   const [maxPrice, setMaxPrice] = useState<number>(999999);
@@ -43,28 +45,28 @@ const ProgramsPage: React.FC = () => {
           />
           <div className="absolute inset-0 bg-black/55" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/20 to-transparent" />
-          <div className="relative z-10 text-center px-6" dir="rtl">
+          <div className="relative z-10 text-center px-6" dir={i18n.dir()}>
             <span className="font-sans text-sand-400 text-xs uppercase tracking-widest mb-3 block">
-              — برامجنا —
+              — {t('programsPage.eyebrow')} —
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-black text-white mb-4">
-              البرامج <span className="text-gradient">السياحية</span>
+              {t('programsPage.titlePart1')} <span className="text-gradient">{t('programsPage.titlePart2')}</span>
             </h1>
             <p className="font-accent text-lg text-white/75 italic">
-              رحلات مصممة بعناية لكل الميزانيات والأذواق
+              {t('programsPage.subtitle')}
             </p>
           </div>
         </section>
 
         {/* Filters */}
-        <section className="py-8 bg-white border-b border-stone-200" dir="rtl">
+        <section className="py-8 bg-white border-b border-stone-200" dir={i18n.dir()}>
           <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-4">
             <div className="relative flex-1 max-w-sm w-full">
               <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
               <input
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="ابحث عن برنامج..."
+                placeholder={t('programsPage.searchPlaceholder')}
                 className="w-full bg-white border border-stone-300 rounded-xl pr-12 pl-4 py-3 font-sans text-stone-800 text-sm placeholder-stone-400 focus:outline-none focus:border-sand-500 transition-colors shadow-sm"
               />
             </div>
@@ -76,10 +78,10 @@ const ProgramsPage: React.FC = () => {
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
                 className="bg-white border border-stone-300 rounded-xl px-4 py-3 font-sans text-stone-700 text-sm focus:outline-none focus:border-sand-500 transition-colors shadow-sm"
               >
-                <option value={999999}>كل الأسعار</option>
-                <option value={5000}>أقل من ٥,٠٠٠ ريال</option>
-                <option value={10000}>أقل من ١٠,٠٠٠ ريال</option>
-                <option value={20000}>أقل من ٢٠,٠٠٠ ريال</option>
+                <option value={999999}>{t('programsPage.priceAll')}</option>
+                <option value={5000}>{t('programsPage.priceUnder5k')}</option>
+                <option value={10000}>{t('programsPage.priceUnder10k')}</option>
+                <option value={20000}>{t('programsPage.priceUnder20k')}</option>
               </select>
 
               <select
@@ -87,30 +89,30 @@ const ProgramsPage: React.FC = () => {
                 onChange={(e) => setMaxDays(Number(e.target.value))}
                 className="bg-white border border-stone-300 rounded-xl px-4 py-3 font-sans text-stone-700 text-sm focus:outline-none focus:border-sand-500 transition-colors shadow-sm"
               >
-                <option value={999}>كل المدد</option>
-                <option value={5}>٥ أيام أو أقل</option>
-                <option value={7}>أسبوع أو أقل</option>
-                <option value={14}>أسبوعين أو أقل</option>
+                <option value={999}>{t('programsPage.durationAll')}</option>
+                <option value={5}>{t('programsPage.duration5days')}</option>
+                <option value={7}>{t('programsPage.duration1week')}</option>
+                <option value={14}>{t('programsPage.duration2weeks')}</option>
               </select>
             </div>
           </div>
         </section>
 
         {/* Results */}
-        <section className="py-16 bg-stone-50" dir="rtl">
+        <section className="py-16 bg-stone-50" dir={i18n.dir()}>
           <div className="max-w-7xl mx-auto px-6">
             {loading ? (
               <Spinner />
             ) : error ? (
               <ErrorBox message={error} />
             ) : programs.length === 0 ? (
-              <EmptyState message="لا توجد برامج بعد" />
+              <EmptyState message={t('programsPage.noneYet')} />
             ) : filtered.length === 0 ? (
-              <EmptyState message="لا توجد برامج تطابق بحثك" />
+              <EmptyState message={t('programsPage.noResults')} />
             ) : (
               <>
                 <p className="font-sans text-stone-500 text-sm mb-6">
-                  {filtered.length} برنامج
+                  {filtered.length} {t('programsPage.programWord')}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

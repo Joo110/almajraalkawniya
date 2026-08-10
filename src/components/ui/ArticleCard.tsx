@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowLeft, BookOpen } from 'lucide-react';
 import { Article } from '../../types';
@@ -8,11 +9,12 @@ interface ArticleCardProps {
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+  const { t, i18n } = useTranslation();
   const img =
     article.coverImage ||
     'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=80';
 
-  const date = new Date(article.publishedAt).toLocaleDateString('ar-EG', {
+  const date = new Date(article.publishedAt).toLocaleDateString(i18n.language === 'ar' ? 'ar-EG' : 'en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -21,7 +23,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
   return (
     <Link
       to={`/blog/${article.slug}`}
-      dir="rtl"
+      dir={i18n.dir()}
       className="group block overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(15,23,42,0.14)]"
     >
       {/* Image */}
@@ -53,11 +55,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
       <div className="p-5 sm:p-6">
         <div className="mb-4 flex items-center gap-2 text-sm text-stone-500">
           <BookOpen className="h-4 w-4 text-stone-400" />
-          <span>مقالة مميزة من مدونة الرحلات</span>
+          <span>{t('articleCard.featuredArticle')}</span>
         </div>
      
         <div className="inline-flex items-center justify-between rounded-2xl bg-stone-900 px-4 py-3 text-sm font-bold text-white transition-all duration-300 group-hover:bg-stone-800">
-          <span>اقرأ المزيد</span>
+          <span>{t('homePage.readMore')}</span>
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
             <ArrowLeft className="h-4 w-4" />
           </span>

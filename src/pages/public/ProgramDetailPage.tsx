@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import {
   Clock,
@@ -75,6 +76,7 @@ const DEFAULT_COVER =
   'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600&q=80';
 
 const ProgramDetailPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { program, loading, error } = useProgramBySlug(slug || '');
 
@@ -111,11 +113,11 @@ const ProgramDetailPage: React.FC = () => {
   if (error || !program) {
     return (
       <PublicLayout>
-        <div className="bg-white min-h-screen flex items-center justify-center" dir="rtl">
+        <div className="bg-white min-h-screen flex items-center justify-center" dir={i18n.dir()}>
           <div className="text-center">
-            <p className="font-display text-2xl text-stone-900 mb-4">البرنامج غير موجود</p>
+            <p className="font-display text-2xl text-stone-900 mb-4">{t('programDetail.notFound')}</p>
             <Link to="/programs" className="btn-primary">
-              عودة للبرامج
+              {t('programDetail.backToPrograms')}
             </Link>
           </div>
         </div>
@@ -127,7 +129,12 @@ const ProgramDetailPage: React.FC = () => {
 
   const whatsappNumber = '966544817995';
   const whatsappMessage = encodeURIComponent(
-    `مرحبًا، أريد الحجز في برنامج: ${program.title}\nالمدة: ${program.durationDays} يوم\nالسعر: ${Number(program.price || 0).toLocaleString('ar-SA')} ريال\nالرابط: ${window.location.href}`
+    t('programDetail.whatsappMessage', {
+      title: program.title,
+      duration: program.durationDays,
+      price: Number(program.price || 0).toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US'),
+      link: window.location.href,
+    })
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -137,13 +144,13 @@ const ProgramDetailPage: React.FC = () => {
         <section className="relative h-[60vh] flex items-end overflow-hidden">
           <img src={coverImg} alt={program.title} className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full" dir="rtl">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 pb-12 w-full" dir={i18n.dir()}>
             <Link
               to="/programs"
               className="inline-flex items-center gap-2 text-white/75 hover:text-white text-sm font-sans mb-6 transition-colors"
             >
               <ArrowRight className="w-4 h-4" />
-              <span>العودة للبرامج</span>
+              <span>{t('programDetail.backToPrograms')}</span>
             </Link>
 
             <h1 className="font-display text-4xl md:text-6xl font-black text-white mb-4">
@@ -153,24 +160,24 @@ const ProgramDetailPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center gap-2 text-white/75">
                 <Clock className="w-4 h-4 text-sand-400" />
-                <span className="font-sans text-sm">{program.durationDays} يوم</span>
+                <span className="font-sans text-sm">{program.durationDays} {t('programDetail.days')}</span>
               </div>
 
               <div className="flex items-center gap-2 text-yellow-400">
                 <Star className="w-4 h-4 fill-current" />
-                <span className="font-sans text-sm font-semibold">4.8 (٣٢ تقييم)</span>
+                <span className="font-sans text-sm font-semibold">4.8 (32 {t('programDetail.reviews')})</span>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-white" dir="rtl">
+        <section className="py-16 bg-white" dir={i18n.dir()}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2 space-y-10">
                 {gallery.length > 1 && (
                   <div>
-                    <h2 className="font-display text-2xl font-bold text-stone-900 mb-5">صور الرحلة</h2>
+                    <h2 className="font-display text-2xl font-bold text-stone-900 mb-5">{t('programDetail.tripPhotos')}</h2>
                     <div className="grid grid-cols-3 gap-3">
                       {gallery.slice(1, 4).map((img: string, i: number) => (
                         <div key={i} className="rounded-xl overflow-hidden h-32 border border-stone-200 shadow-sm">
@@ -184,7 +191,7 @@ const ProgramDetailPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 shadow-sm">
                     <h3 className="font-display text-lg font-bold text-stone-900 mb-4 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" /> يشمل البرنامج
+                      <CheckCircle className="w-5 h-5 text-green-500" /> {t('programDetail.includes')}
                     </h3>
                     <ul className="space-y-2">
                       {includesList.length > 0 ? (
@@ -195,14 +202,14 @@ const ProgramDetailPage: React.FC = () => {
                           </li>
                         ))
                       ) : (
-                        <li className="text-sm text-stone-400">لا توجد بيانات</li>
+                        <li className="text-sm text-stone-400">{t('programDetail.noData')}</li>
                       )}
                     </ul>
                   </div>
 
                   <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6 shadow-sm">
                     <h3 className="font-display text-lg font-bold text-stone-900 mb-4 flex items-center gap-2">
-                      <XCircle className="w-5 h-5 text-red-500" /> لا يشمل البرنامج
+                      <XCircle className="w-5 h-5 text-red-500" /> {t('programDetail.excludes')}
                     </h3>
                     <ul className="space-y-2">
                       {excludesList.length > 0 ? (
@@ -213,7 +220,7 @@ const ProgramDetailPage: React.FC = () => {
                           </li>
                         ))
                       ) : (
-                        <li className="text-sm text-stone-400">لا توجد بيانات</li>
+                        <li className="text-sm text-stone-400">{t('programDetail.noData')}</li>
                       )}
                     </ul>
                   </div>
@@ -221,7 +228,7 @@ const ProgramDetailPage: React.FC = () => {
 
                 {itinerary.length > 0 && (
                   <div>
-                    <h2 className="font-display text-2xl font-bold text-stone-900 mb-6">البرنامج اليومي</h2>
+                    <h2 className="font-display text-2xl font-bold text-stone-900 mb-6">{t('programDetail.dailyProgram')}</h2>
                     <div className="space-y-4">
                       {itinerary.map((day, i) => {
                         const normalized = isItineraryItem(day) ? day : { title: String(day) };
@@ -237,7 +244,7 @@ const ProgramDetailPage: React.FC = () => {
                             </div>
                             <div className="min-w-0">
                               <h4 className="font-sans font-semibold text-stone-900 mb-1">
-                                {normalized.title || `اليوم ${dayNumber}`}
+                                {normalized.title || `${t('programDetail.day')} ${dayNumber}`}
                               </h4>
                               {normalized.description ? (
                                 <p className="font-sans text-stone-600 text-sm">
@@ -257,10 +264,10 @@ const ProgramDetailPage: React.FC = () => {
                 <div className="sticky top-24 bg-stone-50 border border-stone-200 rounded-2xl p-7 shadow-sm">
                   <div className="text-center mb-6 pb-6 border-b border-stone-200">
                     <span className="font-sans text-stone-500 text-xs uppercase tracking-wider block mb-1">
-                      السعر للفرد
+                      {t('programDetail.pricePerPerson')}
                     </span>
                     <span className="font-display text-4xl font-black text-gradient">
-                      {Number(program.price || 0).toLocaleString('ar-SA')} ريال
+                      {Number(program.price || 0).toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')} {t('offersPage.currency')}
                     </span>
                   </div>
 
@@ -274,11 +281,11 @@ const ProgramDetailPage: React.FC = () => {
                     className="btn-primary w-full py-4 text-center inline-flex items-center justify-center gap-2 mt-4"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    احجز عبر واتساب
+                    {t('offersPage.bookViaWhatsapp')}
                   </a>
 
                   <p className="text-center text-stone-500 text-xs mt-3 leading-relaxed">
-                    سيتم تحويلك مباشرة إلى واتساب لإرسال طلب الحجز.
+                    {t('programDetail.whatsappRedirectNote')}
                   </p>
                 </div>
               </div>

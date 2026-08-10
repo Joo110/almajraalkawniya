@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock3, Users, Sparkles, BadgeDollarSign } from 'lucide-react';
 import { Program } from '../../types';
@@ -57,15 +58,16 @@ function getCoverImage(program: Program): string | null {
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
+  const { t, i18n } = useTranslation();
   const p = program as any;
   const coverImg = getCoverImage(program);
   const featured = Boolean(p.featured);
-  const price = Number(program.price || 0).toLocaleString('ar-SA');
+  const price = Number(program.price || 0).toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US');
   const slug = p.slug || program.id;
 
   return (
     <article
-      dir="rtl"
+      dir={i18n.dir()}
       className="group overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(15,23,42,0.14)]"
     >
       {/* Image */}
@@ -88,7 +90,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
               {featured && (
                 <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-amber-400/95 px-3 py-1 text-xs font-bold text-stone-950 shadow-lg shadow-amber-500/20 backdrop-blur-sm">
                   <Sparkles className="h-3.5 w-3.5" />
-                  مميز
+                  {t('programCard.featured')}
                 </span>
               )}
               <h3 className="line-clamp-2 text-xl font-black leading-snug text-white sm:text-2xl">
@@ -102,13 +104,13 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
           {featured && (
             <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-amber-400/95 px-3 py-1 text-xs font-bold text-stone-950 shadow-lg shadow-amber-500/20 backdrop-blur-sm">
               <Sparkles className="h-3.5 w-3.5" />
-              مميز
+              {t('programCard.featured')}
             </span>
           )}
           <h3 className="line-clamp-2 text-xl font-black leading-snug text-white sm:text-2xl">
             {program.title}
           </h3>
-          <p className="mt-2 text-sm text-white/70">لا توجد صورة لهذا البرنامج</p>
+          <p className="mt-2 text-sm text-white/70">{t('programCard.noImage')}</p>
         </div>
       )}
 
@@ -117,20 +119,20 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
         <div className="grid grid-cols-2 gap-3 rounded-2xl bg-stone-50 p-4 text-stone-700">
           <div className="flex items-center gap-2 text-sm font-medium">
             <Clock3 className="h-4 w-4 text-stone-400" />
-            <span>{program.durationDays} يوم</span>
+            <span>{program.durationDays} {t('programDetail.days')}</span>
           </div>
 
           <div className="flex items-center gap-2 text-sm font-medium sm:justify-end">
             <Users className="h-4 w-4 text-stone-400" />
-            <span>الحد الاقصي {program.maxPeople} أشخاص</span>
+            <span>{t('programCard.maxPeople')} {program.maxPeople} {t('homePage.peopleWord')}</span>
           </div>
         </div>
 
         <div className="mt-4 rounded-2xl border border-stone-200 bg-white p-4 shadow-sm">
           <div className="flex items-center gap-2 text-sm text-stone-500">
             <BadgeDollarSign className="h-4 w-4 text-amber-600" />
-            <span>السعر:</span>
-            <span className="text-xl font-black text-stone-900">{price} ر.س</span>
+            <span>{t('programCard.price')}:</span>
+            <span className="text-xl font-black text-stone-900">{price} {t('offersPage.currency')}</span>
           </div>
         </div>
 
@@ -138,7 +140,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
           to={`/programs/${slug}`}
           className="mt-4 inline-flex w-full items-center justify-between rounded-2xl bg-stone-900 px-4 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-stone-800 hover:shadow-lg hover:shadow-stone-900/15"
         >
-          <span>اعرف المزيد</span>
+          <span>{t('programCard.learnMore')}</span>
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 transition-transform duration-300 group-hover:translate-x-1">
             <ArrowLeft className="h-4 w-4" />
           </span>

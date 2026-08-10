@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Upload, Link as LinkIcon, X, ImageIcon } from 'lucide-react';
 import { compressImageToBlob } from '../../utils/imageCompression';
 import { uploadImage } from '../../services/uploadService';
@@ -31,6 +32,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
   maxDimension = 1280,
   quality = 0.82,
 }) => {
+  const { t, i18n } = useTranslation();
   const [mode, setMode] = useState<'upload' | 'url'>('upload');
   const [status, setStatus] = useState<'idle' | 'compressing' | 'uploading' | 'done'>('idle');
   const [sizeInfo, setSizeInfo] = useState<{ before: number; after: number } | null>(null);
@@ -44,7 +46,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
     setSizeInfo(null);
 
     if (!file.type.startsWith('image/')) {
-      setUploadError('من فضلك اختر ملف صورة صالح');
+      setUploadError(t('uploadField.invalidImage'));
       return;
     }
 
@@ -64,7 +66,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
       onChange(uploadedUrl);
       setStatus('done');
     } catch (e) {
-      setUploadError(e instanceof Error ? e.message : 'حصل خطأ أثناء رفع الصورة');
+      setUploadError(e instanceof Error ? e.message : t('uploadField.uploadError'));
       setStatus('idle');
     } finally {
       URL.revokeObjectURL(objectUrl);
@@ -77,7 +79,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
   const busy = status === 'compressing' || status === 'uploading';
 
   return (
-    <div dir="rtl">
+    <div dir={i18n.dir()}>
       <div className="flex items-center justify-between mb-2">
         <label className="block font-sans text-white/60 text-xs uppercase tracking-wider">{label}</label>
         <div className="flex gap-1 bg-white/5 rounded-lg p-0.5">
@@ -88,7 +90,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
               mode === 'upload' ? 'bg-sand-500/20 text-sand-300' : 'text-white/40 hover:text-white/70'
             }`}
           >
-            <Upload className="w-3 h-3" /> رفع من الجهاز
+            <Upload className="w-3 h-3" /> {t('uploadField.uploadFromDevice')}
           </button>
           <button
             type="button"
@@ -97,7 +99,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
               mode === 'url' ? 'bg-sand-500/20 text-sand-300' : 'text-white/40 hover:text-white/70'
             }`}
           >
-            <LinkIcon className="w-3 h-3" /> رابط
+            <LinkIcon className="w-3 h-3" /> {t('uploadField.link')}
           </button>
         </div>
       </div>
@@ -122,14 +124,14 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
             onChange={(e) => handleFile(e.target.files?.[0])}
           />
           {status === 'compressing' ? (
-            <p className="text-white/50 text-sm">جاري ضغط الصورة...</p>
+            <p className="text-white/50 text-sm">{t('uploadField.compressing')}</p>
           ) : status === 'uploading' ? (
-            <p className="text-white/50 text-sm">جاري رفع الصورة على السيرفر...</p>
+            <p className="text-white/50 text-sm">{t('uploadField.uploadingToServer')}</p>
           ) : (
             <div className="flex flex-col items-center gap-1 text-white/40">
               <ImageIcon className="w-6 h-6" />
-              <p className="text-sm">اضغط أو اسحب الصورة هنا للرفع من الجهاز</p>
-              <p className="text-[11px] text-white/25">هيتم ضغطها ورفعها تلقائيًا بدون تغيير الألوان</p>
+              <p className="text-sm">{t('uploadField.clickOrDrag')}</p>
+              <p className="text-[11px] text-white/25">{t('uploadField.autoCompress')}</p>
             </div>
           )}
         </div>
@@ -152,7 +154,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
 
       {sizeInfo && (
         <p className="mt-1 text-[11px] text-emerald-400/80">
-          تم الضغط والرفع: {formatKB(sizeInfo.before)} ← {formatKB(sizeInfo.after)}
+          {t('uploadField.compressedAndUploaded')}: {formatKB(sizeInfo.before)} ← {formatKB(sizeInfo.after)}
         </p>
       )}
 
@@ -168,7 +170,7 @@ const ImageUploadField: React.FC<ImageUploadFieldProps> = ({
                 if (inputRef.current) inputRef.current.value = '';
               }}
               className="absolute top-2 left-2 bg-black/60 hover:bg-black/80 text-white rounded-full p-1"
-              aria-label="إزالة الصورة"
+              aria-label={t('uploadField.removeImage')}
             >
               <X className="w-3.5 h-3.5" />
             </button>

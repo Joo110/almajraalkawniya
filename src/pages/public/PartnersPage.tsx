@@ -1,5 +1,6 @@
 // src/pages/public/PartnersPage.tsx
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Building2, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { SectionHeader, EmptyState } from '../../components/ui/index';
@@ -7,12 +8,13 @@ import { partners, PartnerOffer } from '../../data/partnersData';
 
 const WHATSAPP_NUMBER = '966544817995';
 
-const buildWhatsappLink = (partnerName: string) => {
-  const message = `مرحبًا، أرغب بالاستفسار عن عروض ${partnerName}`;
+const buildWhatsappLink = (partnerName: string, template: string) => {
+  const message = template.replace('{name}', partnerName);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
 const PartnersPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [lightbox, setLightbox] = useState<{ offers: PartnerOffer[]; index: number } | null>(null);
 
   const openLightbox = (offers: PartnerOffer[], index: number) => setLightbox({ offers, index });
@@ -33,37 +35,37 @@ const PartnersPage: React.FC = () => {
         <section className="relative h-72 flex items-center justify-center overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1600&q=80"
-            alt="شركاؤنا"
+            alt={t('partnersPage.heroAlt')}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/65" />
-          <div className="relative z-10 text-center px-6" dir="rtl">
+          <div className="relative z-10 text-center px-6" dir={i18n.dir()}>
             <span className="font-sans text-sand-400 text-xs uppercase tracking-widest mb-3 block">
-              — شراكة نجاح —
+              — {t('partnersPage.eyebrow')} —
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-black text-white mb-4">
-              شركاؤنا <span className="text-gradient">الآخرين</span>
+              {t('partnersPage.titlePart1')} <span className="text-gradient">{t('partnersPage.titlePart2')}</span>
             </h1>
             <p className="font-accent text-lg text-white/75 italic">
-              تعرف على شركائنا وعروضهم الحصرية
+              {t('partnersPage.subtitle')}
             </p>
           </div>
         </section>
 
         {/* Partners list */}
-        <section className="py-20 bg-stone-50" dir="rtl">
+        <section className="py-20 bg-stone-50" dir={i18n.dir()}>
           <div className="max-w-7xl mx-auto px-6">
             <SectionHeader
-              tag="شركاؤنا"
+              tag={t('partnersPage.eyebrow')}
               title=""
-              highlight="الشركات المتعاونة معنا"
-              subtitle="كل شركة وتحتها أحدث عروضها الخاصة"
+              highlight={t('partnersPage.sectionHighlight')}
+              subtitle={t('partnersPage.sectionSubtitle')}
               center
             />
 
             {partners.length === 0 ? (
               <EmptyState
-                message="لا يوجد شركاء مضافين بعد"
+                message={t('partnersPage.noPartners')}
                 icon={<Building2 className="w-10 h-10" />}
               />
             ) : (
@@ -100,20 +102,20 @@ const PartnersPage: React.FC = () => {
                       </div>
 
                       <a
-                        href={buildWhatsappLink(partner.name)}
+                        href={buildWhatsappLink(partner.name, t('partnersPage.whatsappMessage'))}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-sans text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors shrink-0"
                       >
                         <MessageCircle className="w-4 h-4" />
-                        تواصل عبر واتساب
+                        {t('partnersPage.contactViaWhatsapp')}
                       </a>
                     </div>
 
                     {/* Offers grid */}
                     {partner.offers.length === 0 ? (
                       <p className="font-sans text-stone-400 text-sm">
-                        لا توجد عروض حالياً لهذه الشركة
+                        {t('partnersPage.noOffers')}
                       </p>
                     ) : (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -164,7 +166,7 @@ const PartnersPage: React.FC = () => {
             <button
               className="absolute top-6 left-6 text-white/80 hover:text-white"
               onClick={closeLightbox}
-              aria-label="إغلاق"
+              aria-label={t('partnersPage.close')}
             >
               <X className="w-8 h-8" />
             </button>
@@ -176,7 +178,7 @@ const PartnersPage: React.FC = () => {
                   e.stopPropagation();
                   prevImage();
                 }}
-                aria-label="السابق"
+                aria-label={t('partnersPage.prev')}
               >
                 <ChevronRight className="w-10 h-10" />
               </button>
@@ -185,7 +187,7 @@ const PartnersPage: React.FC = () => {
             <div
               className="max-w-3xl w-full text-center"
               onClick={(e) => e.stopPropagation()}
-              dir="rtl"
+              dir={i18n.dir()}
             >
               <img
                 src={lightbox.offers[lightbox.index].image}
@@ -211,7 +213,7 @@ const PartnersPage: React.FC = () => {
                   e.stopPropagation();
                   nextImage();
                 }}
-                aria-label="التالي"
+                aria-label={t('partnersPage.next')}
               >
                 <ChevronLeft className="w-10 h-10" />
               </button>

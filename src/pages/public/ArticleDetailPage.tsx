@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
@@ -6,6 +7,7 @@ import { Spinner } from '../../components/ui/index';
 import { useArticleBySlug } from '../../hooks/useArticles';
 
 export const ArticleDetailPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { article, loading } = useArticleBySlug(slug || '');
 
@@ -22,11 +24,11 @@ export const ArticleDetailPage: React.FC = () => {
   if (!article) {
     return (
       <PublicLayout>
-        <div className="bg-white min-h-screen flex items-center justify-center" dir="rtl">
+        <div className="bg-white min-h-screen flex items-center justify-center" dir={i18n.dir()}>
           <div className="text-center">
-            <p className="font-display text-2xl text-stone-900 mb-4">المقال غير موجود</p>
+            <p className="font-display text-2xl text-stone-900 mb-4">{t('articleDetail.notFound')}</p>
             <Link to="/blog" className="btn-primary">
-              العودة للمدونة
+              {t('articleDetail.backToBlog')}
             </Link>
           </div>
         </div>
@@ -34,7 +36,7 @@ export const ArticleDetailPage: React.FC = () => {
     );
   }
 
-  const date = new Date(article.publishedAt).toLocaleDateString('ar-EG', {
+  const date = new Date(article.publishedAt).toLocaleDateString(i18n.language === 'ar' ? 'ar-EG' : 'en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -43,13 +45,13 @@ export const ArticleDetailPage: React.FC = () => {
   return (
     <PublicLayout>
       <div className="bg-white text-stone-800 min-h-screen">
-        <article className="max-w-3xl mx-auto px-6 py-24" dir="rtl">
+        <article className="max-w-3xl mx-auto px-6 py-24" dir={i18n.dir()}>
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-800 text-sm font-sans mb-8 transition-colors"
           >
             <ArrowRight className="w-4 h-4" />
-            العودة للمدونة
+            {t('articleDetail.backToBlog')}
           </Link>
 
           {article.coverImage && (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowLeft } from 'lucide-react';
 import { Destination } from '../../types';
@@ -12,13 +13,14 @@ const fallbackImages: Record<string, string> = {
 };
 
 const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
+  const { t, i18n } = useTranslation();
   const img = destination.coverImage || fallbackImages.default;
 
   return (
     <Link
       to={`/destinations/${destination.slug}`}
       className="card-hover group relative block rounded-2xl overflow-hidden h-72"
-      dir="rtl"
+      dir={i18n.dir()}
     >
       <img
         src={img}
@@ -33,7 +35,7 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
       <div className="absolute bottom-0 left-0 right-0 p-5">
         <div className="flex items-center gap-1.5 text-white/60 mb-2">
           <MapPin className="w-3.5 h-3.5 text-sand-400" />
-          <span className="font-sans text-xs">{destination.country || 'وجهة عالمية'}</span>
+          <span className="font-sans text-xs">{destination.country || t('destinationDetail.globalDestination')}</span>
         </div>
         <div className="flex items-center justify-between">
           <h3 className="font-display text-xl font-bold text-white group-hover:text-sand-300 transition-colors">

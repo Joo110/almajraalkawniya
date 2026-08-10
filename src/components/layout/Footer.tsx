@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const dir = i18n.dir();
   return (
     <footer className="bg-charcoal-800 border-t border-white/10 pt-14 pb-6">
       <div className="max-w-7xl mx-auto px-5">
@@ -15,16 +18,16 @@ const Footer: React.FC = () => {
             <Link to="/" className="flex items-center gap-2.5 mb-4">
               <img
                 src="/logo3.jpeg"
-                alt="شعار المجرة الكونية"
+                alt={t('nav.logoAlt')}
                 className="w-9 h-9 rounded-full object-cover"
               />
               <span className="font-display text-xl font-bold">
-                <span className="text-gradient">المجرة</span>
-                <span className="text-white"> الكونية</span>
+                <span className="text-gradient">{t('brand.name1')}</span>
+                <span className="text-white"> {t('brand.name2')}</span>
               </span>
             </Link>
-            <p className="font-sans text-white/60 text-sm leading-relaxed mb-5" dir="rtl">
-              نصنع تجارب سفر لا تُنسى، ونأخذك إلى أجمل الوجهات حول العالم بأسلوب يليق بأحلامك.
+            <p className="font-sans text-white/60 text-sm leading-relaxed mb-5" dir={dir}>
+              {t('footer.tagline')}
             </p>
 
             {/* روابط السوشيال ميديا */}
@@ -33,7 +36,7 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/almajraalkawniya2026?igsh=MTlzMWRmaGY3MTZzOA=="
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="إنستغرام"
+                aria-label={t('footer.instagram')}
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:text-sand-400 hover:bg-white/15 transition-colors duration-200"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -47,7 +50,7 @@ const Footer: React.FC = () => {
                 href="https://www.tiktok.com/@almajraalkawniya?_r=1&_d=f01g3e90l4be92&sec_uid=MS4wLjABAAAAuGlEYo5kCArKG7Yql_tpeu_rTS9BhQiKbEJRokPsEtbf2tiT7u1NI5jczCNOMrgc&share_author_id=7643864611427779605&sharer_language=ar&source=h5_m&u_code=f3ia5ifcifhdka&timestamp=1781629933&user_id=7643864611427779605&sec_user_id=MS4wLjABAAAAuGlEYo5kCArKG7Yql_tpeu_rTS9BhQiKbEJRokPsEtbf2tiT7u1NI5jczCNOMrgc&item_author_type=1&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7649618006575007505&share_link_id=ebb192ac-8c2e-4c9d-8069-2a5249e49e4c&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb7360&social_share_type=5&enable_checksum=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="تيك توك"
+                aria-label={t('footer.tiktok')}
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:text-sand-400 hover:bg-white/15 transition-colors duration-200"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -59,7 +62,7 @@ const Footer: React.FC = () => {
                 href="https://www.snapchat.com/add/almajraalkawniy?share_id=IcAmDl12nuQ&locale=ar-EG"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="سناب شات"
+                aria-label={t('footer.snapchat')}
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:text-sand-400 hover:bg-white/15 transition-colors duration-200"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -71,7 +74,7 @@ const Footer: React.FC = () => {
                 href="https://wa.me/966544817995"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="واتساب"
+                aria-label={t('footer.whatsapp')}
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:text-sand-400 hover:bg-white/15 transition-colors duration-200"
               >
                 <Send className="w-4 h-4" />
@@ -80,22 +83,22 @@ const Footer: React.FC = () => {
           </div>
 
           {/* روابط الموقع */}
-          <div dir="rtl">
+          <div dir={dir}>
             <h4 className="font-sans font-semibold text-white text-xs uppercase tracking-widest mb-4">
-              روابط الموقع
+              {t('footer.siteLinks')}
             </h4>
             <ul className="space-y-2.5">
               {[
-                { to: '/about', label: 'من نحن' },
-                { to: '/destinations', label: 'الوجهات' },
-                { to: '/programs', label: 'البرامج السياحية' },
-                { to: '/offers', label: 'العروض الخاصة' },
-                { to: '/terms', label: 'الشروط والأحكام' },
-                { to: '/refund-policy', label: 'سياسة الاسترجاع' },
-                { to: '/bank-accounts', label: 'الحسابات البنكية' },
-                { to: '/site-documentation', label: 'توثيق الموقع' },
-                { to: '/iban-documentation', label: 'خطاب الآيبان' },
-                { to: '/blog', label: 'المدونة' },
+                { to: '/about', label: t('nav.about') },
+                { to: '/destinations', label: t('nav.destinations') },
+                { to: '/programs', label: t('footer.linkPrograms') },
+                { to: '/offers', label: t('footer.linkOffers') },
+                { to: '/terms', label: t('footer.linkTerms') },
+                { to: '/refund-policy', label: t('footer.linkRefund') },
+                { to: '/bank-accounts', label: t('footer.linkBank') },
+                { to: '/site-documentation', label: t('footer.linkSiteDoc') },
+                { to: '/iban-documentation', label: t('footer.linkIban') },
+                { to: '/blog', label: t('nav.blog') },
               ].map((l) => (
                 <li key={l.to}>
                   <Link
@@ -110,9 +113,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* تواصل معنا — full width on mobile */}
-          <div className="col-span-2 md:col-span-1" dir="rtl">
+          <div className="col-span-2 md:col-span-1" dir={dir}>
             <h4 className="font-sans font-semibold text-white text-xs uppercase tracking-widest mb-4">
-              تواصل معنا
+              {t('footer.contactUs')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -123,7 +126,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="font-sans text-white/60 hover:text-sand-400 text-sm transition-colors duration-200"
                 >
-                      الرياض حي السويدي شارع الملك عبدالعزيز بن عبدالرحمن سعود الفرعي  رقم المبنى 6249 الرمز البريد 13342
+                  {t('footer.address')}
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -163,15 +166,15 @@ const Footer: React.FC = () => {
         </div>
 
         {/* وسائل الدفع المتاحة */}
-        <div className="border-t border-white/10 pt-6 pb-6" dir="rtl">
+        <div className="border-t border-white/10 pt-6 pb-6" dir={dir}>
           <p className="font-sans text-white/40 text-xs text-center uppercase tracking-widest mb-4">
-            وسائل الدفع المتاحة
+            {t('footer.paymentMethods')}
           </p>
           <div className="flex items-center justify-center">
             <div className="bg-white rounded-lg shadow-sm px-4 py-3 max-w-full">
               <img
                 src="/paymentinfo.webp"
-                alt="وسائل الدفع المتاحة: Visa, Mastercard, تحويل بنكي, تمارا, tabby"
+                alt={t('footer.paymentMethods')}
                 className="h-10 sm:h-12 md:h-14 w-auto max-w-full object-contain"
               />
             </div>
@@ -179,31 +182,31 @@ const Footer: React.FC = () => {
         </div>
 
         {/* الترخيص والسجل التجاري */}
-        <div className="border-t border-white/10 pt-6 pb-6" dir="rtl">
+        <div className="border-t border-white/10 pt-6 pb-6" dir={dir}>
           <p className="font-sans text-white/40 text-xs text-center leading-relaxed">
-            وكالة سفر وسياحة — رقم السجل التجاري: <span dir="ltr" className="inline-block">7053753773</span>
+            {t('footer.travelAgency')} — {t('footer.crNumber')}: <span dir="ltr" className="inline-block">7053753773</span>
             {' '}|{' '}
-            الرقم الضريبي: <span dir="ltr" className="inline-block">314643915700003</span>
+            {t('footer.taxNumber')}: <span dir="ltr" className="inline-block">314643915700003</span>
           </p>
         </div>
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col-reverse md:flex-row items-center justify-between gap-3">
-          <p className="font-sans text-white/30 text-xs text-center md:text-right" dir="rtl">
-            © {new Date().getFullYear()} وكالة المجرة الكونية للسفر والسياحة — جميع الحقوق محفوظة
+          <p className="font-sans text-white/30 text-xs text-center md:text-right" dir={dir}>
+            © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
           <div className="flex items-center gap-5">
             <Link
               to="/privacy"
               className="font-sans text-white/30 hover:text-white/60 text-xs transition-colors"
             >
-              سياسة الخصوصية
+              {t('footer.privacyPolicy')}
             </Link>
             <Link
               to="/terms"
               className="font-sans text-white/30 hover:text-white/60 text-xs transition-colors"
             >
-              الشروط والأحكام
+              {t('nav.terms')}
             </Link>
           </div>
         </div>

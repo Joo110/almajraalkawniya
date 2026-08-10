@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Menu, X, MapPin } from 'lucide-react';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const dir = i18n.dir();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -18,16 +22,16 @@ const Navbar: React.FC = () => {
   }, [location]);
 
   const links = [
-  { to: '/', label: 'الرئيسية' },
-  { to: '/about', label: 'من نحن' },
-  { to: '/where-to-travel', label: 'وين أسافر؟', special: true },
-  { to: '/destinations', label: 'الوجهات' },
-  { to: '/programs', label: 'البرامج' },
-  { to: '/offers', label: 'العروض' },
-  { to: '/partners', label: 'شركاؤنا الآخرين' },
-  { to: '/blog', label: 'المدونة' },
-  { to: '/contact', label: 'تواصل معنا' },
-];
+    { to: '/', label: t('nav.home') },
+    { to: '/about', label: t('nav.about') },
+    { to: '/where-to-travel', label: t('nav.whereToTravel'), special: true },
+    { to: '/destinations', label: t('nav.destinations') },
+    { to: '/programs', label: t('nav.programs') },
+    { to: '/offers', label: t('nav.offers') },
+    { to: '/partners', label: t('nav.partners') },
+    { to: '/blog', label: t('nav.blog') },
+    { to: '/contact', label: t('nav.contact') },
+  ];
 
   return (
     <nav
@@ -43,17 +47,17 @@ const Navbar: React.FC = () => {
         <Link to="/" className="flex items-center gap-2.5 group">
           <img
             src="/logo3.jpeg"
-            alt="شعار المجرة الكونية"
+            alt={t('nav.logoAlt')}
             className="w-9 h-9 rounded-full object-cover shadow-md shadow-sand-500/20 group-hover:scale-105 transition-transform duration-300"
           />
           <div className="flex flex-col leading-none">
-            <span className="font-display text-lg font-bold text-white tracking-wide">المجرة</span>
-            <span className="font-display text-lg font-bold text-gradient tracking-wide">الكونية</span>
+            <span className="font-display text-lg font-bold text-white tracking-wide">{t('brand.name1')}</span>
+            <span className="font-display text-lg font-bold text-gradient tracking-wide">{t('brand.name2')}</span>
           </div>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-0.5" dir="rtl">
+        <div className="hidden md:flex items-center gap-0.5" dir={dir}>
           {links.map((l) =>
             l.special ? (
               <Link
@@ -86,31 +90,35 @@ const Navbar: React.FC = () => {
           )}
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex">
+        {/* CTA + language switcher */}
+        <div className="hidden md:flex items-center gap-3">
+          <LanguageSwitcher />
           <Link
             to="/programs"
             className="btn-primary text-xs py-2 px-5 rounded-full"
           >
-            احجز الآن
+            {t('nav.bookNow')}
           </Link>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="md:hidden text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors"
-          onClick={() => setOpen(!open)}
-          aria-label="فتح القائمة"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            className="text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors"
+            onClick={() => setOpen(!open)}
+            aria-label={t('nav.openMenu')}
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
         <div
           className="md:hidden bg-black/60 backdrop-blur-2xl border-t border-white/10 px-6 py-5 flex flex-col gap-3"
-          dir="rtl"
+          dir={dir}
         >
           {links.map((l) => (
             <Link
@@ -132,7 +140,7 @@ const Navbar: React.FC = () => {
             to="/programs"
             className="btn-primary text-center text-sm py-2.5 mt-1 rounded-full"
           >
-            احجز الآن
+            {t('nav.bookNow')}
           </Link>
         </div>
       )}

@@ -1,0 +1,561 @@
+{
+  "brand": { "name1": "Al Majra", "name2": "Al Kawniya" },
+  "nav": {
+    "logoAlt": "Al Majra Al Kawniya Logo",
+    "home": "Home",
+    "about": "About Us",
+    "whereToTravel": "Where to Travel?",
+    "destinations": "Destinations",
+    "programs": "Programs",
+    "offers": "Offers",
+    "partners": "Our Partners",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "terms": "Terms & Conditions",
+    "bookNow": "Book Now",
+    "openMenu": "Open menu"
+  },
+  "footer": {
+    "tagline": "We craft unforgettable travel experiences, taking you to the world's most beautiful destinations in a style worthy of your dreams.",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "snapchat": "Snapchat",
+    "whatsapp": "WhatsApp",
+    "siteLinks": "Site Links",
+    "linkPrograms": "Tour Programs",
+    "linkOffers": "Special Offers",
+    "linkTerms": "Terms & Conditions",
+    "linkRefund": "Refund Policy",
+    "linkBank": "Bank Accounts",
+    "linkSiteDoc": "Site Documentation",
+    "linkIban": "IBAN Letter",
+    "contactUs": "Contact Us",
+    "address": "Riyadh, Al Suwaidi District, King Abdulaziz bin Abdulrahman Saud Branch Street, Building No. 6249, Postal Code 13342",
+    "paymentMethods": "Available Payment Methods",
+    "travelAgency": "Travel & Tourism Agency",
+    "crNumber": "Commercial Registration No.",
+    "taxNumber": "Tax Number",
+    "copyright": "Al Majra Al Kawniya Travel & Tourism Agency — All rights reserved",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "bank": {
+    "titlePart1": "Bank",
+    "titlePart2": "Accounts",
+    "imgAlt": "Bank account"
+  },
+  "siteDoc": {
+    "titlePart1": "Site",
+    "titlePart2": "Documentation",
+    "imgAlt": "E-commerce documentation certificate"
+  },
+  "ibanDoc": {
+    "titlePart1": "IBAN",
+    "titlePart2": "Letter",
+    "imgAlt": "IBAN letter - Saudi National Bank"
+  },
+  "privacy": {
+    "titlePart1": "Privacy",
+    "titlePart2": "Policy",
+    "lastUpdated": "Last updated: February 2026",
+    "agencyName": "Al Majra Al Kawniya Travel & Tourism Agency",
+    "introPart1": "is committed to",
+    "introPart2": "(CR: 7053753773) protecting your privacy and safeguarding your personal data. This policy explains how we collect, use, and protect your information when you use our website or services.",
+    "sections": [
+      {
+        "title": "1. Information We Collect",
+        "body": "We collect information you voluntarily provide when filling out booking forms or contacting us, including:\n• Full name and phone number\n• Email address\n• Trip details (destination, travel date, number of travelers)\n• Departure city and trip duration\n• Any notes or special requests you mention\n\nWe also automatically collect some technical data such as IP address and browser type for security and performance improvement purposes."
+      },
+      {
+        "title": "2. How We Use Your Information",
+        "body": "We use the collected information for the following purposes:\n• Processing and responding to booking requests\n• Communicating with you about your trip or our offers\n• Improving our services and user experience on our site\n• Complying with legal and regulatory requirements in the Kingdom of Saudi Arabia\n\nWe will not use your data for any marketing purpose without obtaining your prior consent."
+      },
+      {
+        "title": "3. Sharing Information with Third Parties",
+        "body": "We do not sell or rent your personal data to any third party. We may only share your information in the following cases:\n• With travel partners (hotels, airlines) necessary to complete your booking\n• When legally required or under a court order\n• With trusted technical service providers acting on our behalf under confidentiality agreements"
+      },
+      {
+        "title": "4. Data Retention and Protection",
+        "body": "We retain your data for as long as necessary to provide the service or as required by law.\nWe take appropriate technical and organizational measures to protect your data from unauthorized access, loss, or misuse, including encryption of communications."
+      },
+      {
+        "title": "5. Your Rights",
+        "body": "You have the right at any time to:\n• Access the data we hold about you\n• Request correction of any inaccurate information\n• Request deletion of your data (within legal limits)\n• Withdraw your consent to any optional processing\n\nTo contact us regarding your rights: almajara.alkawnia.travel@gmail.com"
+      },
+      {
+        "title": "6. Cookies",
+        "body": "Our website uses essential cookies to ensure the site functions correctly, and may use analytical cookies to understand how visitors use the site. You can adjust your browser settings to refuse these cookies, though this may affect some site functionality."
+      },
+      {
+        "title": "7. Changes to This Policy",
+        "body": "We reserve the right to update this privacy policy at any time. The updated version will be posted on this page with the last modification date. We encourage you to review the policy periodically."
+      },
+      {
+        "title": "8. Contact Us",
+        "body": "If you have any questions about this policy, you can contact us via:\n\n📧 Email: almajara.alkawnia.travel@gmail.com\n📞 Phone: +966 54 481 7995\n📍 Address: Makkah Al-Mukarramah, Al Tanguim District, Kingdom of Saudi Arabia\n🏢 Commercial Registration: 7053753773"
+      }
+    ]
+  },
+  "termsPage": {
+    "titlePart1": "Terms &",
+    "titlePart2": "Conditions",
+    "items": [
+      "Flight tickets and hotel reservations are sent 48 hours before departure, and may be sent earlier depending on readiness.",
+      "Flight tickets are subject to the terms and conditions of the carrying airline; some tickets may be non-refundable or non-cancellable, and the company is not responsible for any changes or cancellations issued by airlines. If a client wishes to modify a booking or add extra baggage, this is done according to the airline's policy and at an additional cost borne by the client.",
+      "Hotel bookings are subject to each hotel's cancellation and modification policies; some allow free cancellation within a specific period, while others may charge fees up to the full booking value. If the client requests cancellation or modification, this is done according to the hotel's policy after review, with the client bearing any resulting additional costs. Bookings for cabins, apartments, and resorts are non-refundable.",
+      "The client has the right to modify booked hotels, provided the client bears all applicable penalties according to the type of service to be modified; the outcome of the modification depends on availability during that period.",
+      "In case of a refund, it will be processed within 10 to 21 business days at least from the date of the cancellation request. If payment was made via electronic cards (Visa/Mastercard), amounts will be refunded to the card according to the timeframe determined by the bank.",
+      "The duration of the tour is 8 to 10 hours, starting at 10:00 AM and ending at a pre-agreed time. If the client requests an extension or additional time, this is subject to availability and an additional cost determined by the office. The client may also request to change the tour start time, provided the request is submitted at least one day before the tour and coordinated with the office.",
+      "In case the traveler is returned or prevented from traveling for any reason, the office is not responsible for refunding the trip amount or any other related costs, though it may help the client book an alternative trip or reduce penalties where possible.",
+      "In case of any damage inside the room or use of any paid services such as laundry or ironing, the cost is borne by the traveler.",
+      "Triple room: the third bed is an additional foldable bed or sofa bed, not the same size or standard as the main beds.",
+      "Tour programs are subject to change in terms of the order of tours due to weather conditions or other operational circumstances.",
+      "The type of vehicle used in tour programs is determined by the company based on comfort and availability.",
+      "In case of cancellation during the trip, the full amount is deducted and the client is not entitled to any refund.",
+      "Hotel rooms are provided based on hotel availability and according to priority and capacity.",
+      "Hotel check-in begins after 2:00 PM.",
+      "Rooms must be vacated on the last day before 12:00 PM."
+    ]
+  },
+  "refundPage": {
+    "titlePart1": "Refund",
+    "titlePart2": "Policy",
+    "note": "For more details on booking and travel terms, please review the Terms & Conditions page.",
+    "items": [
+      "Flight tickets are subject to the terms and conditions of the carrying airline; some tickets may be non-refundable or non-cancellable, and the company is not responsible for any changes or cancellations issued by airlines.",
+      "Hotel bookings are subject to each hotel's cancellation and modification policies; some allow free cancellation within a specific period, while others may charge fees up to the full booking value. Bookings for cabins, apartments, and resorts are non-refundable.",
+      "The client has the right to modify booked hotels, provided the client bears all applicable penalties according to the type of service to be modified; the outcome of the modification depends on availability during that period.",
+      "In case of a refund, it will be processed within 10 to 21 business days at least from the date of the cancellation request. If payment was made via electronic cards (Visa/Mastercard), amounts will be refunded to the card according to the timeframe determined by the bank.",
+      "In case the traveler is returned or prevented from traveling for any reason, the office is not responsible for refunding the trip amount or any other related costs, though it may help the client book an alternative trip or reduce penalties where possible.",
+      "In case of cancellation during the trip, the full amount is deducted and the client is not entitled to any refund."
+    ]
+  },
+  "blogPage": {
+    "eyebrow": "Blog",
+    "titlePart1": "Your Guide to",
+    "titlePart2": "Smart Travel",
+    "subtitle": "Tips and articles from travel experts to help you on your journey",
+    "searchPlaceholder": "Search articles...",
+    "noResults": "No articles match your search",
+    "placeholderArticles": [
+      { "id": "1", "title": "10 Secrets to Saving Money While Traveling", "slug": "save-money-travel", "coverImage": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" },
+      { "id": "2", "title": "Best Time to Visit Japan in 2026", "slug": "best-time-japan", "coverImage": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" },
+      { "id": "3", "title": "Your Complete Guide to Exploring Paris", "slug": "paris-guide", "coverImage": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" },
+      { "id": "4", "title": "The Most Beautiful Maldives Beaches You Must Visit", "slug": "maldives-beaches", "coverImage": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" },
+      { "id": "5", "title": "Tips for Traveling with Family and Children", "slug": "family-travel", "coverImage": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" },
+      { "id": "6", "title": "Best Restaurants in Dubai for 2026", "slug": "dubai-restaurants", "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" }
+    ]
+  },
+  "articleDetail": {
+    "notFound": "Article not found",
+    "backToBlog": "Back to Blog"
+  },
+  "destinationsPage": {
+    "eyebrow": "Explore",
+    "titlePart1": "Our",
+    "titlePart2": "Destinations",
+    "subtitle": "Choose your favorite destination from among the most beautiful places in the world",
+    "searchPlaceholder": "Search for a destination...",
+    "noResults": "No results match your search",
+    "placeholderDestinations": [
+      { "name": "Paris", "country": "France", "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80", "slug": "paris" },
+      { "name": "Tokyo", "country": "Japan", "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80", "slug": "tokyo" },
+      { "name": "Santorini", "country": "Greece", "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80", "slug": "santorini" },
+      { "name": "Dubai", "country": "UAE", "img": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80", "slug": "dubai" },
+      { "name": "Maldives", "country": "Maldives", "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80", "slug": "maldives" },
+      { "name": "Rome", "country": "Italy", "img": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80", "slug": "rome" }
+    ]
+  },
+  "programsPage": {
+    "eyebrow": "Our Programs",
+    "titlePart1": "Tour",
+    "titlePart2": "Programs",
+    "subtitle": "Trips carefully designed for every budget and taste",
+    "searchPlaceholder": "Search for a program...",
+    "priceAll": "All Prices",
+    "priceUnder5k": "Under SAR 5,000",
+    "priceUnder10k": "Under SAR 10,000",
+    "priceUnder20k": "Under SAR 20,000",
+    "durationAll": "All Durations",
+    "duration5days": "5 days or less",
+    "duration1week": "1 week or less",
+    "duration2weeks": "2 weeks or less",
+    "noneYet": "No programs yet",
+    "noResults": "No programs match your search",
+    "programWord": "program(s)"
+  },
+  "offersPage": {
+    "eyebrow": "Exclusive",
+    "titlePart1": "Special",
+    "titlePart2": "Offers",
+    "subtitle": "Save more and travel more with our exclusive offers",
+    "typePercentage": "Percentage Discount",
+    "typeFixed": "Fixed Discount",
+    "typeBundle": "Special Bundle",
+    "typeDefault": "Offer",
+    "currency": "SAR",
+    "ends": "Ends",
+    "starts": "Starts",
+    "bookViaWhatsapp": "Book via WhatsApp",
+    "whatsappMessage": "Hello, I'd like to inquire about the \"{title}\" offer",
+    "placeholderOffers": [
+      { "title": "Summer Season Discount", "type": "percentage", "value": 20, "desc": "Enjoy a 20% discount on all summer trips for a limited time", "end": "June 30, 2026" },
+      { "title": "Honeymoon Package", "type": "bundle", "value": 15, "desc": "Complete honeymoon package including luxury accommodation and romantic tours", "end": "December 31, 2026" },
+      { "title": "Early Booking Discount", "type": "fixed", "value": 5000, "desc": "Book 3 months before your travel date and save SAR 5,000", "end": "May 31, 2026" }
+    ]
+  },
+  "partnersPage": {
+    "heroAlt": "Our Partners",
+    "eyebrow": "Successful Partnership",
+    "titlePart1": "Our Other",
+    "titlePart2": "Partners",
+    "subtitle": "Get to know our partners and their exclusive offers",
+    "sectionHighlight": "Companies We Collaborate With",
+    "sectionSubtitle": "Each company along with its latest special offers",
+    "noPartners": "No partners added yet",
+    "contactViaWhatsapp": "Contact via WhatsApp",
+    "whatsappMessage": "Hello, I'd like to inquire about {name}'s offers",
+    "noOffers": "No offers currently available for this company",
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "destinationDetail": {
+    "whatsappMessage": "Hello, I'd like to inquire about a trip to {name} and I'd like to book.",
+    "yourDestination": "your destination",
+    "notFound": "Destination not found",
+    "backToDestinations": "Back to Destinations",
+    "featured": "Featured Destination",
+    "globalDestination": "Global Destination",
+    "bookViaWhatsapp": "Book Now via WhatsApp",
+    "about": "About the Destination",
+    "quickInfo": "Quick Info",
+    "country": "Country",
+    "bookNow": "Book Now",
+    "programs": "Programs",
+    "tripsTo": "Trips to",
+    "programsAvailable": "programs available",
+    "browseAllPrograms": "Browse All Programs",
+    "readyQuestion": "Ready to go?",
+    "startYourTripTo": "Start your trip to",
+    "now": "now",
+    "ctaSubtitle": "Contact our team and we'll design an unforgettable trip for you"
+  },
+  "programDetail": {
+    "notFound": "Program not found",
+    "backToPrograms": "Back to Programs",
+    "whatsappMessage": "Hello, I'd like to book the program: {{title}}\nDuration: {{duration}} days\nPrice: {{price}} SAR\nLink: {{link}}",
+    "days": "days",
+    "reviews": "reviews",
+    "tripPhotos": "Trip Photos",
+    "includes": "Program Includes",
+    "excludes": "Program Excludes",
+    "noData": "No data available",
+    "dailyProgram": "Daily Itinerary",
+    "day": "Day",
+    "pricePerPerson": "Price per person",
+    "whatsappRedirectNote": "You will be redirected directly to WhatsApp to send your booking request."
+  },
+  "aboutPage": {
+    "heroTag": "Our Story with Travel",
+    "heroTitle": "Who We Are",
+    "heroTitleMark": "?",
+    "heroSubtitle": "We're not just a travel agency — we're memory-makers, your companions in every adventure, and your partners toward horizons you haven't discovered yet",
+    "storyTag": "Our Story",
+    "storyTitlePart1": "We Started with a",
+    "storyTitleDream": "Dream",
+    "storyTitlePart2": "and Made it a Reality",
+    "storyParagraph1": "In 2014, we set out with a simple dream: to make travel accessible to everyone with high quality and competitive prices. Since then, we've become the trusted partner for over 1,000 families and individuals around the world.",
+    "storyParagraph2": "Our team of Arab specialists understands your needs, speaks your language, and lives your passion for exploration. Every trip we design carries a personal touch worthy of your dreams.",
+    "factsList": [
+      "Over 10 years of experience in tourism",
+      "A specialized team of 50+ travel consultants",
+      "Exclusive partnerships with the world's best hotels",
+      "Round-the-clock support throughout your trip"
+    ],
+    "satisfactionValue": "98%",
+    "satisfactionLabel": "Customer Satisfaction Rate",
+    "stats": [
+      { "value": "1000+", "label": "Trips Successfully Completed" },
+      { "value": "5000+", "label": "Happy Clients" },
+      { "value": "50+", "label": "Destinations Worldwide" },
+      { "value": "10+", "label": "Years of Experience" }
+    ],
+    "valuesTag": "Our Values",
+    "valuesTitle": "What Sets",
+    "valuesHighlight": "Us Apart",
+    "valuesSubtitle": "We believe every detail makes the difference",
+    "values": [
+      { "title": "Passion for Travel", "desc": "We don't just work in tourism, we live it. Every member of our team is a passionate traveler who understands what you're looking for." },
+      { "title": "Honesty & Transparency", "desc": "No hidden prices, no surprises. Everything you pay is clear from the very first moment." },
+      { "title": "Excellence in Service", "desc": "We accept nothing less than excellent. Every detail of your trip goes through careful review to ensure an unforgettable experience." },
+      { "title": "Global Network", "desc": "Our partnerships with the world's best hotels and companies give you prices you won't find anywhere else." },
+      { "title": "Personal Service", "desc": "You're not just a booking number. Your personal consultant follows up with you from the planning stage until you return home." },
+      { "title": "Satisfaction Guarantee", "desc": "If you're not 100% satisfied with our service, we'll make it right. No questions asked." }
+    ],
+    "ctaTitlePart1": "Ready to Start",
+    "ctaTitlePart2": "Your Trip",
+    "ctaTitleMark": "?",
+    "ctaSubtitle": "Contact us now and one of our consultants will help you design your dream trip",
+    "exploreProgramsCta": "Explore Programs"
+  },
+  "contactPage": {
+    "titlePart1": "Contact",
+    "titlePart2": "Us",
+    "subtitle": "Our team is ready to answer all your questions",
+    "sendRequest": "Send Us a Booking Request",
+    "thankYou": "Thank You!",
+    "received": "Your request has been received successfully, and our team will contact you within 24 hours",
+    "name": "Name",
+    "namePlaceholder": "John Smith",
+    "phone": "Phone",
+    "travelersCount": "Number of Travelers",
+    "durationDays": "Trip Duration (days)",
+    "destination": "Destination",
+    "loadingDestinations": "Loading destinations...",
+    "chooseDestination": "Choose a destination",
+    "departureCity": "Departure City",
+    "departureCityPlaceholder": "Makkah",
+    "travelDate": "Travel Date",
+    "notes": "Notes",
+    "notesPlaceholder": "Tell us any additional details",
+    "sending": "Sending...",
+    "sendButton": "Send Request",
+    "contactInfo": "Contact Information",
+    "infoBlocks": [
+      { "label": "Call Us", "value": "+966 54 481 7995", "sub": "Sun – Thu: 9 AM – 6 PM" },
+      { "label": "Email Us", "value": "almajara.alkawnia.travel@gmail.com", "sub": "We reply within 24 hours" },
+      { "label": "Visit Us", "value": "Riyadh, Al Suwaidi District, King Abdulaziz bin Abdulrahman Saud Branch Street, Building No. 6249, Postal Code 13342", "sub": "Kingdom of Saudi Arabia" },
+      { "label": "Working Hours", "value": "Sun – Thu", "sub": "9:00 AM – 6:00 PM" }
+    ]
+  },
+  "wtt": {
+    "heroTitlePart1": "Choose",
+    "heroTitlePart2": "Your Ideal Trip",
+    "heroTitlePart3": "Now",
+    "heroSubtitle": "Explore the best tour programs designed just for you — book easily at the best price",
+    "question": "Question",
+    "of": "of",
+    "tapToSelect": "Tap a card to select",
+    "previous": "Previous",
+    "restart": "Restart",
+    "next": "Next",
+    "showResults": "Show Results",
+    "resultsTitle": "Your Two Ideal Destinations!",
+    "resultsSubtitle": "We picked two destinations from what's available based on your answers",
+    "noMatch": "We couldn't find a strong match based on your answers.",
+    "noMatchHint": "Make sure each destination has `tags` set so recommendations work accurately.",
+    "retakeQuiz": "Retake the Quiz",
+    "bestChoice": "Best Match for You",
+    "bestFor": "Best for:",
+    "pricesFrom": "Prices start from:",
+    "exploreDestination": "Explore Destination",
+    "ctaTitle": "Didn't find your trip? Let us design one just for you",
+    "ctaSubtitle": "Contact us now and get a price quote within minutes",
+    "exploreAllPrograms": "Explore All Programs",
+    "retakeFromStart": "Retake the Quiz from the Start",
+    "questions": [
+      {
+        "question": "Who will you be traveling with?",
+        "options": [
+          { "label": "Alone", "desc": "Flexible trips and a personal experience" },
+          { "label": "Friends", "desc": "Adventure and shared memories" },
+          { "label": "Family", "desc": "Comfort and kid-friendly options" },
+          { "label": "Couple", "desc": "A romantic experience and balance" },
+          { "label": "Honeymoon", "desc": "Privacy and luxurious relaxation" }
+        ]
+      },
+      {
+        "question": "What type of trip do you prefer?",
+        "options": [
+          { "label": "Adventure & Nature", "desc": "Outdoor activities and stunning nature" },
+          { "label": "Culture & History", "desc": "Museums, monuments, and heritage" },
+          { "label": "Relaxation & Beaches", "desc": "Sea, sun, and comfort" },
+          { "label": "Cities & Shopping", "desc": "Modern life and shopping centers" }
+        ]
+      },
+      {
+        "question": "What's your expected budget per person?",
+        "options": [
+          { "label": "Budget", "desc": "Under SAR 5,000" },
+          { "label": "Mid-range", "desc": "SAR 5,000 - 15,000" },
+          { "label": "Luxury", "desc": "Over SAR 15,000" }
+        ]
+      },
+      {
+        "question": "What's your ideal trip length?",
+        "options": [
+          { "label": "Short (3-5 days)", "desc": "A quick, focused getaway" },
+          { "label": "Medium (7-10 days)", "desc": "Enough exploration and rest" },
+          { "label": "Long (2+ weeks)", "desc": "Full immersion in the destination" }
+        ]
+      },
+      {
+        "question": "Which weather do you prefer?",
+        "options": [
+          { "label": "Hot & Sunny", "desc": "Sun and warmth all day" },
+          { "label": "Mild", "desc": "Neither too hot nor too cold" },
+          { "label": "Cold & Snowy", "desc": "An authentic winter experience" },
+          { "label": "Doesn't Matter", "desc": "The experience is what counts" }
+        ]
+      },
+      {
+        "question": "What's your top priority for the trip?",
+        "options": [
+          { "label": "Food Experience", "desc": "Local dishes and food experiences" },
+          { "label": "Photography & Scenery", "desc": "Stunning spots for photos" },
+          { "label": "Luxury Stay", "desc": "Upscale hotels and excellent service" },
+          { "label": "Activities & Sports", "desc": "Active, movement-filled experiences" }
+        ]
+      },
+      {
+        "question": "How much travel experience do you have?",
+        "options": [
+          { "label": "First time traveling abroad", "desc": "I want an easy, comfortable destination" },
+          { "label": "Traveled a bit", "desc": "Some previous experience" },
+          { "label": "Experienced traveler", "desc": "Looking for unusual destinations" }
+        ]
+      },
+      {
+        "question": "When do you want to travel?",
+        "options": [
+          { "label": "Within a month", "desc": "An urgent trip" },
+          { "label": "Within 3 months", "desc": "Time to plan" },
+          { "label": "6 months or more", "desc": "Early planning" },
+          { "label": "Flexible", "desc": "Based on the best offers" }
+        ]
+      }
+    ]
+  },
+  "homePage": {
+    "heroSlides": [
+      { "label": "Maldives", "sublabel": "Paradise of Turquoise Waters" },
+      { "label": "Paris", "sublabel": "City of Love and Lights" },
+      { "label": "Dubai", "sublabel": "Peak of Modern Luxury" },
+      { "label": "Switzerland", "sublabel": "Breathtaking Nature" },
+      { "label": "Indonesia", "sublabel": "Tropical Adventures" }
+    ],
+    "heroTitlePart1": "Discover",
+    "heroTitlePart2": "the World",
+    "heroTitlePart3": "Around You",
+    "heroSubtitle": "Trips carefully designed to give you memories that last a lifetime",
+    "establishmentAddress": "Establishment Address",
+    "addressShort": "Riyadh, Al Suwaidi District",
+    "pageTitle": "Al Majra Al Kawniya | Tourist Trips and Exceptional Travel Experiences",
+    "pageDescription": "Al Majra Al Kawniya is your gateway to unforgettable travel experiences. We offer travelers in Saudi Arabia the best offers, luxurious trips, and complete programs for the most beautiful destinations worldwide in a style worthy of your dreams.",
+    "destinationsHighlight": "Choose Your Favorite Destination",
+    "destinationsSubtitle": "From the beaches of the Maldives to the peaks of the Alps",
+    "viewAll": "View All",
+    "programsHighlight": "Featured Trips Await You",
+    "programsSubtitle": "Comprehensive tour programs at competitive prices",
+    "placeholderPrograms": [
+      { "title": "Romantic Paris Trip", "price": 45000, "days": 7, "people": 2, "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" },
+      { "title": "Tokyo Cultural Adventure", "price": 62000, "days": 10, "people": 4, "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" },
+      { "title": "Dreamy Maldives Islands", "price": 89000, "days": 8, "people": 2, "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" }
+    ],
+    "currencyShort": "SAR",
+    "peopleWord": "people",
+    "exclusiveOffers": "Exclusive Offers",
+    "defaultOfferTitle": "Discount up to 30%",
+    "defaultOfferDesc": "Book now and enjoy the best prices on our featured programs",
+    "whyUsTag": "Why Us",
+    "whyUsHighlight": "We Offer You More Than Just a Trip",
+    "whyUsSubtitle": "We believe every trip should be an exceptional experience",
+    "feature1Title": "Safe & Guaranteed Booking",
+    "feature1Desc": "We guarantee a completely safe booking experience with a flexible cancellation policy and 24/7 support",
+    "feature2Title": "Carefully Curated Programs",
+    "feature2Desc": "Our specialized team selects the best hotels and activities that suit your taste and budget",
+    "feature3Title": "Expert Guides",
+    "feature3Desc": "Experienced tour guides who speak Arabic and know every corner of your destination",
+    "service1Title": "Flight Ticket Booking",
+    "service1Desc": "The best flight prices from all airlines",
+    "service2Title": "Luxury Hotels",
+    "service2Desc": "A select collection of the finest hotels around the world",
+    "service3Title": "Tourist Tours",
+    "service3Desc": "Organized tours with professional guides",
+    "readMore": "Read More",
+    "placeholderArticles": [
+      { "title": "10 Secrets to Saving Money While Traveling", "date": "April 16, 2026", "img": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" },
+      { "title": "Best Time to Visit Japan in 2026", "date": "April 10, 2026", "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" },
+      { "title": "Your Complete Guide to Exploring Paris", "date": "April 5, 2026", "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" }
+    ],
+    "bookNowTag": "Book Now",
+    "bookNowHighlight": "Your Trip With Us",
+    "bookNowSubtitle": "Leave your details and one of our consultants will contact you within 24 hours",
+    "thankYouContact": "Thank You for Reaching Out!",
+    "teamWillContact": "Our team will contact you as soon as possible",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "email": "Email",
+    "cairoPlaceholder": "Cairo",
+    "destinationExamplesPlaceholder": "Paris, Tokyo, Maldives...",
+    "tripDurationDays": "Trip Duration (days)",
+    "yourMessage": "Your Message",
+    "dreamTripPlaceholder": "Tell us about the trip you dream of...",
+    "sendYourRequest": "Send Your Request",
+    "callUsAria": "Call Us"
+  },
+  "articleCard": {
+    "featuredArticle": "Featured article from the travel blog"
+  },
+  "programCard": {
+    "featured": "Featured",
+    "noImage": "No image available for this program",
+    "maxPeople": "Max",
+    "price": "Price",
+    "learnMore": "Learn More"
+  },
+  "paymentBadge": {
+    "fillNamePhone": "Please fill in your name and mobile number",
+    "paymentFailedDetail": "Payment could not be started: {{detail}}",
+    "paymentFailedTabby": "Could not start payment with Tabby, please try again",
+    "paymentFailedTamara": "Could not start payment with Tamara, please try again",
+    "installWith": "Split it with",
+    "installmentsNoInterest": "interest-free installments",
+    "payWithTabby": "Pay with Tabby Now",
+    "payWithTamara": "Pay with Tamara Now",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "mobileNumber": "Mobile Number",
+    "emailOptional": "Email (optional)",
+    "redirecting": "Redirecting...",
+    "continuePayment": "Continue Payment"
+  },
+  "uploadField": {
+    "invalidImage": "Please select a valid image file",
+    "uploadError": "An error occurred while uploading the image",
+    "uploadFromDevice": "Upload from Device",
+    "link": "Link",
+    "compressing": "Compressing image...",
+    "uploadingToServer": "Uploading image to server...",
+    "clickOrDrag": "Click or drag an image here to upload from your device",
+    "autoCompress": "It will be compressed and uploaded automatically without changing the colors",
+    "compressedAndUploaded": "Compressed and uploaded",
+    "removeImage": "Remove Image",
+    "uploadImagesError": "An error occurred while uploading the images",
+    "image": "Image",
+    "deleteImage": "Delete Image",
+    "uploading": "Uploading...",
+    "uploadImagesFromDevice": "Upload Images from Device",
+    "pasteImageUrl": "Or paste an image link...",
+    "addLink": "Add Link"
+  },
+  "uiCommon": {
+    "noDataYet": "No data yet",
+    "confirmDelete": "Are you sure you want to delete?",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "adminLayout": {
+    "brandName": "Hora Tour",
+    "systemAdmin": "System Admin",
+    "admin": "Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "destinations": "Destinations",
+      "programs": "Programs",
+      "articles": "Articles",
+      "offers": "Offers",
+      "leads": "Leads"
+    }
+  }
+}

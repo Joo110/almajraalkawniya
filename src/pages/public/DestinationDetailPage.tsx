@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, ArrowRight, MessageCircle, Star, Compass } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
@@ -27,6 +28,7 @@ function resolveDestinationImage(destination: unknown): string {
 }
 
 const DestinationDetailPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { destination, loading } = useDestinationBySlug(slug || '');
   const { programs } = usePrograms();
@@ -36,7 +38,7 @@ const DestinationDetailPage: React.FC = () => {
   );
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `مرحباً، أود الاستفسار عن رحلة إلى ${destination?.name || 'وجهتكم'} وأريد الحجز.`
+    t('destinationDetail.whatsappMessage', { name: destination?.name || t('destinationDetail.yourDestination') })
   )}`;
 
   if (loading) {
@@ -52,10 +54,10 @@ const DestinationDetailPage: React.FC = () => {
   if (!destination) {
     return (
       <PublicLayout>
-        <div className="bg-white min-h-screen flex items-center justify-center" dir="rtl">
+        <div className="bg-white min-h-screen flex items-center justify-center" dir={i18n.dir()}>
           <div className="text-center">
-            <p className="font-display text-2xl text-stone-900 mb-4">الوجهة غير موجودة</p>
-            <Link to="/destinations" className="btn-primary">العودة للوجهات</Link>
+            <p className="font-display text-2xl text-stone-900 mb-4">{t('destinationDetail.notFound')}</p>
+            <Link to="/destinations" className="btn-primary">{t('destinationDetail.backToDestinations')}</Link>
           </div>
         </div>
       </PublicLayout>
@@ -79,21 +81,21 @@ const DestinationDetailPage: React.FC = () => {
 
           <div className="absolute top-10 left-10 hidden md:flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 px-4 py-2 rounded-full">
             <Star className="w-3.5 h-3.5 text-sand-400 fill-current" />
-            <span className="font-sans text-white/75 text-xs">وجهة مميزة</span>
+            <span className="font-sans text-white/75 text-xs">{t('destinationDetail.featured')}</span>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full" dir="rtl">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full" dir={i18n.dir()}>
             <Link
               to="/destinations"
               className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-sans mb-8 transition-colors group"
             >
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              العودة للوجهات
+              {t('destinationDetail.backToDestinations')}
             </Link>
 
             <div className="flex items-center gap-2 text-sand-400 mb-4">
               <MapPin className="w-4 h-4" />
-              <span className="font-sans text-sm tracking-wide">{destination.country || 'وجهة عالمية'}</span>
+              <span className="font-sans text-sm tracking-wide">{destination.country || t('destinationDetail.globalDestination')}</span>
             </div>
 
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
@@ -109,21 +111,21 @@ const DestinationDetailPage: React.FC = () => {
                 style={{ background: 'linear-gradient(135deg, #25D366 0%, #1aab52 100%)' }}
               >
                 <MessageCircle className="w-5 h-5" />
-                احجز الآن عبر واتساب
+                {t('destinationDetail.bookViaWhatsapp')}
               </a>
             </div>
           </div>
         </section>
 
         {/* CONTENT */}
-        <section className="py-20 bg-white" dir="rtl">
+        <section className="py-20 bg-white" dir={i18n.dir()}>
           <div className="max-w-7xl mx-auto px-6">
             {destination.description && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20 items-start">
                 <div className="md:col-span-2">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-8 h-0.5 bg-sand-500" />
-                    <span className="font-sans text-sand-500 text-xs uppercase tracking-widest">عن الوجهة</span>
+                    <span className="font-sans text-sand-500 text-xs uppercase tracking-widest">{t('destinationDetail.about')}</span>
                   </div>
                   <p className="font-sans text-stone-600 text-lg leading-relaxed">
                     {destination.description}
@@ -135,12 +137,12 @@ const DestinationDetailPage: React.FC = () => {
                     <div className="w-10 h-10 rounded-xl bg-sand-500/15 flex items-center justify-center">
                       <Compass className="w-5 h-5 text-sand-500" />
                     </div>
-                    <span className="font-sans text-stone-700 text-sm font-semibold">معلومات سريعة</span>
+                    <span className="font-sans text-stone-700 text-sm font-semibold">{t('destinationDetail.quickInfo')}</span>
                   </div>
 
                   <div className="space-y-3">
                     <div className="flex justify-between items-center border-b border-stone-200 pb-3">
-                      <span className="font-sans text-stone-500 text-xs">الدولة</span>
+                      <span className="font-sans text-stone-500 text-xs">{t('destinationDetail.country')}</span>
                       <span className="font-sans text-stone-900 text-sm">{destination.country || '—'}</span>
                     </div>
                  
@@ -154,7 +156,7 @@ const DestinationDetailPage: React.FC = () => {
                     style={{ background: 'linear-gradient(135deg, #25D366 0%, #1aab52 100%)' }}
                   >
                     <MessageCircle className="w-4 h-4" />
-                    احجز الآن
+                    {t('destinationDetail.bookNow')}
                   </a>
                 </div>
               </div>
@@ -165,15 +167,15 @@ const DestinationDetailPage: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-0.5 bg-sand-500" />
-                    <span className="font-sans text-sand-500 text-xs uppercase tracking-widest">البرامج</span>
+                    <span className="font-sans text-sand-500 text-xs uppercase tracking-widest">{t('destinationDetail.programs')}</span>
                   </div>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-stone-900">
-                    رحلات إلى <span className="text-gradient">{destination.name}</span>
+                    {t('destinationDetail.tripsTo')} <span className="text-gradient">{destination.name}</span>
                   </h2>
                 </div>
                 {relatedPrograms.length > 0 && (
                   <span className="font-sans text-stone-500 text-sm hidden md:block">
-                    {relatedPrograms.length} برنامج متاح
+                    {relatedPrograms.length} {t('destinationDetail.programsAvailable')}
                   </span>
                 )}
               </div>
@@ -185,7 +187,7 @@ const DestinationDetailPage: React.FC = () => {
                   </div>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                     <Link to="/programs" className="btn-primary inline-flex items-center gap-2">
-                      استعرض جميع البرامج
+                      {t('destinationDetail.browseAllPrograms')}
                     </Link>
                     <a
                       href={whatsappUrl}
@@ -195,7 +197,7 @@ const DestinationDetailPage: React.FC = () => {
                       style={{ background: 'linear-gradient(135deg, #25D366 0%, #1aab52 100%)' }}
                     >
                       <MessageCircle className="w-4 h-4" />
-                      تواصل معنا
+                      {t('nav.contact')}
                     </a>
                   </div>
                 </div>
@@ -212,14 +214,14 @@ const DestinationDetailPage: React.FC = () => {
                 className="absolute inset-0 opacity-10 bg-cover bg-center"
                 style={{ backgroundImage: `url(${destinationImage})` }}
               />
-              <div className="relative px-8 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-8" dir="rtl">
+              <div className="relative px-8 md:px-16 py-14 flex flex-col md:flex-row items-center justify-between gap-8" dir={i18n.dir()}>
                 <div>
-                  <span className="font-sans text-sand-200 text-xs uppercase tracking-widest mb-3 block">هل أنت مستعد؟</span>
+                  <span className="font-sans text-sand-200 text-xs uppercase tracking-widest mb-3 block">{t('destinationDetail.readyQuestion')}</span>
                   <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-2">
-                    ابدأ رحلتك إلى {destination.name} الآن
+                    {t('destinationDetail.startYourTripTo')} {destination.name} {t('destinationDetail.now')}
                   </h3>
                   <p className="font-sans text-white/70 text-sm">
-                    تواصل مع فريقنا وسنصمم لك رحلة لا تُنسى
+                    {t('destinationDetail.ctaSubtitle')}
                   </p>
                 </div>
                 <a
@@ -229,7 +231,7 @@ const DestinationDetailPage: React.FC = () => {
                   className="flex-shrink-0 flex items-center gap-3 bg-white text-sand-800 font-sans font-bold px-10 py-4 rounded-xl text-base shadow-lg hover:bg-sand-50 transition-all duration-300 hover:scale-105 active:scale-95"
                 >
                   <MessageCircle className="w-5 h-5 text-green-600" />
-                  احجز الآن عبر واتساب
+                  {t('destinationDetail.bookViaWhatsapp')}
                 </a>
               </div>
             </div>

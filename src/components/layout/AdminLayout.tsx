@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, MapPin, Package, FileText, Tag, Users,
   LogOut, Menu, X, Globe, ChevronRight
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
 
-const navItems = [
-  { to: '/admin', label: 'لوحة التحكم', icon: LayoutDashboard },
-  { to: '/admin/destinations', label: 'الوجهات', icon: MapPin },
-  { to: '/admin/programs', label: 'البرامج', icon: Package },
-  { to: '/admin/articles', label: 'المقالات', icon: FileText },
-  { to: '/admin/offers', label: 'العروض', icon: Tag },
-  { to: '/admin/leads', label: 'العملاء المحتملون', icon: Users },
+const navKeys = [
+  { to: '/admin', key: 'dashboard', icon: LayoutDashboard },
+  { to: '/admin/destinations', key: 'destinations', icon: MapPin },
+  { to: '/admin/programs', key: 'programs', icon: Package },
+  { to: '/admin/articles', key: 'articles', icon: FileText },
+  { to: '/admin/offers', key: 'offers', icon: Tag },
+  { to: '/admin/leads', key: 'leads', icon: Users },
 ];
 
 const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { t, i18n } = useTranslation();
+  const navItems = navKeys.map((n) => ({ ...n, label: t(`adminLayout.nav.${n.key}`) }));
   const { user, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -27,7 +31,7 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] flex" dir="rtl">
+    <div className="min-h-screen bg-[#0a0a0f] flex" dir={i18n.dir()}>
       {/* Sidebar */}
       <aside
         className={`${sidebarOpen ? 'w-64' : 'w-16'} transition-all duration-300 bg-charcoal-900 border-l border-white/5 flex flex-col fixed top-0 right-0 h-full z-40`}
@@ -39,15 +43,18 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sand-400 to-sand-600 flex items-center justify-center">
                 <Globe className="w-4 h-4 text-white" />
               </div>
-              <span className="font-display text-lg font-bold text-gradient">جولة Hora</span>
+              <span className="font-display text-lg font-bold text-gradient">{t('adminLayout.brandName')}</span>
             </Link>
           )}
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="text-white/40 hover:text-white transition-colors p-1"
-          >
-            {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          <div className="flex items-center gap-2">
+            {sidebarOpen && <LanguageSwitcher variant="dark" />}
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="text-white/40 hover:text-white transition-colors p-1"
+            >
+              {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Nav */}
@@ -82,8 +89,8 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           {sidebarOpen ? (
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-sans text-white text-sm font-medium">{user?.email || 'مدير النظام'}</p>
-                <p className="font-sans text-white/40 text-xs mt-0.5">مسؤول</p>
+                <p className="font-sans text-white text-sm font-medium">{user?.email || t('adminLayout.systemAdmin')}</p>
+                <p className="font-sans text-white/40 text-xs mt-0.5">{t('adminLayout.admin')}</p>
               </div>
               <button onClick={handleLogout} className="text-white/40 hover:text-red-400 transition-colors">
                 <LogOut className="w-4 h-4" />

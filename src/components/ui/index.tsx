@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Loader2 } from 'lucide-react';
 
 // ─── Spinner ─────────────────────────────────────────
@@ -9,11 +10,14 @@ export const Spinner: React.FC<{ className?: string }> = ({ className = '' }) =>
 );
 
 // ─── Error Box ────────────────────────────────────────
-export const ErrorBox: React.FC<{ message: string }> = ({ message }) => (
-  <div className="glass border border-red-500/20 rounded-lg p-6 text-center">
-    <p className="text-red-400 font-sans text-sm" dir="rtl">⚠ {message}</p>
-  </div>
-);
+export const ErrorBox: React.FC<{ message: string }> = ({ message }) => {
+  const { i18n } = useTranslation();
+  return (
+    <div className="glass border border-red-500/20 rounded-lg p-6 text-center">
+      <p className="text-red-400 font-sans text-sm" dir={i18n.dir()}>⚠ {message}</p>
+    </div>
+  );
+};
 
 // ─── Section Header ───────────────────────────────────
 interface SectionHeaderProps {
@@ -25,8 +29,10 @@ interface SectionHeaderProps {
 }
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   tag, title, highlight, subtitle, center = false,
-}) => (
-  <div className={`mb-12 ${center ? 'text-center' : ''}`} dir="rtl">
+}) => {
+  const { i18n } = useTranslation();
+  return (
+  <div className={`mb-12 ${center ? 'text-center' : ''}`} dir={i18n.dir()}>
     {tag && (
       <span className="font-sans text-sand-400 text-xs uppercase tracking-[0.25em] font-medium mb-4 block">
         — {tag} —
@@ -40,7 +46,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       <p className="section-subtitle text-white/50 max-w-xl">{subtitle}</p>
     )}
   </div>
-);
+  );
+};
 
 // ─── Badge ─────────────────────────────────────────────
 interface BadgeProps {
@@ -63,23 +70,28 @@ export const Badge: React.FC<BadgeProps> = ({ label, color = 'gold' }) => {
 
 // ─── Empty State ──────────────────────────────────────
 export const EmptyState: React.FC<{ message?: string; icon?: React.ReactNode }> = ({
-  message = 'لا توجد بيانات بعد',
+  message,
   icon,
-}) => (
-  <div className="flex flex-col items-center justify-center py-20 text-center" dir="rtl">
-    {icon && <div className="mb-4 text-white/20">{icon}</div>}
-    <p className="font-sans text-white/40 text-sm">{message}</p>
-  </div>
-);
+}) => {
+  const { t, i18n } = useTranslation();
+  return (
+    <div className="flex flex-col items-center justify-center py-20 text-center" dir={i18n.dir()}>
+      {icon && <div className="mb-4 text-white/20">{icon}</div>}
+      <p className="font-sans text-white/40 text-sm">{message || t('uiCommon.noDataYet')}</p>
+    </div>
+  );
+};
 
 // ─── Admin Table ──────────────────────────────────────
 interface AdminTableProps {
   headers: string[];
   children: React.ReactNode;
 }
-export const AdminTable: React.FC<AdminTableProps> = ({ headers, children }) => (
+export const AdminTable: React.FC<AdminTableProps> = ({ headers, children }) => {
+  const { i18n } = useTranslation();
+  return (
   <div className="overflow-x-auto rounded-xl border border-white/5">
-    <table className="w-full" dir="rtl">
+    <table className="w-full" dir={i18n.dir()}>
       <thead>
         <tr className="bg-white/3 border-b border-white/5">
           {headers.map((h) => (
@@ -95,7 +107,8 @@ export const AdminTable: React.FC<AdminTableProps> = ({ headers, children }) => 
       <tbody className="divide-y divide-white/5">{children}</tbody>
     </table>
   </div>
-);
+  );
+};
 
 // ─── Admin Page Header ────────────────────────────────
 interface AdminPageHeaderProps {
@@ -103,15 +116,18 @@ interface AdminPageHeaderProps {
   subtitle?: string;
   action?: React.ReactNode;
 }
-export const AdminPageHeader: React.FC<AdminPageHeaderProps> = ({ title, subtitle, action }) => (
-  <div className="flex items-start justify-between mb-8" dir="rtl">
+export const AdminPageHeader: React.FC<AdminPageHeaderProps> = ({ title, subtitle, action }) => {
+  const { i18n } = useTranslation();
+  return (
+  <div className="flex items-start justify-between mb-8" dir={i18n.dir()}>
     <div>
       <h1 className="font-display text-2xl font-bold text-white mb-1">{title}</h1>
       {subtitle && <p className="font-sans text-white/40 text-sm">{subtitle}</p>}
     </div>
     {action && <div>{action}</div>}
   </div>
-);
+  );
+};
 
 // ─── Modal ─────────────────────────────────────────────
 interface ModalProps {
@@ -121,9 +137,10 @@ interface ModalProps {
   children: React.ReactNode;
 }
 export const Modal: React.FC<ModalProps> = ({ open, onClose, title, children }) => {
+  const { i18n } = useTranslation();
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" dir="rtl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" dir={i18n.dir()}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-[#141420] border border-white/10 rounded-2xl p-8 w-full max-w-lg shadow-2xl max-h-[90vh] overflow-y-auto">
         <h3 className="font-display text-xl font-bold text-white mb-6">{title}</h3>
@@ -138,8 +155,10 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   error?: string;
 }
-export const InputField: React.FC<InputFieldProps> = ({ label, error, ...props }) => (
-  <div dir="rtl">
+export const InputField: React.FC<InputFieldProps> = ({ label, error, ...props }) => {
+  const { i18n } = useTranslation();
+  return (
+  <div dir={i18n.dir()}>
     <label className="block font-sans text-white/60 text-xs uppercase tracking-wider mb-2">{label}</label>
     <input
       {...props}
@@ -149,21 +168,25 @@ export const InputField: React.FC<InputFieldProps> = ({ label, error, ...props }
     />
     {error && <p className="mt-1 text-red-400 text-xs">{error}</p>}
   </div>
-);
+  );
+};
 
 // ─── Textarea ─────────────────────────────────────────
 interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
 }
-export const TextareaField: React.FC<TextareaFieldProps> = ({ label, ...props }) => (
-  <div dir="rtl">
+export const TextareaField: React.FC<TextareaFieldProps> = ({ label, ...props }) => {
+  const { i18n } = useTranslation();
+  return (
+  <div dir={i18n.dir()}>
     <label className="block font-sans text-white/60 text-xs uppercase tracking-wider mb-2">{label}</label>
     <textarea
       {...props}
       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 font-sans text-white text-sm placeholder-white/20 focus:outline-none focus:border-sand-500/50 transition-colors resize-none"
     />
   </div>
-);
+  );
+};
 
 // ─── Select ───────────────────────────────────────────
 interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
@@ -171,8 +194,10 @@ interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement>
   options: { value: string | number; label: string }[];
   error?: string;
 }
-export const SelectField: React.FC<SelectFieldProps> = ({ label, options, ...props }) => (
-  <div dir="rtl">
+export const SelectField: React.FC<SelectFieldProps> = ({ label, options, ...props }) => {
+  const { i18n } = useTranslation();
+  return (
+  <div dir={i18n.dir()}>
     <label className="block font-sans text-white/60 text-xs uppercase tracking-wider mb-2">{label}</label>
     <select
       {...props}
@@ -183,7 +208,8 @@ export const SelectField: React.FC<SelectFieldProps> = ({ label, options, ...pro
       ))}
     </select>
   </div>
-);
+  );
+};
 
 // ─── Confirm Dialog ───────────────────────────────────
 interface ConfirmDialogProps {
@@ -193,18 +219,19 @@ interface ConfirmDialogProps {
   message?: string;
 }
 export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
-  open, onConfirm, onCancel, message = 'هل أنت متأكد من الحذف؟'
+  open, onConfirm, onCancel, message
 }) => {
+  const { t, i18n } = useTranslation();
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" dir="rtl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" dir={i18n.dir()}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onCancel} />
       <div className="relative bg-[#141420] border border-white/10 rounded-2xl p-8 w-full max-w-sm shadow-2xl">
-        <p className="font-sans text-white text-sm mb-6 text-center">{message}</p>
+        <p className="font-sans text-white text-sm mb-6 text-center">{message || t('uiCommon.confirmDelete')}</p>
         <div className="flex gap-3 justify-center">
-          <button onClick={onCancel} className="btn-outline text-xs py-2 px-6">إلغاء</button>
+          <button onClick={onCancel} className="btn-outline text-xs py-2 px-6">{t('uiCommon.cancel')}</button>
           <button onClick={onConfirm} className="bg-red-500 hover:bg-red-400 text-white font-sans text-xs py-2 px-6 rounded-sm uppercase tracking-wider transition-colors">
-            حذف
+            {t('uiCommon.delete')}
           </button>
         </div>
       </div>
@@ -219,8 +246,10 @@ interface StatCardProps {
   icon: React.ReactNode;
   trend?: string;
 }
-export const StatCard: React.FC<StatCardProps> = ({ label, value, icon, trend }) => (
-  <div className="glass rounded-xl p-6" dir="rtl">
+export const StatCard: React.FC<StatCardProps> = ({ label, value, icon, trend }) => {
+  const { i18n } = useTranslation();
+  return (
+  <div className="glass rounded-xl p-6" dir={i18n.dir()}>
     <div className="flex items-start justify-between mb-4">
       <div className="w-10 h-10 rounded-lg bg-sand-500/15 flex items-center justify-center text-sand-400">
         {icon}
@@ -230,7 +259,8 @@ export const StatCard: React.FC<StatCardProps> = ({ label, value, icon, trend })
     <p className="font-display text-3xl font-bold text-white mb-1">{value}</p>
     <p className="font-sans text-white/40 text-sm">{label}</p>
   </div>
-);
+  );
+};
 
 // ─── Pagination ──────────────────────────────────────
 interface PaginationProps {

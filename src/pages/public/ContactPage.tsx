@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin, Clock, Send, Star } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { leadsService } from '../../services/otherServices';
@@ -29,6 +30,10 @@ function getTomorrowDateInputValue() {
 }
 
 const ContactPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const contactInfoIcons = [
+    <Phone className="w-5 h-5" />, <Mail className="w-5 h-5" />, <MapPin className="w-5 h-5" />, <Clock className="w-5 h-5" />,
+  ];
   const [form, setForm] = useState<ContactFormState>({
     name: '',
     phone: '',
@@ -129,22 +134,22 @@ const ContactPage: React.FC = () => {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/65" />
-          <div className="relative z-10 text-center px-6" dir="rtl">
+          <div className="relative z-10 text-center px-6" dir={i18n.dir()}>
             <h1 className="font-display text-4xl md:text-6xl font-black text-white mb-3">
-              تواصل <span className="text-gradient">معنا</span>
+              {t('contactPage.titlePart1')} <span className="text-gradient">{t('contactPage.titlePart2')}</span>
             </h1>
             <p className="font-accent text-lg text-white/70 italic">
-              فريقنا جاهز للإجابة على كل أسئلتك
+              {t('contactPage.subtitle')}
             </p>
           </div>
         </section>
 
-        <section className="py-20 bg-white" dir="rtl">
+        <section className="py-20 bg-white" dir={i18n.dir()}>
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="font-display text-3xl font-bold text-stone-900 mb-8">
-                  أرسل لنا طلب حجز
+                  {t('contactPage.sendRequest')}
                 </h2>
 
                 {sent ? (
@@ -153,10 +158,10 @@ const ContactPage: React.FC = () => {
                       <Star className="w-8 h-8 text-green-500" />
                     </div>
                     <h4 className="font-display text-2xl font-bold text-stone-900 mb-2">
-                      شكراً لك!
+                      {t('contactPage.thankYou')}
                     </h4>
                     <p className="font-sans text-stone-600 text-sm">
-                      تم استلام طلبك بنجاح، وسيتواصل معك فريقنا خلال ٢٤ ساعة
+                      {t('contactPage.received')}
                     </p>
                   </div>
                 ) : (
@@ -170,20 +175,20 @@ const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
                         <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                          الاسم *
+                          {t('contactPage.name')} *
                         </label>
                         <input
                           required
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
-                          placeholder="محمد أحمد"
+                          placeholder={t('contactPage.namePlaceholder')}
                           className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 font-sans text-stone-800 text-sm placeholder-stone-400 focus:outline-none focus:border-sand-500/50 transition-colors shadow-sm"
                         />
                       </div>
 
                       <div>
                         <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                          الهاتف *
+                          {t('contactPage.phone')} *
                         </label>
                         <input
                           required
@@ -198,7 +203,7 @@ const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
                         <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                          عدد المسافرين *
+                          {t('contactPage.travelersCount')} *
                         </label>
                         <input
                           required
@@ -218,7 +223,7 @@ const ContactPage: React.FC = () => {
 
                       <div>
                         <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                          مدة الرحلة بالأيام *
+                          {t('contactPage.durationDays')} *
                         </label>
                         <input
                           required
@@ -239,7 +244,7 @@ const ContactPage: React.FC = () => {
 
                     <div>
                       <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                        الوجهة *
+                        {t('contactPage.destination')} *
                       </label>
                       <select
                         required
@@ -249,7 +254,7 @@ const ContactPage: React.FC = () => {
                         className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 font-sans text-stone-800 text-sm focus:outline-none focus:border-sand-500/50 transition-colors shadow-sm disabled:opacity-60"
                       >
                         <option value="">
-                          {loadingDestinations ? 'جاري تحميل الوجهات...' : 'اختر الوجهة'}
+                          {loadingDestinations ? t('contactPage.loadingDestinations') : t('contactPage.chooseDestination')}
                         </option>
                         {destinations.map((d) => (
                           <option key={d.id} value={d.id}>
@@ -261,7 +266,7 @@ const ContactPage: React.FC = () => {
 
                     <div>
                       <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                        مدينة المغادرة *
+                        {t('contactPage.departureCity')} *
                       </label>
                       <input
                         required
@@ -269,14 +274,14 @@ const ContactPage: React.FC = () => {
                         onChange={(e) =>
                           setForm({ ...form, departureCity: e.target.value })
                         }
-                        placeholder="مكة المكرمة"
+                        placeholder={t('contactPage.departureCityPlaceholder')}
                         className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 font-sans text-stone-800 text-sm focus:outline-none focus:border-sand-500/50 transition-colors shadow-sm"
                       />
                     </div>
 
                     <div>
                       <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                        تاريخ السفر *
+                        {t('contactPage.travelDate')} *
                       </label>
                       <input
                         required
@@ -289,13 +294,13 @@ const ContactPage: React.FC = () => {
 
                     <div>
                       <label className="block font-sans text-stone-600 text-xs uppercase tracking-wider mb-2">
-                        ملاحظات
+                        {t('contactPage.notes')}
                       </label>
                       <textarea
                         rows={5}
                         value={form.notes}
                         onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                        placeholder="أخبرنا بأي تفاصيل إضافية"
+                        placeholder={t('contactPage.notesPlaceholder')}
                         className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 font-sans text-stone-800 text-sm placeholder-stone-400 focus:outline-none focus:border-sand-500/50 transition-colors resize-none shadow-sm"
                       />
                     </div>
@@ -306,7 +311,7 @@ const ContactPage: React.FC = () => {
                       className="btn-primary w-full py-4 flex items-center justify-center gap-2 disabled:opacity-60"
                     >
                       <Send className="w-4 h-4" />
-                      {loading ? 'جاري الإرسال...' : 'إرسال الطلب'}
+                      {loading ? t('contactPage.sending') : t('contactPage.sendButton')}
                     </button>
                   </form>
                 )}
@@ -314,42 +319,17 @@ const ContactPage: React.FC = () => {
 
               <div>
                 <h2 className="font-display text-3xl font-bold text-stone-900 mb-8">
-                  معلومات التواصل
+                  {t('contactPage.contactInfo')}
                 </h2>
 
                 <div className="space-y-6 mb-10">
-                  {[
-                    {
-                      icon: <Phone className="w-5 h-5" />,
-                      label: 'اتصل بنا',
-                      value: '+966 54 481 7995',
-                      sub: 'الأحد – الخميس: ٩ صباحاً – ٦ مساءً',
-                    },
-                    {
-                      icon: <Mail className="w-5 h-5" />,
-                      label: 'راسلنا',
-                      value: 'almajara.alkawnia.travel@gmail.com',
-                      sub: 'نرد خلال ٢٤ ساعة',
-                    },
-                    {
-                      icon: <MapPin className="w-5 h-5" />,
-                      label: 'زورنا',
-                       value: 'الرياض حي السويدي شارع الملك عبدالعزيز بن عبدالرحمن سعود الفرعي  رقم المبنى 6249 الرمز البريد 13342',
-                      sub: 'المملكة العربية السعودية',
-                    },
-                    {
-                      icon: <Clock className="w-5 h-5" />,
-                      label: 'ساعات العمل',
-                      value: 'الأحد – الخميس',
-                      sub: '٩:٠٠ صباحاً – ٦:٠٠ مساءً',
-                    },
-                  ].map((info) => (
+                  {(t('contactPage.infoBlocks', { returnObjects: true }) as Array<{ label: string; value: string; sub: string }>).map((info, idx) => (
                     <div
                       key={info.label}
                       className="flex items-start gap-5 bg-stone-50 border border-stone-200 rounded-xl p-5 shadow-sm"
                     >
                       <div className="w-11 h-11 rounded-xl bg-sand-500/15 flex items-center justify-center text-sand-500 flex-shrink-0">
-                        {info.icon}
+                        {contactInfoIcons[idx]}
                       </div>
                       <div>
                         <p className="font-sans text-stone-500 text-xs uppercase tracking-wider mb-0.5">
@@ -366,11 +346,11 @@ const ContactPage: React.FC = () => {
                   ))}
                 </div>
 
-                {/* الرقم الضريبي ورقم الترخيص */}
+                {/* Tax number and CR number */}
                 <div className="bg-stone-50 border border-stone-200 rounded-xl p-5 shadow-sm mb-8 space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="font-sans text-stone-500 text-xs uppercase tracking-wider">
-                      الرقم الضريبي
+                      {t('footer.taxNumber')}
                     </span>
                     <span className="font-sans text-stone-900 font-medium text-sm" dir="ltr">
                       314643915700003
@@ -379,7 +359,7 @@ const ContactPage: React.FC = () => {
                   <div className="border-t border-stone-200" />
                   <div className="flex items-center justify-between">
                     <span className="font-sans text-stone-500 text-xs uppercase tracking-wider">
-                     رقم السجل التجاري 
+                     {t('footer.crNumber')}
                     </span>
                     <span className="font-sans text-stone-900 font-medium text-sm" dir="ltr">
                      7053753773

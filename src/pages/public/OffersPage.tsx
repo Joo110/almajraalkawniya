@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Calendar, MessageCircle, ArrowLeft } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner, ErrorBox, Badge } from '../../components/ui/index';
@@ -7,28 +8,28 @@ import { Offer, OfferType } from '../../types';
 
 const WHATSAPP_NUMBER = '966544817995';
 
-const buildWhatsappLink = (title: string) => {
-  const message = `مرحبًا، أرغب بالاستفسار عن عرض "${title}"`;
+const buildWhatsappLink = (title: string, msgTemplate: string) => {
+  const message = msgTemplate.replace('{title}', title);
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
-const offerTypeLabel = (type: OfferType | string) => {
+const offerTypeLabel = (type: OfferType | string, t: (k: string) => string) => {
   switch ((type || '').toString().toLowerCase()) {
     case 'percentage':
-      return { label: 'خصم نسبي', color: 'green' as const };
+      return { label: t('offersPage.typePercentage'), color: 'green' as const };
     case 'fixed':
     case 'value':
-      return { label: 'خصم ثابت', color: 'blue' as const };
+      return { label: t('offersPage.typeFixed'), color: 'blue' as const };
     case 'bundle':
-      return { label: 'باقة خاصة', color: 'gold' as const };
+      return { label: t('offersPage.typeBundle'), color: 'gold' as const };
     default:
-      return { label: 'عرض', color: 'gold' as const };
+      return { label: t('offersPage.typeDefault'), color: 'gold' as const };
   }
 };
 
 const formatDate = (dateString?: string) => {
   if (!dateString) return '';
-  return new Date(dateString).toLocaleDateString('ar-SA', {
+  return new Date(dateString).toLocaleDateString(document.documentElement.lang === 'en' ? 'en-US' : 'ar-SA', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -36,6 +37,7 @@ const formatDate = (dateString?: string) => {
 };
 
 const OffersPage: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { offers, loading, error } = useOffers();
 
   const activeOffers = offers.filter(
@@ -53,21 +55,21 @@ const OffersPage: React.FC = () => {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/65" />
-          <div className="relative z-10 text-center px-6" dir="rtl">
+          <div className="relative z-10 text-center px-6" dir={i18n.dir()}>
             <span className="font-sans text-sand-400 text-xs uppercase tracking-widest mb-3 block">
-              — حصري —
+              — {t('offersPage.eyebrow')} —
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-black text-white mb-4">
-              العروض <span className="text-gradient">الخاصة</span>
+              {t('offersPage.titlePart1')} <span className="text-gradient">{t('offersPage.titlePart2')}</span>
             </h1>
             <p className="font-accent text-lg text-white/75 italic">
-              وفّر أكثر واسافر أكثر مع عروضنا الحصرية
+              {t('offersPage.subtitle')}
             </p>
           </div>
         </section>
 
         {/* Offers */}
-        <section className="py-20 bg-stone-50" dir="rtl">
+        <section className="py-20 bg-stone-50" dir={i18n.dir()}>
           <div className="max-w-7xl mx-auto px-6">
             {loading ? (
               <Spinner />
@@ -75,30 +77,8 @@ const OffersPage: React.FC = () => {
               <ErrorBox message={error} />
             ) : activeOffers.length === 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  {
-                    title: 'خصم موسم الصيف',
-                    type: OfferType.Percentage,
-                    value: 20,
-                    desc: 'استمتع بخصم ٢٠٪ على جميع رحلات الصيف لفترة محدودة',
-                    end: '٣٠ يونيو ٢٠٢٦',
-                  },
-                  {
-                    title: 'باقة العرسان',
-                    type: OfferType.Bundle,
-                    value: 15,
-                    desc: 'باقة شهر العسل الكاملة تشمل إقامة فاخرة وجولات رومانسية',
-                    end: '٣١ ديسمبر ٢٠٢٦',
-                  },
-                  {
-                    title: 'خصم الحجز المبكر',
-                    type: OfferType.Fixed,
-                    value: 5000,
-                    desc: 'احجز قبل ٣ أشهر من موعد سفرك ووفّر ٥,٠٠٠ ريال',
-                    end: '٣١ مايو ٢٠٢٦',
-                  },
-                ].map((o, i) => {
-                  const typeInfo = offerTypeLabel(o.type);
+                {(t('offersPage.placeholderOffers', { returnObjects: true }) as Array<{ title: string; type: OfferType; value: number; desc: string; end: string }>).map((o, i) => {
+                  const typeInfo = offerTypeLabel(o.type, t);
 
                   return (
                     <div
@@ -114,8 +94,8 @@ const OffersPage: React.FC = () => {
                         </h3>
                         <div className="font-display text-4xl font-black text-gradient">
                           {o.type === OfferType.Percentage
-                            ? `${o.value}٪`
-                            : `${o.value.toLocaleString('ar-SA')} ريال`}
+                            ? `${o.value}%`
+                            : `${o.value.toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')} ${t('offersPage.currency')}`}
                         </div>
                       </div>
                       <div className="p-6 flex flex-col flex-1">
@@ -124,16 +104,16 @@ const OffersPage: React.FC = () => {
                         </p>
                         <div className="flex items-center gap-2 text-stone-500 text-xs mb-5">
                           <Calendar className="w-3.5 h-3.5" />
-                          <span>ينتهي: {o.end}</span>
+                          <span>{t('offersPage.ends')}: {o.end}</span>
                         </div>
                         <a
-                          href={buildWhatsappLink(o.title)}
+                          href={buildWhatsappLink(o.title, t('offersPage.whatsappMessage'))}
                           target="_blank"
                           rel="noreferrer"
                           className="mt-auto inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-sans text-sm font-semibold py-2.5 rounded-xl transition-colors"
                         >
                           <MessageCircle className="w-4 h-4" />
-                          احجز عبر واتساب
+                          {t('offersPage.bookViaWhatsapp')}
                           <ArrowLeft className="w-4 h-4" />
                         </a>
                       </div>
@@ -144,7 +124,7 @@ const OffersPage: React.FC = () => {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {activeOffers.map((o) => {
-                  const typeInfo = offerTypeLabel(o.type);
+                  const typeInfo = offerTypeLabel(o.type, t);
                   const endDate = formatDate(o.endDate);
                   const startDate = formatDate(o.startDate);
                   const description = o.description || '';
@@ -163,8 +143,8 @@ const OffersPage: React.FC = () => {
                         </h3>
                         <div className="font-display text-4xl font-black text-gradient">
                           {String(o.type).toLowerCase() === 'percentage'
-                            ? `${o.value}٪`
-                            : `${o.value.toLocaleString('ar-SA')} ريال`}
+                            ? `${o.value}%`
+                            : `${o.value.toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')} ${t('offersPage.currency')}`}
                         </div>
                       </div>
                       <div className="p-6 flex flex-col flex-1">
@@ -176,25 +156,25 @@ const OffersPage: React.FC = () => {
                           {startDate && (
                             <div className="flex items-center gap-2">
                               <Calendar className="w-3.5 h-3.5" />
-                              <span>يبدأ: {startDate}</span>
+                              <span>{t('offersPage.starts')}: {startDate}</span>
                             </div>
                           )}
                           {endDate && (
                             <div className="flex items-center gap-2">
                               <Calendar className="w-3.5 h-3.5" />
-                              <span>ينتهي: {endDate}</span>
+                              <span>{t('offersPage.ends')}: {endDate}</span>
                             </div>
                           )}
                         </div>
 
                         <a
-                          href={buildWhatsappLink(o.title)}
+                          href={buildWhatsappLink(o.title, t('offersPage.whatsappMessage'))}
                           target="_blank"
                           rel="noreferrer"
                           className="mt-auto inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-sans text-sm font-semibold py-2.5 rounded-xl transition-colors"
                         >
                           <MessageCircle className="w-4 h-4" />
-                          احجز عبر واتساب
+                          {t('offersPage.bookViaWhatsapp')}
                           <ArrowLeft className="w-4 h-4" />
                         </a>
                       </div>

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Upload, X, Plus } from 'lucide-react';
 import { compressImageToBlob } from '../../utils/imageCompression';
 import { uploadImage } from '../../services/uploadService';
@@ -40,6 +41,7 @@ const GalleryUploadField: React.FC<GalleryUploadFieldProps> = ({
   maxDimension = 1280,
   quality = 0.82,
 }) => {
+  const { t, i18n } = useTranslation();
   const images = parseGallery(value);
   const [urlInput, setUrlInput] = useState('');
   const [uploading, setUploading] = useState(false);
@@ -69,7 +71,7 @@ const GalleryUploadField: React.FC<GalleryUploadFieldProps> = ({
       }
       updateImages([...images, ...uploaded]);
     } catch (e) {
-      setUploadError(e instanceof Error ? e.message : 'حصل خطأ أثناء رفع الصور');
+      setUploadError(e instanceof Error ? e.message : t('uploadField.uploadImagesError'));
       // نضيف أي صور نجحت قبل ما يحصل الخطأ
       if (uploaded.length > 0) updateImages([...images, ...uploaded]);
     } finally {
@@ -91,19 +93,19 @@ const GalleryUploadField: React.FC<GalleryUploadFieldProps> = ({
   };
 
   return (
-    <div dir="rtl">
+    <div dir={i18n.dir()}>
       <label className="block font-sans text-white/60 text-xs uppercase tracking-wider mb-2">{label}</label>
 
       {images.length > 0 && (
         <div className="grid grid-cols-4 gap-2 mb-3">
           {images.map((img, idx) => (
             <div key={idx} className="relative rounded-lg overflow-hidden h-20 border border-white/10">
-              <img src={img} alt={`صورة ${idx + 1}`} className="w-full h-full object-cover" />
+              <img src={img} alt={`${t('uploadField.image')} ${idx + 1}`} className="w-full h-full object-cover" />
               <button
                 type="button"
                 onClick={() => removeAt(idx)}
                 className="absolute top-1 left-1 bg-black/60 hover:bg-black/80 text-white rounded-full p-0.5"
-                aria-label="حذف الصورة"
+                aria-label={t('uploadField.deleteImage')}
               >
                 <X className="w-3 h-3" />
               </button>
@@ -121,8 +123,8 @@ const GalleryUploadField: React.FC<GalleryUploadFieldProps> = ({
         >
           <Upload className="w-3.5 h-3.5" />
           {uploading
-            ? `جاري الرفع... ${progress ? `(${progress.done}/${progress.total})` : ''}`
-            : 'رفع صور من الجهاز'}
+            ? `${t('uploadField.uploading')} ${progress ? `(${progress.done}/${progress.total})` : ''}`
+            : t('uploadField.uploadImagesFromDevice')}
         </button>
         <input
           ref={inputRef}
@@ -136,14 +138,14 @@ const GalleryUploadField: React.FC<GalleryUploadFieldProps> = ({
         <input
           value={urlInput}
           onChange={(e) => setUrlInput(e.target.value)}
-          placeholder="أو الصق رابط صورة..."
+          placeholder={t('uploadField.pasteImageUrl')}
           className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 font-sans text-white text-xs placeholder-white/20 focus:outline-none focus:border-sand-500/50 transition-colors"
         />
         <button
           type="button"
           onClick={addUrl}
           className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:text-sand-300 hover:border-sand-500/40 transition-colors"
-          aria-label="إضافة رابط"
+          aria-label={t('uploadField.addLink')}
         >
           <Plus className="w-3.5 h-3.5" />
         </button>
