@@ -1,13 +1,13 @@
+import i18n from '../i18n';
 import api, { cachedGet } from './api';
 import { Article, CreateArticleRequest, PagedResult } from '../types';
 
 export const articlesService = {
   getAll: async (): Promise<Article[]> => {
-    // مُخزّنة مؤقتًا (cache) لتقليل عدد نداءات الـ API المتكررة في الصفحة الرئيسية
-    return cachedGet<Article[]>('/api/articles');
+    return cachedGet<Article[]>('/api/articles', { lang: i18n.language });
   },
   getBySlug: async (slug: string): Promise<Article> => {
-    const res = await api.get(`/api/articles/${slug}`);
+    const res = await api.get(`/api/articles/${slug}`, { params: { lang: i18n.language } });
     return res.data;
   },
   adminGetAll: async (pageNumber = 1, pageSize = 10): Promise<PagedResult<Article>> => {

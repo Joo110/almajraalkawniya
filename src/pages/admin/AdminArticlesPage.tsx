@@ -13,11 +13,15 @@ import { extractApiError } from '../../services/api';
 
 interface ArticleFormData {
   title: string;
+  titleEn: string;
   slug: string;
   content: string;
+  contentEn: string;
   coverImage: string;
   seoTitle: string;
+  seoTitleEn: string;
   seoDescription: string;
+  seoDescriptionEn: string;
   publishedAt: string;
   isPublished: boolean;
 }
@@ -31,11 +35,15 @@ const todayInput = () => new Date().toISOString().slice(0, 16);
 
 const EMPTY: ArticleFormData = {
   title: '',
+  titleEn: '',
   slug: '',
   content: '',
+  contentEn: '',
   coverImage: '',
   seoTitle: '',
+  seoTitleEn: '',
   seoDescription: '',
+  seoDescriptionEn: '',
   publishedAt: todayInput(),
   isPublished: true,
 };
@@ -67,11 +75,15 @@ const AdminArticlesPage: React.FC = () => {
     setEditing(a);
     setForm({
       title: a.title,
+      titleEn: a.titleEn || '',
       slug: a.slug,
       content: a.content || '',
+      contentEn: a.contentEn || '',
       coverImage: a.coverImage || '',
       seoTitle: (a as any).seoTitle || '',
+      seoTitleEn: a.seoTitleEn || '',
       seoDescription: (a as any).seoDescription || '',
+      seoDescriptionEn: a.seoDescriptionEn || '',
       publishedAt: a.publishedAt
         ? new Date(a.publishedAt).toISOString().slice(0, 16)
         : todayInput(),
@@ -97,11 +109,15 @@ const AdminArticlesPage: React.FC = () => {
     try {
       const payload = {
         title: form.title.trim(),
+        titleEn: form.titleEn.trim() || undefined,
         slug: form.slug.trim(),
         content: form.content.trim(),
+        contentEn: form.contentEn.trim() || undefined,
         coverImage: form.coverImage.trim(),
         seoTitle: form.seoTitle.trim(),
+        seoTitleEn: form.seoTitleEn.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
+        seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
         publishedAt: toISOLocal(form.publishedAt),
         isPublished: form.isPublished,
       };
@@ -217,6 +233,13 @@ const AdminArticlesPage: React.FC = () => {
               placeholder="دليلك الشامل لاستكشاف باريس"
             />
             <InputField
+              label="Article Title (English)"
+              value={form.titleEn}
+              onChange={e => setForm({ ...form, titleEn: e.target.value })}
+              placeholder="Your Complete Guide to Exploring Paris"
+              dir="ltr"
+            />
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -237,6 +260,14 @@ const AdminArticlesPage: React.FC = () => {
               onChange={e => setForm({ ...form, content: e.target.value })}
               placeholder="اكتب محتوى المقال هنا..."
             />
+            <TextareaField
+              label="Article Content (English)"
+              rows={8}
+              value={form.contentEn}
+              onChange={e => setForm({ ...form, contentEn: e.target.value })}
+              placeholder="Write the article content here..."
+              dir="ltr"
+            />
             <div className="grid grid-cols-1 gap-4">
               <InputField
                 label="عنوان SEO"
@@ -245,10 +276,24 @@ const AdminArticlesPage: React.FC = () => {
                 placeholder="عنوان للمحركات البحثية"
               />
               <InputField
+                label="SEO Title (English)"
+                value={form.seoTitleEn}
+                onChange={e => setForm({ ...form, seoTitleEn: e.target.value })}
+                placeholder="SEO title in English"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={e => setForm({ ...form, seoDescription: e.target.value })}
                 placeholder="وصف مختصر للمحركات البحثية"
+              />
+              <InputField
+                label="SEO Description (English)"
+                value={form.seoDescriptionEn}
+                onChange={e => setForm({ ...form, seoDescriptionEn: e.target.value })}
+                placeholder="SEO description in English"
+                dir="ltr"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">

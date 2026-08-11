@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Article, CreateArticleRequest } from '../types';
 import { articlesService } from '../services/articlesService';
 import { extractApiError } from '../services/api';
@@ -13,6 +14,7 @@ function normalizeList<T>(data: unknown): T[] {
 }
 
 export function useArticles() {
+  const { i18n } = useTranslation();
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,7 +32,7 @@ export function useArticles() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     fetchAll();
@@ -40,6 +42,7 @@ export function useArticles() {
 }
 
 export function useArticleBySlug(slug: string) {
+  const { i18n } = useTranslation();
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +83,7 @@ export function useArticleBySlug(slug: string) {
     return () => {
       isMounted = false;
     };
-  }, [slug]);
+  }, [slug, i18n.language]);
 
   return { article, loading, error };
 }

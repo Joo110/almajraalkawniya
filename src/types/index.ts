@@ -157,3 +157,142 @@ export interface UpdateLeadStatusRequest {
 export interface QuizRequest {
   answers: Record<string, string>;
 }
+
+
+// ========== DESTINATIONS ==========
+export interface Destination {
+  id: string;
+  name: string;
+  nameEn?: string;
+  slug: string;
+  coverImage: string;
+  description?: string;
+  descriptionEn?: string;
+  country?: string;
+  countryEn?: string;
+  tags?: string[]; 
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+  featured?: boolean;
+}
+export interface CreateDestinationRequest {
+  name: string;
+  nameEn?: string;
+  slug: string;
+  coverImage: string;
+  description?: string;
+  descriptionEn?: string;
+  country?: string;
+  countryEn?: string;
+  tags?: string;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+  featured?: boolean;
+}
+
+// ========== PROGRAMS ==========
+export interface Program {
+  id: string;
+  destinationId: string;
+  title: string;
+  titleEn?: string;
+  slug: string;
+  price: number;
+  durationDays: number;
+  maxPeople: number;
+  includes: string;
+  includesEn?: string;
+  excludes: string;
+  excludesEn?: string;
+  itineraryJson: string;
+  itineraryJsonEn?: string;
+  galleryJson: string;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+  featured: boolean;
+  active: boolean;
+  destination?: Destination;
+  destinationName?: string;
+  destinationNameEn?: string;
+}
+export interface CreateProgramRequest {
+  destinationId: string;
+  title: string;
+  titleEn?: string;
+  slug: string;
+  price: number;
+  durationDays: number;
+  maxPeople: number;
+  includes: string;
+  includesEn?: string;
+  excludes: string;
+  excludesEn?: string;
+  itineraryJson: string;
+  itineraryJsonEn?: string;
+  galleryJson: string;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+  featured: boolean;
+  active: boolean;
+}
+
+// ========== ARTICLES ==========
+export interface Article {
+  id: string;
+  title: string;
+  titleEn?: string;
+  slug: string;
+  coverImage: string;
+  publishedAt: string;
+  content?: string;
+  contentEn?: string;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+}
+export interface CreateArticleRequest {
+  title: string;
+  titleEn?: string;
+  slug: string;
+  coverImage: string;
+  content?: string;
+  contentEn?: string;
+  seoTitle?: string;
+  seoTitleEn?: string;
+  seoDescription?: string;
+  seoDescriptionEn?: string;
+}
+
+
+export interface Offer {
+  id: string;
+  title: string;
+  titleEn?: string;
+  type: OfferType;
+  value: number;
+  description: string;
+  descriptionEn?: string;
+  startDate: string;
+  endDate: string;
+  isActive: boolean;
+}
+export interface CreateOfferRequest {
+  title: string;
+  titleEn?: string;
+  type: OfferType;
+  value: number;
+  description: string;
+  descriptionEn?: string;
+  startDate: string;
+  endDate: string;
+  isActive: boolean;
+}

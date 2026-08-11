@@ -1,13 +1,13 @@
+import i18n from '../i18n'; // عدّل المسار حسب مكان ملف i18n عندك
 import api, { cachedGet } from './api';
 import { Destination, CreateDestinationRequest, PagedResult } from '../types';
 
 export const destinationsService = {
   getAll: async (): Promise<Destination[]> => {
-    // مُخزّنة مؤقتًا (cache) لتقليل عدد نداءات الـ API المتكررة في الصفحة الرئيسية
-    return cachedGet<Destination[]>('/api/destinations');
+    return cachedGet<Destination[]>('/api/destinations', { lang: i18n.language });
   },
   getBySlug: async (slug: string): Promise<Destination> => {
-    const res = await api.get(`/api/destinations/${slug}`);
+    const res = await api.get(`/api/destinations/${slug}`, { params: { lang: i18n.language } });
     return res.data;
   },
   adminGetAll: async (pageNumber = 1, pageSize = 10): Promise<PagedResult<Destination>> => {

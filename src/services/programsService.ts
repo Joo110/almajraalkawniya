@@ -1,13 +1,13 @@
+import i18n from '../i18n';
 import api, { cachedGet } from './api';
 import { Program, CreateProgramRequest, PagedResult } from '../types';
 
 export const programsService = {
   getAll: async (): Promise<Program[]> => {
-    // مُخزّنة مؤقتًا (cache) لتقليل عدد نداءات الـ API المتكررة في الصفحة الرئيسية
-    return cachedGet<Program[]>('/api/programs');
+    return cachedGet<Program[]>('/api/programs', { lang: i18n.language });
   },
   getBySlug: async (slug: string): Promise<Program> => {
-    const res = await api.get(`/api/programs/${slug}`);
+    const res = await api.get(`/api/programs/${slug}`, { params: { lang: i18n.language } });
     return res.data;
   },
   adminGetAll: async (pageNumber = 1, pageSize = 10): Promise<PagedResult<Program>> => {

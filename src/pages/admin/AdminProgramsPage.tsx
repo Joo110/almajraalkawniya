@@ -25,16 +25,22 @@ import { extractApiError } from '../../services/api';
 interface ProgramFormData {
   destinationId: string;
   title: string;
+  titleEn: string;
   slug: string;
   price: number;
   durationDays: number;
   maxPeople: number;
   includes: string;
+  includesEn: string;
   excludes: string;
+  excludesEn: string;
   itineraryJson: string;
+  itineraryJsonEn: string;
   galleryJson: string;
   seoTitle: string;
+  seoTitleEn: string;
   seoDescription: string;
+  seoDescriptionEn: string;
   featured: boolean;
   active: boolean;
 }
@@ -46,16 +52,22 @@ type ProgramApi = Program & {
 const EMPTY: ProgramFormData = {
   destinationId: '',
   title: '',
+  titleEn: '',
   slug: '',
   price: 0,
   durationDays: 1,
   maxPeople: 10,
   includes: '',
+  includesEn: '',
   excludes: '',
+  excludesEn: '',
   itineraryJson: '[]',
+  itineraryJsonEn: '',
   galleryJson: '[]',
   seoTitle: '',
+  seoTitleEn: '',
   seoDescription: '',
+  seoDescriptionEn: '',
   featured: false,
   active: true,
 };
@@ -122,16 +134,22 @@ const AdminProgramsPage: React.FC = () => {
     setForm({
       destinationId: program.destinationId,
       title: program.title,
+      titleEn: program.titleEn || '',
       slug: program.slug,
       price: program.price,
       durationDays: program.durationDays,
       maxPeople: program.maxPeople,
       includes: program.includes || '',
+      includesEn: program.includesEn || '',
       excludes: program.excludes || '',
+      excludesEn: program.excludesEn || '',
       itineraryJson: (program as any).itineraryJson || '[]',
+      itineraryJsonEn: program.itineraryJsonEn || '',
       galleryJson: (program as any).galleryJson || '[]',
       seoTitle: program.seoTitle || '',
+      seoTitleEn: program.seoTitleEn || '',
       seoDescription: program.seoDescription || '',
+      seoDescriptionEn: program.seoDescriptionEn || '',
       featured: program.featured ?? false,
       active: getProgramActive(program),
     });
@@ -165,16 +183,22 @@ const AdminProgramsPage: React.FC = () => {
       const payload = {
         destinationId: form.destinationId,
         title: form.title.trim(),
+        titleEn: form.titleEn.trim() || undefined,
         slug: form.slug.trim(),
         price: Number(form.price),
         durationDays: Number(form.durationDays),
         maxPeople: Number(form.maxPeople),
         includes: form.includes.trim(),
+        includesEn: form.includesEn.trim() || undefined,
         excludes: form.excludes.trim(),
+        excludesEn: form.excludesEn.trim() || undefined,
         itineraryJson: form.itineraryJson.trim() || '[]',
+        itineraryJsonEn: form.itineraryJsonEn.trim() || undefined,
         galleryJson: form.galleryJson.trim() || '[]',
         seoTitle: form.seoTitle.trim(),
+        seoTitleEn: form.seoTitleEn.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
+        seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
         featured: form.featured,
         active: form.active,
         isActive: form.active,
@@ -326,6 +350,14 @@ const AdminProgramsPage: React.FC = () => {
             />
 
             <InputField
+              label="Program Title (English)"
+              value={form.titleEn}
+              onChange={(e) => setForm({ ...form, titleEn: e.target.value })}
+              placeholder="Romantic Paris Trip"
+              dir="ltr"
+            />
+
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -372,11 +404,29 @@ const AdminProgramsPage: React.FC = () => {
             />
 
             <TextareaField
+              label="Program Includes (English)"
+              rows={3}
+              value={form.includesEn}
+              onChange={(e) => setForm({ ...form, includesEn: e.target.value })}
+              placeholder="One item per line"
+              dir="ltr"
+            />
+
+            <TextareaField
               label="لا يشمل البرنامج"
               rows={3}
               value={form.excludes}
               onChange={(e) => setForm({ ...form, excludes: e.target.value })}
               placeholder="كل سطر = بند واحد"
+            />
+
+            <TextareaField
+              label="Program Excludes (English)"
+              rows={3}
+              value={form.excludesEn}
+              onChange={(e) => setForm({ ...form, excludesEn: e.target.value })}
+              placeholder="One item per line"
+              dir="ltr"
             />
 
             <GalleryUploadField
@@ -394,6 +444,14 @@ const AdminProgramsPage: React.FC = () => {
               placeholder='[{"day":1,"title":"اليوم الأول","description":"..."}]'
             />
 
+            <InputField
+              label="Daily Itinerary (English JSON)"
+              value={form.itineraryJsonEn}
+              onChange={(e) => setForm({ ...form, itineraryJsonEn: e.target.value })}
+              placeholder='[{"day":1,"title":"Day One","description":"..."}]'
+              dir="ltr"
+            />
+
             <div className="grid grid-cols-1 gap-4">
               <InputField
                 label="عنوان SEO"
@@ -402,10 +460,24 @@ const AdminProgramsPage: React.FC = () => {
                 placeholder="عنوان للمحركات البحثية"
               />
               <InputField
+                label="SEO Title (English)"
+                value={form.seoTitleEn}
+                onChange={(e) => setForm({ ...form, seoTitleEn: e.target.value })}
+                placeholder="SEO title in English"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
                 placeholder="وصف مختصر للمحركات البحثية"
+              />
+              <InputField
+                label="SEO Description (English)"
+                value={form.seoDescriptionEn}
+                onChange={(e) => setForm({ ...form, seoDescriptionEn: e.target.value })}
+                placeholder="SEO description in English"
+                dir="ltr"
               />
             </div>
 

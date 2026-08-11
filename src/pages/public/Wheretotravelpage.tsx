@@ -117,9 +117,20 @@ const WhereToTravelPage: React.FC = () => {
     }));
   }, [t]);
 
-  const normalizedDestinations = useMemo<DestinationResult[]>(() => {
-    return (destinations || []).map((d: DestinationLike) => normalizeDestination(d));
-  }, [destinations]);
+const normalizedDestinations = useMemo<DestinationResult[]>(() => {
+  return (destinations || []).map((d: DestinationLike) => {
+    const rawTags = (d as { tags?: string[] | string }).tags;
+    const normalized: DestinationLike = {
+      ...d,
+      tags: Array.isArray(rawTags)
+        ? rawTags
+        : typeof rawTags === 'string'
+        ? rawTags.split(',').map((t: string) => t.trim())
+        : [],
+    };
+    return normalizeDestination(normalized);
+  });
+}, [destinations]);
 
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});

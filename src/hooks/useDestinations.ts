@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Destination, CreateDestinationRequest } from '../types';
 import { destinationsService } from '../services/destinationsService';
 import { extractApiError } from '../services/api';
@@ -8,6 +9,7 @@ type ApiListResponse<T> = {
 };
 
 export function useDestinations() {
+  const { i18n } = useTranslation();
   const [destinations, setDestinations] = useState<Destination[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,7 +32,7 @@ export function useDestinations() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     fetchAll();
@@ -40,6 +42,7 @@ export function useDestinations() {
 }
 
 export function useDestinationBySlug(slug: string) {
+  const { i18n } = useTranslation();
   const [destination, setDestination] = useState<Destination | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +83,7 @@ export function useDestinationBySlug(slug: string) {
     return () => {
       isMounted = false;
     };
-  }, [slug]);
+  }, [slug, i18n.language]);
 
   return { destination, loading, error };
 }

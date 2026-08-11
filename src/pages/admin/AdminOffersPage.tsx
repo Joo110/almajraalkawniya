@@ -11,8 +11,8 @@ import { CreateOfferRequest, Offer, OfferType } from '../../types';
 import { extractApiError } from '../../services/api';
 
 const EMPTY: CreateOfferRequest = {
-  title: '', type: OfferType.Percentage, value: 0,
-  description: '', startDate: '', endDate: '', isActive: true,
+  title: '', titleEn: '', type: OfferType.Percentage, value: 0,
+  description: '', descriptionEn: '', startDate: '', endDate: '', isActive: true,
 };
 
 const typeOptions = [
@@ -53,8 +53,8 @@ const AdminOffersPage: React.FC = () => {
   const openEdit = (o: Offer) => {
     setEditing(o);
     setForm({
-      title: o.title, type: o.type, value: o.value,
-      description: o.description, startDate: o.startDate,
+      title: o.title, titleEn: o.titleEn || '', type: o.type, value: o.value,
+      description: o.description, descriptionEn: o.descriptionEn || '', startDate: o.startDate,
       endDate: o.endDate, isActive: o.isActive,
     });
     setModalOpen(true);
@@ -97,9 +97,11 @@ const AdminOffersPage: React.FC = () => {
       // نبعت الـ object كامل مع كل الحقول، مش بس الحقل اللي اتغير (isActive)
       const fullData: CreateOfferRequest = {
         title: o.title,
+        titleEn: o.titleEn,
         type: o.type,
         value: o.value,
         description: o.description,
+        descriptionEn: o.descriptionEn,
         startDate: o.startDate,
         endDate: o.endDate,
         isActive: !o.isActive,
@@ -184,6 +186,9 @@ const AdminOffersPage: React.FC = () => {
             <InputField label="عنوان العرض *" required value={form.title}
               onChange={e => setForm({ ...form, title: e.target.value })}
               placeholder="خصم موسم الصيف" />
+            <InputField label="Offer Title (English)" value={form.titleEn || ''}
+              onChange={e => setForm({ ...form, titleEn: e.target.value })}
+              placeholder="Summer Season Discount" dir="ltr" />
             <SelectField label="نوع العرض *" options={typeOptions} value={form.type}
               onChange={e => setForm({ ...form, type: Number(e.target.value) as OfferType })} />
             <InputField
@@ -194,6 +199,9 @@ const AdminOffersPage: React.FC = () => {
             <TextareaField label="وصف العرض" rows={3} value={form.description}
               onChange={e => setForm({ ...form, description: e.target.value })}
               placeholder="تفاصيل العرض..." />
+            <TextareaField label="Offer Description (English)" rows={3} value={form.descriptionEn || ''}
+              onChange={e => setForm({ ...form, descriptionEn: e.target.value })}
+              placeholder="Offer details..." dir="ltr" />
             <div className="grid grid-cols-2 gap-4">
               <InputField label="تاريخ البداية *" type="date" required
                 value={toDateInput(form.startDate)}

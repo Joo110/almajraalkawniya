@@ -13,26 +13,36 @@ import { extractApiError } from '../../services/api';
 
 interface DestinationFormData {
   name: string;
+  nameEn: string;
   slug: string;
   country: string;
+  countryEn: string;
   coverImage: string;
   description: string;
+  descriptionEn: string;
   tags: string;
   seoTitle: string;
+  seoTitleEn: string;
   seoDescription: string;
+  seoDescriptionEn: string;
   isFeatured: boolean;
   isActive: boolean;
 }
 
 const EMPTY_FORM: DestinationFormData = {
   name: '',
+  nameEn: '',
   slug: '',
   country: '',
+  countryEn: '',
   coverImage: '',
   description: '',
+  descriptionEn: '',
   tags: '',
   seoTitle: '',
+  seoTitleEn: '',
   seoDescription: '',
+  seoDescriptionEn: '',
   isFeatured: false,
   isActive: true,
 };
@@ -64,13 +74,18 @@ const AdminDestinationsPage: React.FC = () => {
     setEditing(d);
     setForm({
       name: d.name,
+      nameEn: d.nameEn || '',
       slug: d.slug,
       country: d.country || '',
+      countryEn: d.countryEn || '',
       coverImage: d.coverImage || '',
       description: d.description || '',
+      descriptionEn: d.descriptionEn || '',
       tags: (d as any).tags || '',
       seoTitle: (d as any).seoTitle || '',
+      seoTitleEn: d.seoTitleEn || '',
       seoDescription: (d as any).seoDescription || '',
+      seoDescriptionEn: d.seoDescriptionEn || '',
       isFeatured: (d as any).isFeatured ?? d.featured ?? false,
       isActive: (d as any).isActive ?? true,
     });
@@ -93,13 +108,18 @@ const AdminDestinationsPage: React.FC = () => {
     try {
       const payload = {
         name: form.name.trim(),
+        nameEn: form.nameEn.trim() || undefined,
         slug: form.slug.trim(),
         country: form.country.trim(),
+        countryEn: form.countryEn.trim() || undefined,
         coverImage: form.coverImage.trim(),
         description: form.description.trim(),
+        descriptionEn: form.descriptionEn.trim() || undefined,
         tags: form.tags.trim(),
         seoTitle: form.seoTitle.trim(),
+        seoTitleEn: form.seoTitleEn.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
+        seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
         isFeatured: form.isFeatured,
         isActive: form.isActive,
       };
@@ -215,6 +235,13 @@ const AdminDestinationsPage: React.FC = () => {
               placeholder="باريس"
             />
             <InputField
+              label="Name (English)"
+              value={form.nameEn}
+              onChange={e => setForm({ ...form, nameEn: e.target.value })}
+              placeholder="Paris"
+              dir="ltr"
+            />
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -228,6 +255,13 @@ const AdminDestinationsPage: React.FC = () => {
               onChange={e => setForm({ ...form, country: e.target.value })}
               placeholder="فرنسا"
             />
+            <InputField
+              label="Country (English)"
+              value={form.countryEn}
+              onChange={e => setForm({ ...form, countryEn: e.target.value })}
+              placeholder="France"
+              dir="ltr"
+            />
             <ImageUploadField
               label="صورة الغلاف"
               value={form.coverImage}
@@ -240,6 +274,14 @@ const AdminDestinationsPage: React.FC = () => {
               value={form.description}
               onChange={e => setForm({ ...form, description: e.target.value })}
               placeholder="وصف مختصر عن الوجهة..."
+            />
+            <TextareaField
+              label="Description (English)"
+              rows={3}
+              value={form.descriptionEn}
+              onChange={e => setForm({ ...form, descriptionEn: e.target.value })}
+              placeholder="Short description of the destination..."
+              dir="ltr"
             />
             <InputField
               label="الوسوم (Tags)"
@@ -255,10 +297,24 @@ const AdminDestinationsPage: React.FC = () => {
                 placeholder="عنوان للمحركات البحثية"
               />
               <InputField
+                label="SEO Title (English)"
+                value={form.seoTitleEn}
+                onChange={e => setForm({ ...form, seoTitleEn: e.target.value })}
+                placeholder="SEO title in English"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={e => setForm({ ...form, seoDescription: e.target.value })}
                 placeholder="وصف مختصر للمحركات البحثية"
+              />
+              <InputField
+                label="SEO Description (English)"
+                value={form.seoDescriptionEn}
+                onChange={e => setForm({ ...form, seoDescriptionEn: e.target.value })}
+                placeholder="SEO description in English"
+                dir="ltr"
               />
             </div>
             <div className="flex gap-6 pt-1">

@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Program, CreateProgramRequest } from '../types';
 import { programsService } from '../services/programsService';
 import { extractApiError } from '../services/api';
@@ -13,6 +14,7 @@ function normalizeList<T>(data: unknown): T[] {
 }
 
 export function usePrograms() {
+  const { i18n } = useTranslation();
   const [programs, setPrograms] = useState<Program[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -30,7 +32,7 @@ export function usePrograms() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     fetchAll();
@@ -40,6 +42,7 @@ export function usePrograms() {
 }
 
 export function useProgramBySlug(slug: string) {
+  const { i18n } = useTranslation();
   const [program, setProgram] = useState<Program | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +83,7 @@ export function useProgramBySlug(slug: string) {
     return () => {
       isMounted = false;
     };
-  }, [slug]);
+  }, [slug, i18n.language]);
 
   return { program, loading, error };
 }

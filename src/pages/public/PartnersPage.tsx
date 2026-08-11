@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Building2, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { SectionHeader, EmptyState } from '../../components/ui/index';
-import { partners, PartnerOffer } from '../../data/partnersData';
+import { partners, Partner, PartnerOffer } from '../../data/partnersData';
 
 const WHATSAPP_NUMBER = '966544817995';
 
@@ -13,8 +13,19 @@ const buildWhatsappLink = (partnerName: string, template: string) => {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 };
 
+/**
+ * بترجع النص الإنجليزي لو موجود واللغة الحالية إنجليزي،
+ * وإلا بترجع النص العربي كـ fallback (بدل ما يفضل فاضي).
+ */
+const pickText = (isEn: boolean, ar: string | undefined, en: string | undefined): string | undefined => {
+  if (isEn && en && en.trim() !== '') return en;
+  return ar;
+};
+
 const PartnersPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const isEn = i18n.language?.startsWith('en');
+
   const [lightbox, setLightbox] = useState<{ offers: PartnerOffer[]; index: number } | null>(null);
 
   const openLightbox = (offers: PartnerOffer[], index: number) => setLightbox({ offers, index });
@@ -27,6 +38,13 @@ const PartnersPage: React.FC = () => {
     setLightbox((prev) =>
       prev ? { ...prev, index: (prev.index - 1 + prev.offers.length) % prev.offers.length } : prev
     );
+
+  const partnerName = (p: Partner) => pickText(isEn, p.name, p.nameEn) || p.name;
+  const partnerDescription = (p: Partner) => pickText(isEn, p.description, p.descriptionEn);
+  const offerTitle = (o: PartnerOffer) => pickText(isEn, o.title, o.titleEn);
+  const offerDescription = (o: PartnerOffer) => pickText(isEn, o.description, o.descriptionEn);
+
+  const activeOffer = lightbox ? lightbox.offers[lightbox.index] : null;
 
   return (
     <PublicLayout>
@@ -81,7 +99,7 @@ const PartnersPage: React.FC = () => {
                         {partner.logo ? (
                           <img
                             src={partner.logo}
-                            alt={partner.name}
+                            alt={partnerName(partner)}
                             className="w-16 h-16 rounded-xl object-cover border border-stone-200"
                           />
                         ) : (
@@ -91,18 +109,18 @@ const PartnersPage: React.FC = () => {
                         )}
                         <div>
                           <h3 className="font-display text-2xl font-bold text-stone-900">
-                            {partner.name}
+                            {partnerName(partner)}
                           </h3>
-                          {partner.description && (
+                          {partnerDescription(partner) && (
                             <p className="font-sans text-stone-500 text-sm mt-1">
-                              {partner.description}
+                              {partnerDescription(partner)}
                             </p>
                           )}
                         </div>
                       </div>
 
                       <a
-                        href={buildWhatsappLink(partner.name, t('partnersPage.whatsappMessage'))}
+                        href={buildWhatsappLink(partnerName(partner), t('partnersPage.whatsappMessage'))}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-sans text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors shrink-0"
@@ -128,20 +146,20 @@ const PartnersPage: React.FC = () => {
                             <div className="aspect-[3/4] overflow-hidden bg-stone-100 flex items-center justify-center">
                               <img
                                 src={offer.image}
-                                alt={offer.title || partner.name}
+                                alt={offerTitle(offer) || partnerName(partner)}
                                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                               />
                             </div>
-                            {(offer.title || offer.description) && (
+                            {(offerTitle(offer) || offerDescription(offer)) && (
                               <div className="p-4">
-                                {offer.title && (
+                                {offerTitle(offer) && (
                                   <h4 className="font-display font-bold text-stone-900 text-sm mb-1">
-                                    {offer.title}
+                                    {offerTitle(offer)}
                                   </h4>
                                 )}
-                                {offer.description && (
+                                {offerDescription(offer) && (
                                   <p className="font-sans text-stone-500 text-xs leading-relaxed">
-                                    {offer.description}
+                                    {offerDescription(offer)}
                                   </p>
                                 )}
                               </div>
@@ -158,7 +176,7 @@ const PartnersPage: React.FC = () => {
         </section>
 
         {/* Lightbox */}
-        {lightbox && (
+        {lightbox && activeOffer && (
           <div
             className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center px-4"
             onClick={closeLightbox}
@@ -190,18 +208,18 @@ const PartnersPage: React.FC = () => {
               dir={i18n.dir()}
             >
               <img
-                src={lightbox.offers[lightbox.index].image}
-                alt={lightbox.offers[lightbox.index].title || ''}
+                src={activeOffer.image}
+                alt={offerTitle(activeOffer) || ''}
                 className="w-full max-h-[75vh] object-contain rounded-xl mx-auto"
               />
-              {lightbox.offers[lightbox.index].title && (
+              {offerTitle(activeOffer) && (
                 <h4 className="text-white font-display font-bold text-xl mt-4">
-                  {lightbox.offers[lightbox.index].title}
+                  {offerTitle(activeOffer)}
                 </h4>
               )}
-              {lightbox.offers[lightbox.index].description && (
+              {offerDescription(activeOffer) && (
                 <p className="text-white/70 font-sans text-sm mt-2">
-                  {lightbox.offers[lightbox.index].description}
+                  {offerDescription(activeOffer)}
                 </p>
               )}
             </div>
