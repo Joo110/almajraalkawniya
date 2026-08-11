@@ -32,11 +32,13 @@ export function usePrograms() {
     } finally {
       setLoading(false);
     }
-  }, [i18n.language]);
+  }, []);
 
+  // بنعيد الجلب لما اللغة تتغيّر (i18n.language) عشان programsService.getAll()
+  // بيبعت الـ lang الحالي من جوه نفسه، فمحتاجين نعيد النداء لما يتغيّر.
   useEffect(() => {
     fetchAll();
-  }, [fetchAll]);
+  }, [fetchAll, i18n.language]);
 
   return { programs, loading, error, refetch: fetchAll };
 }

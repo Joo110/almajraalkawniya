@@ -32,11 +32,13 @@ export function useDestinations() {
     } finally {
       setLoading(false);
     }
-  }, [i18n.language]);
+  }, []);
 
+  // بنعيد الجلب لما اللغة تتغيّر (i18n.language) عشان destinationsService.getAll()
+  // بيبعت الـ lang الحالي من جوه نفسه، فمحتاجين نعيد النداء لما يتغيّر.
   useEffect(() => {
     fetchAll();
-  }, [fetchAll]);
+  }, [fetchAll, i18n.language]);
 
   return { destinations, loading, error, refetch: fetchAll };
 }
