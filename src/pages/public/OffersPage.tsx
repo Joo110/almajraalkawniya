@@ -5,6 +5,7 @@ import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner, ErrorBox, Badge } from '../../components/ui/index';
 import { useOffers } from '../../hooks/useOffers';
 import { Offer, OfferType } from '../../types';
+import { toIntlLocale, toIntlLocaleSA } from '../../utils/localeFormat';
 
 const WHATSAPP_NUMBER = '966544817995';
 
@@ -29,7 +30,7 @@ const offerTypeLabel = (type: OfferType | string, t: (k: string) => string) => {
 
 const formatDate = (dateString?: string) => {
   if (!dateString) return '';
-  return new Date(dateString).toLocaleDateString(document.documentElement.lang === 'en' ? 'en-US' : 'ar-SA', {
+  return new Date(dateString).toLocaleDateString(toIntlLocale(document.documentElement.lang), {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -95,7 +96,7 @@ const OffersPage: React.FC = () => {
                         <div className="font-display text-4xl font-black text-gradient">
                           {o.type === OfferType.Percentage
                             ? `${o.value}%`
-                            : `${o.value.toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')} ${t('offersPage.currency')}`}
+                            : `${o.value.toLocaleString(toIntlLocaleSA(i18n.language))} ${t('offersPage.currency')}`}
                         </div>
                       </div>
                       <div className="p-6 flex flex-col flex-1">
@@ -144,7 +145,7 @@ const OffersPage: React.FC = () => {
                         <div className="font-display text-4xl font-black text-gradient">
                           {String(o.type).toLowerCase() === 'percentage'
                             ? `${o.value}%`
-                            : `${o.value.toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')} ${t('offersPage.currency')}`}
+                            : `${o.value.toLocaleString(toIntlLocaleSA(i18n.language))} ${t('offersPage.currency')}`}
                         </div>
                       </div>
                       <div className="p-6 flex flex-col flex-1">

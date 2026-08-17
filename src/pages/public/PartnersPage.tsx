@@ -14,17 +14,23 @@ const buildWhatsappLink = (partnerName: string, template: string) => {
 };
 
 /**
- * بترجع النص الإنجليزي لو موجود واللغة الحالية إنجليزي،
- * وإلا بترجع النص العربي كـ fallback (بدل ما يفضل فاضي).
+ * بترجع النص الفرنسي لو موجود واللغة الحالية فرنسي، أو الإنجليزي لو
+ * اللغة إنجليزي، وإلا بترجع النص العربي كـ fallback (بدل ما يفضل فاضي).
  */
-const pickText = (isEn: boolean, ar: string | undefined, en: string | undefined): string | undefined => {
-  if (isEn && en && en.trim() !== '') return en;
+const pickText = (
+  lang: string,
+  ar: string | undefined,
+  en: string | undefined,
+  fr: string | undefined
+): string | undefined => {
+  if (lang === 'fr' && fr && fr.trim() !== '') return fr;
+  if (lang === 'en' && en && en.trim() !== '') return en;
   return ar;
 };
 
 const PartnersPage: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const isEn = i18n.language?.startsWith('en');
+  const lang = i18n.language?.split('-')[0] || 'ar';
 
   const [lightbox, setLightbox] = useState<{ offers: PartnerOffer[]; index: number } | null>(null);
 
@@ -39,10 +45,10 @@ const PartnersPage: React.FC = () => {
       prev ? { ...prev, index: (prev.index - 1 + prev.offers.length) % prev.offers.length } : prev
     );
 
-  const partnerName = (p: Partner) => pickText(isEn, p.name, p.nameEn) || p.name;
-  const partnerDescription = (p: Partner) => pickText(isEn, p.description, p.descriptionEn);
-  const offerTitle = (o: PartnerOffer) => pickText(isEn, o.title, o.titleEn);
-  const offerDescription = (o: PartnerOffer) => pickText(isEn, o.description, o.descriptionEn);
+  const partnerName = (p: Partner) => pickText(lang, p.name, p.nameEn, p.nameFr) || p.name;
+  const partnerDescription = (p: Partner) => pickText(lang, p.description, p.descriptionEn, p.descriptionFr);
+  const offerTitle = (o: PartnerOffer) => pickText(lang, o.title, o.titleEn, o.titleFr);
+  const offerDescription = (o: PartnerOffer) => pickText(lang, o.description, o.descriptionEn, o.descriptionFr);
 
   const activeOffer = lightbox ? lightbox.offers[lightbox.index] : null;
 

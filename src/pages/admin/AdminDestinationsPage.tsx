@@ -14,17 +14,27 @@ import { extractApiError } from '../../services/api';
 interface DestinationFormData {
   name: string;
   nameEn: string;
+
+  nameFr: string;
   slug: string;
   country: string;
   countryEn: string;
+
+  countryFr: string;
   coverImage: string;
   description: string;
   descriptionEn: string;
+
+  descriptionFr: string;
   tags: string;
   seoTitle: string;
   seoTitleEn: string;
+
+  seoTitleFr: string;
   seoDescription: string;
   seoDescriptionEn: string;
+
+  seoDescriptionFr: string;
   isFeatured: boolean;
   isActive: boolean;
 }
@@ -32,17 +42,27 @@ interface DestinationFormData {
 const EMPTY_FORM: DestinationFormData = {
   name: '',
   nameEn: '',
+
+  nameFr: '',
   slug: '',
   country: '',
   countryEn: '',
+
+  countryFr: '',
   coverImage: '',
   description: '',
   descriptionEn: '',
+
+  descriptionFr: '',
   tags: '',
   seoTitle: '',
   seoTitleEn: '',
+
+  seoTitleFr: '',
   seoDescription: '',
   seoDescriptionEn: '',
+
+  seoDescriptionFr: '',
   isFeatured: false,
   isActive: true,
 };
@@ -75,17 +95,27 @@ const AdminDestinationsPage: React.FC = () => {
     setForm({
       name: d.name,
       nameEn: d.nameEn || '',
+
+      nameFr: d.nameFr || '',
       slug: d.slug,
       country: d.country || '',
       countryEn: d.countryEn || '',
+
+      countryFr: d.countryFr || '',
       coverImage: d.coverImage || '',
       description: d.description || '',
       descriptionEn: d.descriptionEn || '',
+
+      descriptionFr: d.descriptionFr || '',
       tags: (d as any).tags || '',
       seoTitle: (d as any).seoTitle || '',
       seoTitleEn: d.seoTitleEn || '',
+
+      seoTitleFr: d.seoTitleFr || '',
       seoDescription: (d as any).seoDescription || '',
       seoDescriptionEn: d.seoDescriptionEn || '',
+
+      seoDescriptionFr: d.seoDescriptionFr || '',
       isFeatured: (d as any).isFeatured ?? d.featured ?? false,
       isActive: (d as any).isActive ?? true,
     });
@@ -109,17 +139,27 @@ const AdminDestinationsPage: React.FC = () => {
       const payload = {
         name: form.name.trim(),
         nameEn: form.nameEn.trim() || undefined,
+
+        nameFr: form.nameFr.trim() || undefined,
         slug: form.slug.trim(),
         country: form.country.trim(),
         countryEn: form.countryEn.trim() || undefined,
+
+        countryFr: form.countryFr.trim() || undefined,
         coverImage: form.coverImage.trim(),
         description: form.description.trim(),
         descriptionEn: form.descriptionEn.trim() || undefined,
+
+        descriptionFr: form.descriptionFr.trim() || undefined,
         tags: form.tags.trim(),
         seoTitle: form.seoTitle.trim(),
         seoTitleEn: form.seoTitleEn.trim() || undefined,
+
+        seoTitleFr: form.seoTitleFr.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
         seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
+
+        seoDescriptionFr: form.seoDescriptionFr.trim() || undefined,
         isFeatured: form.isFeatured,
         isActive: form.isActive,
       };
@@ -242,6 +282,13 @@ const AdminDestinationsPage: React.FC = () => {
               dir="ltr"
             />
             <InputField
+              label="Nom (Français)"
+              value={form.nameFr}
+              onChange={e => setForm({ ...form, nameFr: e.target.value })}
+              placeholder="Paris"
+              dir="ltr"
+            />
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -259,6 +306,13 @@ const AdminDestinationsPage: React.FC = () => {
               label="Country (English)"
               value={form.countryEn}
               onChange={e => setForm({ ...form, countryEn: e.target.value })}
+              placeholder="France"
+              dir="ltr"
+            />
+            <InputField
+              label="Pays (Français)"
+              value={form.countryFr}
+              onChange={e => setForm({ ...form, countryFr: e.target.value })}
               placeholder="France"
               dir="ltr"
             />
@@ -283,6 +337,14 @@ const AdminDestinationsPage: React.FC = () => {
               placeholder="Short description of the destination..."
               dir="ltr"
             />
+            <TextareaField
+              label="Description (Français)"
+              rows={3}
+              value={form.descriptionFr}
+              onChange={e => setForm({ ...form, descriptionFr: e.target.value })}
+              placeholder="Brève description de la destination..."
+              dir="ltr"
+            />
             <InputField
               label="الوسوم (Tags)"
               value={form.tags}
@@ -304,6 +366,13 @@ const AdminDestinationsPage: React.FC = () => {
                 dir="ltr"
               />
               <InputField
+                label="Titre SEO (Français)"
+                value={form.seoTitleFr}
+                onChange={e => setForm({ ...form, seoTitleFr: e.target.value })}
+                placeholder="Titre SEO en français"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={e => setForm({ ...form, seoDescription: e.target.value })}
@@ -314,6 +383,13 @@ const AdminDestinationsPage: React.FC = () => {
                 value={form.seoDescriptionEn}
                 onChange={e => setForm({ ...form, seoDescriptionEn: e.target.value })}
                 placeholder="SEO description in English"
+                dir="ltr"
+              />
+              <InputField
+                label="Description SEO (Français)"
+                value={form.seoDescriptionFr}
+                onChange={e => setForm({ ...form, seoDescriptionFr: e.target.value })}
+                placeholder="Description SEO en français"
                 dir="ltr"
               />
             </div>

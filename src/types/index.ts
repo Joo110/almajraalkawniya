@@ -164,33 +164,43 @@ export interface Destination {
   id: string;
   name: string;
   nameEn?: string;
+  nameFr?: string;
   slug: string;
   coverImage: string;
   description?: string;
   descriptionEn?: string;
+  descriptionFr?: string;
   country?: string;
   countryEn?: string;
+  countryFr?: string;
   tags?: string[]; 
   seoTitle?: string;
   seoTitleEn?: string;
+  seoTitleFr?: string;
   seoDescription?: string;
   seoDescriptionEn?: string;
+  seoDescriptionFr?: string;
   featured?: boolean;
 }
 export interface CreateDestinationRequest {
   name: string;
   nameEn?: string;
+  nameFr?: string;
   slug: string;
   coverImage: string;
   description?: string;
   descriptionEn?: string;
+  descriptionFr?: string;
   country?: string;
   countryEn?: string;
+  countryFr?: string;
   tags?: string;
   seoTitle?: string;
   seoTitleEn?: string;
+  seoTitleFr?: string;
   seoDescription?: string;
   seoDescriptionEn?: string;
+  seoDescriptionFr?: string;
   featured?: boolean;
 }
 
@@ -200,46 +210,59 @@ export interface Program {
   destinationId: string;
   title: string;
   titleEn?: string;
+  titleFr?: string;
   slug: string;
   price: number;
   durationDays: number;
   maxPeople: number;
   includes: string;
   includesEn?: string;
+  includesFr?: string;
   excludes: string;
   excludesEn?: string;
+  excludesFr?: string;
   itineraryJson: string;
   itineraryJsonEn?: string;
+  itineraryJsonFr?: string;
   galleryJson: string;
   seoTitle?: string;
   seoTitleEn?: string;
+  seoTitleFr?: string;
   seoDescription?: string;
   seoDescriptionEn?: string;
+  seoDescriptionFr?: string;
   featured: boolean;
   active: boolean;
   destination?: Destination;
   destinationName?: string;
   destinationNameEn?: string;
+  destinationNameFr?: string;
 }
 export interface CreateProgramRequest {
   destinationId: string;
   title: string;
   titleEn?: string;
+  titleFr?: string;
   slug: string;
   price: number;
   durationDays: number;
   maxPeople: number;
   includes: string;
   includesEn?: string;
+  includesFr?: string;
   excludes: string;
   excludesEn?: string;
+  excludesFr?: string;
   itineraryJson: string;
   itineraryJsonEn?: string;
+  itineraryJsonFr?: string;
   galleryJson: string;
   seoTitle?: string;
   seoTitleEn?: string;
+  seoTitleFr?: string;
   seoDescription?: string;
   seoDescriptionEn?: string;
+  seoDescriptionFr?: string;
   featured: boolean;
   active: boolean;
 }
@@ -249,27 +272,35 @@ export interface Article {
   id: string;
   title: string;
   titleEn?: string;
+  titleFr?: string;
   slug: string;
   coverImage: string;
   publishedAt: string;
   content?: string;
   contentEn?: string;
+  contentFr?: string;
   seoTitle?: string;
   seoTitleEn?: string;
+  seoTitleFr?: string;
   seoDescription?: string;
   seoDescriptionEn?: string;
+  seoDescriptionFr?: string;
 }
 export interface CreateArticleRequest {
   title: string;
   titleEn?: string;
+  titleFr?: string;
   slug: string;
   coverImage: string;
   content?: string;
   contentEn?: string;
+  contentFr?: string;
   seoTitle?: string;
   seoTitleEn?: string;
+  seoTitleFr?: string;
   seoDescription?: string;
   seoDescriptionEn?: string;
+  seoDescriptionFr?: string;
 }
 
 
@@ -277,10 +308,12 @@ export interface Offer {
   id: string;
   title: string;
   titleEn?: string;
+  titleFr?: string;
   type: OfferType;
   value: number;
   description: string;
   descriptionEn?: string;
+  descriptionFr?: string;
   startDate: string;
   endDate: string;
   isActive: boolean;
@@ -288,10 +321,12 @@ export interface Offer {
 export interface CreateOfferRequest {
   title: string;
   titleEn?: string;
+  titleFr?: string;
   type: OfferType;
   value: number;
   description: string;
   descriptionEn?: string;
+  descriptionFr?: string;
   startDate: string;
   endDate: string;
   isActive: boolean;

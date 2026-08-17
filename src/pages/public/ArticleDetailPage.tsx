@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { toIntlLocale } from '../../utils/localeFormat';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
@@ -36,7 +37,7 @@ export const ArticleDetailPage: React.FC = () => {
     );
   }
 
-  const date = new Date(article.publishedAt).toLocaleDateString(i18n.language === 'ar' ? 'ar-EG' : 'en-US', {
+  const date = new Date(article.publishedAt).toLocaleDateString(toIntlLocale(i18n.language), {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

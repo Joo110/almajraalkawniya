@@ -11,8 +11,8 @@ import { CreateOfferRequest, Offer, OfferType } from '../../types';
 import { extractApiError } from '../../services/api';
 
 const EMPTY: CreateOfferRequest = {
-  title: '', titleEn: '', type: OfferType.Percentage, value: 0,
-  description: '', descriptionEn: '', startDate: '', endDate: '', isActive: true,
+  title: '', titleEn: '', titleFr: '', type: OfferType.Percentage, value: 0,
+  description: '', descriptionEn: '', descriptionFr: '', startDate: '', endDate: '', isActive: true,
 };
 
 const typeOptions = [
@@ -53,8 +53,8 @@ const AdminOffersPage: React.FC = () => {
   const openEdit = (o: Offer) => {
     setEditing(o);
     setForm({
-      title: o.title, titleEn: o.titleEn || '', type: o.type, value: o.value,
-      description: o.description, descriptionEn: o.descriptionEn || '', startDate: o.startDate,
+      title: o.title, titleEn: o.titleEn || '', titleFr: o.titleFr || '', type: o.type, value: o.value,
+      description: o.description, descriptionEn: o.descriptionEn || '', descriptionFr: o.descriptionFr || '', startDate: o.startDate,
       endDate: o.endDate, isActive: o.isActive,
     });
     setModalOpen(true);
@@ -98,10 +98,12 @@ const AdminOffersPage: React.FC = () => {
       const fullData: CreateOfferRequest = {
         title: o.title,
         titleEn: o.titleEn,
+        titleFr: o.titleFr,
         type: o.type,
         value: o.value,
         description: o.description,
         descriptionEn: o.descriptionEn,
+        descriptionFr: o.descriptionFr,
         startDate: o.startDate,
         endDate: o.endDate,
         isActive: !o.isActive,
@@ -189,6 +191,9 @@ const AdminOffersPage: React.FC = () => {
             <InputField label="Offer Title (English)" value={form.titleEn || ''}
               onChange={e => setForm({ ...form, titleEn: e.target.value })}
               placeholder="Summer Season Discount" dir="ltr" />
+            <InputField label="Titre de l'offre (Français)" value={form.titleFr || ''}
+              onChange={e => setForm({ ...form, titleFr: e.target.value })}
+              placeholder="Remise saison d'été" dir="ltr" />
             <SelectField label="نوع العرض *" options={typeOptions} value={form.type}
               onChange={e => setForm({ ...form, type: Number(e.target.value) as OfferType })} />
             <InputField
@@ -202,6 +207,9 @@ const AdminOffersPage: React.FC = () => {
             <TextareaField label="Offer Description (English)" rows={3} value={form.descriptionEn || ''}
               onChange={e => setForm({ ...form, descriptionEn: e.target.value })}
               placeholder="Offer details..." dir="ltr" />
+            <TextareaField label="Description de l'offre (Français)" rows={3} value={form.descriptionFr || ''}
+              onChange={e => setForm({ ...form, descriptionFr: e.target.value })}
+              placeholder="Détails de l'offre..." dir="ltr" />
             <div className="grid grid-cols-2 gap-4">
               <InputField label="تاريخ البداية *" type="date" required
                 value={toDateInput(form.startDate)}

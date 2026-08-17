@@ -26,21 +26,33 @@ interface ProgramFormData {
   destinationId: string;
   title: string;
   titleEn: string;
+
+  titleFr: string;
   slug: string;
   price: number;
   durationDays: number;
   maxPeople: number;
   includes: string;
   includesEn: string;
+
+  includesFr: string;
   excludes: string;
   excludesEn: string;
+
+  excludesFr: string;
   itineraryJson: string;
   itineraryJsonEn: string;
+
+  itineraryJsonFr: string;
   galleryJson: string;
   seoTitle: string;
   seoTitleEn: string;
+
+  seoTitleFr: string;
   seoDescription: string;
   seoDescriptionEn: string;
+
+  seoDescriptionFr: string;
   featured: boolean;
   active: boolean;
 }
@@ -53,21 +65,33 @@ const EMPTY: ProgramFormData = {
   destinationId: '',
   title: '',
   titleEn: '',
+
+  titleFr: '',
   slug: '',
   price: 0,
   durationDays: 1,
   maxPeople: 10,
   includes: '',
   includesEn: '',
+
+  includesFr: '',
   excludes: '',
   excludesEn: '',
+
+  excludesFr: '',
   itineraryJson: '[]',
   itineraryJsonEn: '',
+
+  itineraryJsonFr: '',
   galleryJson: '[]',
   seoTitle: '',
   seoTitleEn: '',
+
+  seoTitleFr: '',
   seoDescription: '',
   seoDescriptionEn: '',
+
+  seoDescriptionFr: '',
   featured: false,
   active: true,
 };
@@ -135,21 +159,33 @@ const AdminProgramsPage: React.FC = () => {
       destinationId: program.destinationId,
       title: program.title,
       titleEn: program.titleEn || '',
+
+      titleFr: program.titleFr || '',
       slug: program.slug,
       price: program.price,
       durationDays: program.durationDays,
       maxPeople: program.maxPeople,
       includes: program.includes || '',
       includesEn: program.includesEn || '',
+
+      includesFr: program.includesFr || '',
       excludes: program.excludes || '',
       excludesEn: program.excludesEn || '',
+
+      excludesFr: program.excludesFr || '',
       itineraryJson: (program as any).itineraryJson || '[]',
       itineraryJsonEn: program.itineraryJsonEn || '',
+
+      itineraryJsonFr: program.itineraryJsonFr || '',
       galleryJson: (program as any).galleryJson || '[]',
       seoTitle: program.seoTitle || '',
       seoTitleEn: program.seoTitleEn || '',
+
+      seoTitleFr: program.seoTitleFr || '',
       seoDescription: program.seoDescription || '',
       seoDescriptionEn: program.seoDescriptionEn || '',
+
+      seoDescriptionFr: program.seoDescriptionFr || '',
       featured: program.featured ?? false,
       active: getProgramActive(program),
     });
@@ -184,21 +220,33 @@ const AdminProgramsPage: React.FC = () => {
         destinationId: form.destinationId,
         title: form.title.trim(),
         titleEn: form.titleEn.trim() || undefined,
+
+        titleFr: form.titleFr.trim() || undefined,
         slug: form.slug.trim(),
         price: Number(form.price),
         durationDays: Number(form.durationDays),
         maxPeople: Number(form.maxPeople),
         includes: form.includes.trim(),
         includesEn: form.includesEn.trim() || undefined,
+
+        includesFr: form.includesFr.trim() || undefined,
         excludes: form.excludes.trim(),
         excludesEn: form.excludesEn.trim() || undefined,
+
+        excludesFr: form.excludesFr.trim() || undefined,
         itineraryJson: form.itineraryJson.trim() || '[]',
         itineraryJsonEn: form.itineraryJsonEn.trim() || undefined,
+
+        itineraryJsonFr: form.itineraryJsonFr.trim() || undefined,
         galleryJson: form.galleryJson.trim() || '[]',
         seoTitle: form.seoTitle.trim(),
         seoTitleEn: form.seoTitleEn.trim() || undefined,
+
+        seoTitleFr: form.seoTitleFr.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
         seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
+
+        seoDescriptionFr: form.seoDescriptionFr.trim() || undefined,
         featured: form.featured,
         active: form.active,
         isActive: form.active,
@@ -358,6 +406,14 @@ const AdminProgramsPage: React.FC = () => {
             />
 
             <InputField
+              label="Titre du programme (Français)"
+              value={form.titleFr}
+              onChange={(e) => setForm({ ...form, titleFr: e.target.value })}
+              placeholder="Voyage romantique à Paris"
+              dir="ltr"
+            />
+
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -413,6 +469,15 @@ const AdminProgramsPage: React.FC = () => {
             />
 
             <TextareaField
+              label="Programme inclut (Français)"
+              rows={3}
+              value={form.includesFr}
+              onChange={(e) => setForm({ ...form, includesFr: e.target.value })}
+              placeholder="Un élément par ligne"
+              dir="ltr"
+            />
+
+            <TextareaField
               label="لا يشمل البرنامج"
               rows={3}
               value={form.excludes}
@@ -426,6 +491,15 @@ const AdminProgramsPage: React.FC = () => {
               value={form.excludesEn}
               onChange={(e) => setForm({ ...form, excludesEn: e.target.value })}
               placeholder="One item per line"
+              dir="ltr"
+            />
+
+            <TextareaField
+              label="Programme n'inclut pas (Français)"
+              rows={3}
+              value={form.excludesFr}
+              onChange={(e) => setForm({ ...form, excludesFr: e.target.value })}
+              placeholder="Un élément par ligne"
               dir="ltr"
             />
 
@@ -452,6 +526,14 @@ const AdminProgramsPage: React.FC = () => {
               dir="ltr"
             />
 
+            <InputField
+              label="Programme journalier (JSON Français)"
+              value={form.itineraryJsonFr}
+              onChange={(e) => setForm({ ...form, itineraryJsonFr: e.target.value })}
+              placeholder='[{"day":1,"title":"Jour 1","description":"..."}]'
+              dir="ltr"
+            />
+
             <div className="grid grid-cols-1 gap-4">
               <InputField
                 label="عنوان SEO"
@@ -467,6 +549,13 @@ const AdminProgramsPage: React.FC = () => {
                 dir="ltr"
               />
               <InputField
+                label="Titre SEO (Français)"
+                value={form.seoTitleFr}
+                onChange={(e) => setForm({ ...form, seoTitleFr: e.target.value })}
+                placeholder="Titre SEO en français"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
@@ -477,6 +566,13 @@ const AdminProgramsPage: React.FC = () => {
                 value={form.seoDescriptionEn}
                 onChange={(e) => setForm({ ...form, seoDescriptionEn: e.target.value })}
                 placeholder="SEO description in English"
+                dir="ltr"
+              />
+              <InputField
+                label="Description SEO (Français)"
+                value={form.seoDescriptionFr}
+                onChange={(e) => setForm({ ...form, seoDescriptionFr: e.target.value })}
+                placeholder="Description SEO en français"
                 dir="ltr"
               />
             </div>

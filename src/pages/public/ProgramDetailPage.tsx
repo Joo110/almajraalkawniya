@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toIntlLocaleSA } from '../../utils/localeFormat';
 import { useParams, Link } from 'react-router-dom';
 import {
   Clock,
@@ -132,7 +133,7 @@ const ProgramDetailPage: React.FC = () => {
     t('programDetail.whatsappMessage', {
       title: program.title,
       duration: program.durationDays,
-      price: Number(program.price || 0).toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US'),
+      price: Number(program.price || 0).toLocaleString(toIntlLocaleSA(i18n.language)),
       link: window.location.href,
     })
   );
@@ -267,7 +268,7 @@ const ProgramDetailPage: React.FC = () => {
                       {t('programDetail.pricePerPerson')}
                     </span>
                     <span className="font-display text-4xl font-black text-gradient">
-                      {Number(program.price || 0).toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US')} {t('offersPage.currency')}
+                      {Number(program.price || 0).toLocaleString(toIntlLocaleSA(i18n.language))} {t('offersPage.currency')}
                     </span>
                   </div>
 

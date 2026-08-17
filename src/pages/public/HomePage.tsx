@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toIntlLocale } from '../../utils/localeFormat';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Star, Shield, Clock, Hash, Users, Plane, Hotel, Camera, Phone, MapPin, FileText } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
@@ -332,7 +333,7 @@ const HomePage: React.FC = () => {
                     <img src={p.img} alt={p.title} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute bottom-3 right-3">
-                      <span className="font-display text-2xl font-bold text-white">{p.price.toLocaleString(i18n.language === 'ar' ? 'ar-EG' : 'en-US')} {t('homePage.currencyShort')}</span>
+                      <span className="font-display text-2xl font-bold text-white">{p.price.toLocaleString(toIntlLocale(i18n.language))} {t('homePage.currencyShort')}</span>
                     </div>
                   </div>
                   <div className="p-5">

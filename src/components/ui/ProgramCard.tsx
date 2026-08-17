@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock3, Users, Sparkles, BadgeDollarSign } from 'lucide-react';
 import { Program } from '../../types';
+import { toIntlLocaleSA } from '../../utils/localeFormat';
 
 interface ProgramCardProps {
   program: Program;
@@ -62,7 +63,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ program }) => {
   const p = program as any;
   const coverImg = getCoverImage(program);
   const featured = Boolean(p.featured);
-  const price = Number(program.price || 0).toLocaleString(i18n.language === 'ar' ? 'ar-SA' : 'en-US');
+  const price = Number(program.price || 0).toLocaleString(toIntlLocaleSA(i18n.language));
   const slug = p.slug || program.id;
 
   return (

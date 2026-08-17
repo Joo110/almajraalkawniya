@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowLeft, BookOpen } from 'lucide-react';
 import { Article } from '../../types';
+import { toIntlLocale } from '../../utils/localeFormat';
 
 interface ArticleCardProps {
   article: Article;
@@ -14,7 +15,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
     article.coverImage ||
     'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=80';
 
-  const date = new Date(article.publishedAt).toLocaleDateString(i18n.language === 'ar' ? 'ar-EG' : 'en-US', {
+  const date = new Date(article.publishedAt).toLocaleDateString(toIntlLocale(i18n.language), {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

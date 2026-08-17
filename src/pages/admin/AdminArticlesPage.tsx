@@ -14,14 +14,22 @@ import { extractApiError } from '../../services/api';
 interface ArticleFormData {
   title: string;
   titleEn: string;
+
+  titleFr: string;
   slug: string;
   content: string;
   contentEn: string;
+
+  contentFr: string;
   coverImage: string;
   seoTitle: string;
   seoTitleEn: string;
+
+  seoTitleFr: string;
   seoDescription: string;
   seoDescriptionEn: string;
+
+  seoDescriptionFr: string;
   publishedAt: string;
   isPublished: boolean;
 }
@@ -36,14 +44,22 @@ const todayInput = () => new Date().toISOString().slice(0, 16);
 const EMPTY: ArticleFormData = {
   title: '',
   titleEn: '',
+
+  titleFr: '',
   slug: '',
   content: '',
   contentEn: '',
+
+  contentFr: '',
   coverImage: '',
   seoTitle: '',
   seoTitleEn: '',
+
+  seoTitleFr: '',
   seoDescription: '',
   seoDescriptionEn: '',
+
+  seoDescriptionFr: '',
   publishedAt: todayInput(),
   isPublished: true,
 };
@@ -76,14 +92,22 @@ const AdminArticlesPage: React.FC = () => {
     setForm({
       title: a.title,
       titleEn: a.titleEn || '',
+
+      titleFr: a.titleFr || '',
       slug: a.slug,
       content: a.content || '',
       contentEn: a.contentEn || '',
+
+      contentFr: a.contentFr || '',
       coverImage: a.coverImage || '',
       seoTitle: (a as any).seoTitle || '',
       seoTitleEn: a.seoTitleEn || '',
+
+      seoTitleFr: a.seoTitleFr || '',
       seoDescription: (a as any).seoDescription || '',
       seoDescriptionEn: a.seoDescriptionEn || '',
+
+      seoDescriptionFr: a.seoDescriptionFr || '',
       publishedAt: a.publishedAt
         ? new Date(a.publishedAt).toISOString().slice(0, 16)
         : todayInput(),
@@ -110,14 +134,22 @@ const AdminArticlesPage: React.FC = () => {
       const payload = {
         title: form.title.trim(),
         titleEn: form.titleEn.trim() || undefined,
+
+        titleFr: form.titleFr.trim() || undefined,
         slug: form.slug.trim(),
         content: form.content.trim(),
         contentEn: form.contentEn.trim() || undefined,
+
+        contentFr: form.contentFr.trim() || undefined,
         coverImage: form.coverImage.trim(),
         seoTitle: form.seoTitle.trim(),
         seoTitleEn: form.seoTitleEn.trim() || undefined,
+
+        seoTitleFr: form.seoTitleFr.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
         seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
+
+        seoDescriptionFr: form.seoDescriptionFr.trim() || undefined,
         publishedAt: toISOLocal(form.publishedAt),
         isPublished: form.isPublished,
       };
@@ -240,6 +272,13 @@ const AdminArticlesPage: React.FC = () => {
               dir="ltr"
             />
             <InputField
+              label="Titre de l'article (Français)"
+              value={form.titleFr}
+              onChange={e => setForm({ ...form, titleFr: e.target.value })}
+              placeholder="Votre guide complet pour explorer Paris"
+              dir="ltr"
+            />
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -268,6 +307,14 @@ const AdminArticlesPage: React.FC = () => {
               placeholder="Write the article content here..."
               dir="ltr"
             />
+            <TextareaField
+              label="Contenu de l'article (Français)"
+              rows={8}
+              value={form.contentFr}
+              onChange={e => setForm({ ...form, contentFr: e.target.value })}
+              placeholder="Rédigez le contenu de l'article ici..."
+              dir="ltr"
+            />
             <div className="grid grid-cols-1 gap-4">
               <InputField
                 label="عنوان SEO"
@@ -283,6 +330,13 @@ const AdminArticlesPage: React.FC = () => {
                 dir="ltr"
               />
               <InputField
+                label="Titre SEO (Français)"
+                value={form.seoTitleFr}
+                onChange={e => setForm({ ...form, seoTitleFr: e.target.value })}
+                placeholder="Titre SEO en français"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={e => setForm({ ...form, seoDescription: e.target.value })}
@@ -293,6 +347,13 @@ const AdminArticlesPage: React.FC = () => {
                 value={form.seoDescriptionEn}
                 onChange={e => setForm({ ...form, seoDescriptionEn: e.target.value })}
                 placeholder="SEO description in English"
+                dir="ltr"
+              />
+              <InputField
+                label="Description SEO (Français)"
+                value={form.seoDescriptionFr}
+                onChange={e => setForm({ ...form, seoDescriptionFr: e.target.value })}
+                placeholder="Description SEO en français"
                 dir="ltr"
               />
             </div>
