@@ -28,6 +28,8 @@ interface ProgramFormData {
   titleEn: string;
 
   titleFr: string;
+  titleTr: string;
+  titleRu: string;
   slug: string;
   price: number;
   durationDays: number;
@@ -36,23 +38,33 @@ interface ProgramFormData {
   includesEn: string;
 
   includesFr: string;
+  includesTr: string;
+  includesRu: string;
   excludes: string;
   excludesEn: string;
 
   excludesFr: string;
+  excludesTr: string;
+  excludesRu: string;
   itineraryJson: string;
   itineraryJsonEn: string;
 
   itineraryJsonFr: string;
+  itineraryJsonTr: string;
+  itineraryJsonRu: string;
   galleryJson: string;
   seoTitle: string;
   seoTitleEn: string;
 
   seoTitleFr: string;
+  seoTitleTr: string;
+  seoTitleRu: string;
   seoDescription: string;
   seoDescriptionEn: string;
 
   seoDescriptionFr: string;
+  seoDescriptionTr: string;
+  seoDescriptionRu: string;
   featured: boolean;
   active: boolean;
 }
@@ -67,6 +79,8 @@ const EMPTY: ProgramFormData = {
   titleEn: '',
 
   titleFr: '',
+  titleTr: '',
+  titleRu: '',
   slug: '',
   price: 0,
   durationDays: 1,
@@ -75,23 +89,33 @@ const EMPTY: ProgramFormData = {
   includesEn: '',
 
   includesFr: '',
+  includesTr: '',
+  includesRu: '',
   excludes: '',
   excludesEn: '',
 
   excludesFr: '',
+  excludesTr: '',
+  excludesRu: '',
   itineraryJson: '[]',
   itineraryJsonEn: '',
 
   itineraryJsonFr: '',
+  itineraryJsonTr: '',
+  itineraryJsonRu: '',
   galleryJson: '[]',
   seoTitle: '',
   seoTitleEn: '',
 
   seoTitleFr: '',
+  seoTitleTr: '',
+  seoTitleRu: '',
   seoDescription: '',
   seoDescriptionEn: '',
 
   seoDescriptionFr: '',
+  seoDescriptionTr: '',
+  seoDescriptionRu: '',
   featured: false,
   active: true,
 };
@@ -161,6 +185,8 @@ const AdminProgramsPage: React.FC = () => {
       titleEn: program.titleEn || '',
 
       titleFr: program.titleFr || '',
+      titleTr: program.titleTr || '',
+      titleRu: program.titleRu || '',
       slug: program.slug,
       price: program.price,
       durationDays: program.durationDays,
@@ -169,23 +195,33 @@ const AdminProgramsPage: React.FC = () => {
       includesEn: program.includesEn || '',
 
       includesFr: program.includesFr || '',
+      includesTr: program.includesTr || '',
+      includesRu: program.includesRu || '',
       excludes: program.excludes || '',
       excludesEn: program.excludesEn || '',
 
       excludesFr: program.excludesFr || '',
+      excludesTr: program.excludesTr || '',
+      excludesRu: program.excludesRu || '',
       itineraryJson: (program as any).itineraryJson || '[]',
       itineraryJsonEn: program.itineraryJsonEn || '',
 
       itineraryJsonFr: program.itineraryJsonFr || '',
+      itineraryJsonTr: program.itineraryJsonTr || '',
+      itineraryJsonRu: program.itineraryJsonRu || '',
       galleryJson: (program as any).galleryJson || '[]',
       seoTitle: program.seoTitle || '',
       seoTitleEn: program.seoTitleEn || '',
 
       seoTitleFr: program.seoTitleFr || '',
+      seoTitleTr: program.seoTitleTr || '',
+      seoTitleRu: program.seoTitleRu || '',
       seoDescription: program.seoDescription || '',
       seoDescriptionEn: program.seoDescriptionEn || '',
 
       seoDescriptionFr: program.seoDescriptionFr || '',
+      seoDescriptionTr: program.seoDescriptionTr || '',
+      seoDescriptionRu: program.seoDescriptionRu || '',
       featured: program.featured ?? false,
       active: getProgramActive(program),
     });
@@ -222,6 +258,8 @@ const AdminProgramsPage: React.FC = () => {
         titleEn: form.titleEn.trim() || undefined,
 
         titleFr: form.titleFr.trim() || undefined,
+        titleTr: form.titleTr.trim() || undefined,
+        titleRu: form.titleRu.trim() || undefined,
         slug: form.slug.trim(),
         price: Number(form.price),
         durationDays: Number(form.durationDays),
@@ -230,23 +268,33 @@ const AdminProgramsPage: React.FC = () => {
         includesEn: form.includesEn.trim() || undefined,
 
         includesFr: form.includesFr.trim() || undefined,
+        includesTr: form.includesTr.trim() || undefined,
+        includesRu: form.includesRu.trim() || undefined,
         excludes: form.excludes.trim(),
         excludesEn: form.excludesEn.trim() || undefined,
 
         excludesFr: form.excludesFr.trim() || undefined,
+        excludesTr: form.excludesTr.trim() || undefined,
+        excludesRu: form.excludesRu.trim() || undefined,
         itineraryJson: form.itineraryJson.trim() || '[]',
         itineraryJsonEn: form.itineraryJsonEn.trim() || undefined,
 
         itineraryJsonFr: form.itineraryJsonFr.trim() || undefined,
+        itineraryJsonTr: form.itineraryJsonTr.trim() || undefined,
+        itineraryJsonRu: form.itineraryJsonRu.trim() || undefined,
         galleryJson: form.galleryJson.trim() || '[]',
         seoTitle: form.seoTitle.trim(),
         seoTitleEn: form.seoTitleEn.trim() || undefined,
 
         seoTitleFr: form.seoTitleFr.trim() || undefined,
+        seoTitleTr: form.seoTitleTr.trim() || undefined,
+        seoTitleRu: form.seoTitleRu.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
         seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
 
         seoDescriptionFr: form.seoDescriptionFr.trim() || undefined,
+        seoDescriptionTr: form.seoDescriptionTr.trim() || undefined,
+        seoDescriptionRu: form.seoDescriptionRu.trim() || undefined,
         featured: form.featured,
         active: form.active,
         isActive: form.active,
@@ -412,6 +460,20 @@ const AdminProgramsPage: React.FC = () => {
               placeholder="Voyage romantique à Paris"
               dir="ltr"
             />
+            <InputField
+              label="Program Başlığı (Türkçe)"
+              value={form.titleTr}
+              onChange={(e) => setForm({ ...form, titleTr: e.target.value })}
+              placeholder="Paris'e Romantik Gezi"
+              dir="ltr"
+            />
+            <InputField
+              label="Название тура (Русский)"
+              value={form.titleRu}
+              onChange={(e) => setForm({ ...form, titleRu: e.target.value })}
+              placeholder="Романтическая поездка в Париж"
+              dir="ltr"
+            />
 
             <InputField
               label="الرابط (Slug) *"
@@ -476,6 +538,22 @@ const AdminProgramsPage: React.FC = () => {
               placeholder="Un élément par ligne"
               dir="ltr"
             />
+            <TextareaField
+              label="Program Neleri İçerir (Türkçe)"
+              rows={3}
+              value={form.includesTr}
+              onChange={(e) => setForm({ ...form, includesTr: e.target.value })}
+              placeholder="Her satır bir madde"
+              dir="ltr"
+            />
+            <TextareaField
+              label="Тур включает (Русский)"
+              rows={3}
+              value={form.includesRu}
+              onChange={(e) => setForm({ ...form, includesRu: e.target.value })}
+              placeholder="Каждая строка — один пункт"
+              dir="ltr"
+            />
 
             <TextareaField
               label="لا يشمل البرنامج"
@@ -500,6 +578,22 @@ const AdminProgramsPage: React.FC = () => {
               value={form.excludesFr}
               onChange={(e) => setForm({ ...form, excludesFr: e.target.value })}
               placeholder="Un élément par ligne"
+              dir="ltr"
+            />
+            <TextareaField
+              label="Program Neleri İçermez (Türkçe)"
+              rows={3}
+              value={form.excludesTr}
+              onChange={(e) => setForm({ ...form, excludesTr: e.target.value })}
+              placeholder="Her satır bir madde"
+              dir="ltr"
+            />
+            <TextareaField
+              label="Тур не включает (Русский)"
+              rows={3}
+              value={form.excludesRu}
+              onChange={(e) => setForm({ ...form, excludesRu: e.target.value })}
+              placeholder="Каждая строка — один пункт"
               dir="ltr"
             />
 
@@ -556,6 +650,20 @@ const AdminProgramsPage: React.FC = () => {
                 dir="ltr"
               />
               <InputField
+                label="SEO Başlığı (Türkçe)"
+                value={form.seoTitleTr}
+                onChange={(e) => setForm({ ...form, seoTitleTr: e.target.value })}
+                placeholder="Türkçe SEO başlığı"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO заголовок (Русский)"
+                value={form.seoTitleRu}
+                onChange={(e) => setForm({ ...form, seoTitleRu: e.target.value })}
+                placeholder="SEO-заголовок на русском"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
@@ -573,6 +681,20 @@ const AdminProgramsPage: React.FC = () => {
                 value={form.seoDescriptionFr}
                 onChange={(e) => setForm({ ...form, seoDescriptionFr: e.target.value })}
                 placeholder="Description SEO en français"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO Açıklaması (Türkçe)"
+                value={form.seoDescriptionTr}
+                onChange={(e) => setForm({ ...form, seoDescriptionTr: e.target.value })}
+                placeholder="Türkçe SEO açıklaması"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO описание (Русский)"
+                value={form.seoDescriptionRu}
+                onChange={(e) => setForm({ ...form, seoDescriptionRu: e.target.value })}
+                placeholder="SEO-описание на русском"
                 dir="ltr"
               />
             </div>

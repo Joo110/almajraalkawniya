@@ -194,6 +194,12 @@ const AdminOffersPage: React.FC = () => {
             <InputField label="Titre de l'offre (Français)" value={form.titleFr || ''}
               onChange={e => setForm({ ...form, titleFr: e.target.value })}
               placeholder="Remise saison d'été" dir="ltr" />
+            <InputField label="Teklif Başlığı (Türkçe)" value={form.titleTr || ''}
+              onChange={e => setForm({ ...form, titleTr: e.target.value })}
+              placeholder="Yaz Sezonu İndirimi" dir="ltr" />
+            <InputField label="Название предложения (Русский)" value={form.titleRu || ''}
+              onChange={e => setForm({ ...form, titleRu: e.target.value })}
+              placeholder="Летняя сезонная скидка" dir="ltr" />
             <SelectField label="نوع العرض *" options={typeOptions} value={form.type}
               onChange={e => setForm({ ...form, type: Number(e.target.value) as OfferType })} />
             <InputField
@@ -210,6 +216,12 @@ const AdminOffersPage: React.FC = () => {
             <TextareaField label="Description de l'offre (Français)" rows={3} value={form.descriptionFr || ''}
               onChange={e => setForm({ ...form, descriptionFr: e.target.value })}
               placeholder="Détails de l'offre..." dir="ltr" />
+            <TextareaField label="Teklif Açıklaması (Türkçe)" rows={3} value={form.descriptionTr || ''}
+              onChange={e => setForm({ ...form, descriptionTr: e.target.value })}
+              placeholder="Teklif detayları..." dir="ltr" />
+            <TextareaField label="Описание предложения (Русский)" rows={3} value={form.descriptionRu || ''}
+              onChange={e => setForm({ ...form, descriptionRu: e.target.value })}
+              placeholder="Детали предложения..." dir="ltr" />
             <div className="grid grid-cols-2 gap-4">
               <InputField label="تاريخ البداية *" type="date" required
                 value={toDateInput(form.startDate)}

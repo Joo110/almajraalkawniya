@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Search, SlidersHorizontal } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import ProgramCard from '../../components/ui/ProgramCard';
@@ -14,6 +15,7 @@ type ProgramWithStatus = Program & {
 
 const ProgramsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('programsPage.seoTitle'), description: t('programsPage.seoDescription'), path: '/programs' });
   const { programs, loading, error } = usePrograms();
   const [search, setSearch] = useState('');
   const [maxPrice, setMaxPrice] = useState<number>(999999);

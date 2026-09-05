@@ -1,0 +1,851 @@
+{
+  "brand": {
+    "name1": "El Mecra",
+    "name2": "El Kevniyye"
+  },
+  "nav": {
+    "logoAlt": "El Mecra El Kevniyye Logosu",
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "whereToTravel": "Nereye Gitmeli?",
+    "destinations": "Destinasyonlar",
+    "programs": "Turlar",
+    "offers": "Fırsatlar",
+    "partners": "İş Ortaklarımız",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "terms": "Şartlar ve Koşullar",
+    "bookNow": "Hemen Rezervasyon Yap",
+    "openMenu": "Menüyü aç"
+  },
+  "footer": {
+    "tagline": "Hayallerinize layık bir tarzda, dünyanın en güzel destinasyonlarına sizi götüren unutulmaz seyahat deneyimleri yaratıyoruz.",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "snapchat": "Snapchat",
+    "whatsapp": "WhatsApp",
+    "siteLinks": "Site Bağlantıları",
+    "linkPrograms": "Tur Programları",
+    "linkOffers": "Özel Fırsatlar",
+    "linkTerms": "Şartlar ve Koşullar",
+    "linkRefund": "İade Politikası",
+    "linkBank": "Banka Hesapları",
+    "linkSiteDoc": "Site Belgeleri",
+    "linkIban": "IBAN Mektubu",
+    "contactUs": "Bize Ulaşın",
+    "address": "Riyad, Es-Suveydi Bölgesi, Kral Abdülaziz bin Abdurrahman Suud Şubesi Caddesi, Bina No. 6249, Posta Kodu 13342",
+    "paymentMethods": "Mevcut Ödeme Yöntemleri",
+    "travelAgency": "Seyahat ve Turizm Acentesi",
+    "crNumber": "Ticaret Sicil No.",
+    "taxNumber": "Vergi Numarası",
+    "copyright": "El Mecra El Kevniyye Seyahat ve Turizm Acentesi — Tüm hakları saklıdır",
+    "privacyPolicy": "Gizlilik Politikası"
+  },
+  "bank": {
+    "titlePart1": "Banka",
+    "titlePart2": "Hesapları",
+    "imgAlt": "Banka hesabı",
+    "seoTitle": "Banka Hesapları | El Mecra El Kevniyye",
+    "seoDescription": "Ödemeler ve transferler için El Mecra El Kevniyye Seyahat ve Turizm Acentesi banka hesap bilgileri."
+  },
+  "siteDoc": {
+    "titlePart1": "Site",
+    "titlePart2": "Belgeleri",
+    "imgAlt": "E-ticaret belgelendirme sertifikası",
+    "seoTitle": "Site Belgeleri | El Mecra El Kevniyye",
+    "seoDescription": "El Mecra El Kevniyye web sitesinin resmi e-ticaret belgeleri ve sertifikasyonu."
+  },
+  "ibanDoc": {
+    "titlePart1": "IBAN",
+    "titlePart2": "Mektubu",
+    "imgAlt": "IBAN mektubu - Suudi Ulusal Bankası",
+    "seoTitle": "IBAN Mektubu | El Mecra El Kevniyye",
+    "seoDescription": "El Mecra El Kevniyye Seyahat ve Turizm Acentesi için Suudi Ulusal Bankası'ndan resmi IBAN mektubu."
+  },
+  "privacy": {
+    "titlePart1": "Gizlilik",
+    "titlePart2": "Politikası",
+    "lastUpdated": "Son güncelleme: Şubat 2026",
+    "agencyName": "El Mecra El Kevniyye Seyahat ve Turizm Acentesi",
+    "introPart1": "kararlıdır",
+    "introPart2": "(Ticaret Sicil No: 7053753773) gizliliğinizi korumaya ve kişisel verilerinizi güvence altına almaya bağlıdır. Bu politika, web sitemizi veya hizmetlerimizi kullandığınızda bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.",
+    "sections": [
+      {
+        "title": "1. Topladığımız Bilgiler",
+        "body": "Rezervasyon formlarını doldururken veya bizimle iletişime geçerken gönüllü olarak sağladığınız bilgileri topluyoruz, bunlar arasında:\n• Ad soyad ve telefon numarası\n• E-posta adresi\n• Seyahat detayları (destinasyon, seyahat tarihi, yolcu sayısı)\n• Kalkış şehri ve seyahat süresi\n• Belirttiğiniz notlar veya özel istekler\n\nAyrıca güvenlik ve performans iyileştirme amacıyla IP adresi ve tarayıcı türü gibi bazı teknik verileri otomatik olarak topluyoruz."
+      },
+      {
+        "title": "2. Bilgilerinizi Nasıl Kullanıyoruz",
+        "body": "Toplanan bilgileri şu amaçlarla kullanıyoruz:\n• Rezervasyon taleplerini işleme ve yanıtlama\n• Seyahatiniz veya fırsatlarımız hakkında sizinle iletişim kurma\n• Sitemizdeki hizmetlerimizi ve kullanıcı deneyimini geliştirme\n• Suudi Arabistan Krallığı'ndaki yasal ve düzenleyici gereklilikleri karşılama\n\nÖnceden onayınızı almadan verilerinizi hiçbir pazarlama amacı için kullanmayacağız."
+      },
+      {
+        "title": "3. Bilgilerin Üçüncü Taraflarla Paylaşılması",
+        "body": "Kişisel verilerinizi hiçbir üçüncü tarafa satmıyor veya kiralamıyoruz. Bilgilerinizi yalnızca şu durumlarda paylaşabiliriz:\n• Rezervasyonunuzu tamamlamak için gerekli seyahat ortaklarıyla (oteller, havayolları)\n• Yasal olarak gerekli olduğunda veya mahkeme kararı ile\n• Gizlilik anlaşmaları kapsamında bizim adımıza hareket eden güvenilir teknik hizmet sağlayıcılarla"
+      },
+      {
+        "title": "4. Veri Saklama ve Koruma",
+        "body": "Verilerinizi hizmeti sağlamak için gerekli olduğu sürece veya yasaların gerektirdiği şekilde saklıyoruz.\nVerilerinizi yetkisiz erişim, kayıp veya kötüye kullanımdan korumak için iletişimlerin şifrelenmesi de dahil olmak üzere uygun teknik ve organizasyonel önlemler alıyoruz."
+      },
+      {
+        "title": "5. Haklarınız",
+        "body": "Her zaman şu haklara sahipsiniz:\n• Hakkınızda tuttuğumuz verilere erişme\n• Yanlış bilgilerin düzeltilmesini talep etme\n• Verilerinizin silinmesini talep etme (yasal sınırlar dahilinde)\n• Herhangi bir isteğe bağlı işleme onayınızı geri çekme\n\nHaklarınızla ilgili bizimle iletişime geçmek için: almajara.alkawnia.travel@gmail.com"
+      },
+      {
+        "title": "6. Çerezler",
+        "body": "Web sitemiz sitenin düzgün çalışmasını sağlamak için gerekli çerezler kullanır ve ziyaretçilerin siteyi nasıl kullandığını anlamak için analitik çerezler kullanabilir. Tarayıcı ayarlarınızı bu çerezleri reddetmek için ayarlayabilirsiniz, ancak bu bazı site işlevlerini etkileyebilir."
+      },
+      {
+        "title": "7. Bu Politikadaki Değişiklikler",
+        "body": "Bu gizlilik politikasını istediğimiz zaman güncelleme hakkını saklı tutarız. Güncellenmiş sürüm, son değişiklik tarihiyle birlikte bu sayfada yayınlanacaktır. Politikayı periyodik olarak gözden geçirmenizi öneririz."
+      },
+      {
+        "title": "8. Bize Ulaşın",
+        "body": "Bu politika hakkında herhangi bir sorunuz varsa, bizimle şu şekillerde iletişime geçebilirsiniz:\n\n📧 E-posta: almajara.alkawnia.travel@gmail.com\n📞 Telefon: +966 54 481 7995\n📍 Adres: Mekke-i Mükerreme, Et-Tengim Bölgesi, Suudi Arabistan Krallığı\n🏢 Ticaret Sicil No: 7053753773"
+      }
+    ],
+    "seoTitle": "Gizlilik Politikası | El Mecra El Kevniyye",
+    "seoDescription": "Kişisel verilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu anlamak için El Mecra El Kevniyye gizlilik politikasını okuyun."
+  },
+  "termsPage": {
+    "titlePart1": "Şartlar ve",
+    "titlePart2": "Koşullar",
+    "items": [
+      "Uçak biletleri ve otel rezervasyonları kalkıştan 48 saat önce gönderilir; hazırlık durumuna göre daha erken de gönderilebilir.",
+      "Uçak biletleri, taşıyan havayolunun şart ve koşullarına tabidir; bazı biletler iade edilemez veya iptal edilemez olabilir ve şirket, havayolları tarafından yapılan herhangi bir değişiklik veya iptalden sorumlu değildir. Müşteri bir rezervasyonu değiştirmek veya ekstra bagaj eklemek isterse, bu havayolunun politikasına göre ve müşterinin karşılayacağı ek bir maliyetle yapılır.",
+      "Otel rezervasyonları her otelin iptal ve değişiklik politikalarına tabidir; bazıları belirli bir süre içinde ücretsiz iptale izin verirken, diğerleri rezervasyon değerinin tamamına kadar ücret talep edebilir. Müşteri iptal veya değişiklik talep ederse, bu incelemenin ardından otelin politikasına göre yapılır ve doğacak ek maliyetler müşteriye aittir. Kabin, apartman ve tatil köyü rezervasyonları iade edilemez.",
+      "Müşteri, değiştirilecek hizmet türüne göre geçerli tüm cezaları üstlenmesi koşuluyla rezerve edilen otelleri değiştirme hakkına sahiptir; değişikliğin sonucu o dönemdeki müsaitliğe bağlıdır.",
+      "İade durumunda, iptal talebi tarihinden itibaren en az 10 ila 21 iş günü içinde işleme alınacaktır. Ödeme elektronik kartlarla (Visa/Mastercard) yapıldıysa, tutarlar bankanın belirlediği süre içinde karta iade edilecektir.",
+      "Turun süresi 8 ila 10 saattir, saat 10:00'da başlar ve önceden kararlaştırılan bir saatte sona erer. Müşteri uzatma veya ek süre talep ederse, bu müsaitliğe ve ofis tarafından belirlenen ek bir maliyete tabidir. Müşteri ayrıca, talebin turdan en az bir gün önce sunulması ve ofisle koordine edilmesi koşuluyla tur başlangıç saatinin değiştirilmesini talep edebilir.",
+      "Yolcunun herhangi bir nedenle geri gönderilmesi veya seyahat etmesinin engellenmesi durumunda, ofis gezi tutarının veya ilgili başka herhangi bir maliyetin iadesinden sorumlu değildir, ancak müşteriye alternatif bir gezi rezervasyonu yapmasına veya mümkün olduğunda cezaları azaltmasına yardımcı olabilir.",
+      "Oda içinde herhangi bir hasar olması veya çamaşırhane ya da ütüleme gibi ücretli hizmetlerin kullanılması durumunda, maliyet yolcuya aittir.",
+      "Üçlü oda: üçüncü yatak, ana yataklarla aynı boyut veya standartta olmayan ek katlanabilir bir yatak veya kanepe yataktır.",
+      "Tur programları, hava koşulları veya diğer operasyonel durumlar nedeniyle turların sırası açısından değişikliğe tabidir.",
+      "Tur programlarında kullanılan araç türü, konfor ve müsaitlik esas alınarak şirket tarafından belirlenir.",
+      "Gezi sırasında iptal durumunda, tutarın tamamı kesilir ve müşteri herhangi bir iade hakkına sahip olmaz.",
+      "Otel odaları, otel müsaitliğine göre ve öncelik ile kapasiteye göre sağlanır.",
+      "Otele giriş saat 14:00'ten sonra başlar.",
+      "Odalar son gün öğlen saat 12:00'den önce boşaltılmalıdır."
+    ],
+    "seoTitle": "Şartlar ve Koşullar | El Mecra El Kevniyye",
+    "seoDescription": "El Mecra El Kevniyye ile rezervasyonları, uçuşları, otelleri ve tur programlarını yöneten şart ve koşulları okuyun."
+  },
+  "refundPage": {
+    "titlePart1": "İade",
+    "titlePart2": "Politikası",
+    "note": "Rezervasyon ve seyahat şartları hakkında daha fazla bilgi için lütfen Şartlar ve Koşullar sayfasını inceleyin.",
+    "items": [
+      "Uçak biletleri, taşıyan havayolunun şart ve koşullarına tabidir; bazı biletler iade edilemez veya iptal edilemez olabilir ve şirket, havayolları tarafından yapılan herhangi bir değişiklik veya iptalden sorumlu değildir.",
+      "Otel rezervasyonları her otelin iptal ve değişiklik politikalarına tabidir; bazıları belirli bir süre içinde ücretsiz iptale izin verirken, diğerleri rezervasyon değerinin tamamına kadar ücret talep edebilir. Kabin, apartman ve tatil köyü rezervasyonları iade edilemez.",
+      "Müşteri, değiştirilecek hizmet türüne göre geçerli tüm cezaları üstlenmesi koşuluyla rezerve edilen otelleri değiştirme hakkına sahiptir; değişikliğin sonucu o dönemdeki müsaitliğe bağlıdır.",
+      "İade durumunda, iptal talebi tarihinden itibaren en az 10 ila 21 iş günü içinde işleme alınacaktır. Ödeme elektronik kartlarla (Visa/Mastercard) yapıldıysa, tutarlar bankanın belirlediği süre içinde karta iade edilecektir.",
+      "Yolcunun herhangi bir nedenle geri gönderilmesi veya seyahat etmesinin engellenmesi durumunda, ofis gezi tutarının veya ilgili başka herhangi bir maliyetin iadesinden sorumlu değildir, ancak müşteriye alternatif bir gezi rezervasyonu yapmasına veya mümkün olduğunda cezaları azaltmasına yardımcı olabilir.",
+      "Gezi sırasında iptal durumunda, tutarın tamamı kesilir ve müşteri herhangi bir iade hakkına sahip olmaz."
+    ],
+    "seoTitle": "İade Politikası | El Mecra El Kevniyye",
+    "seoDescription": "El Mecra El Kevniyye'nin uçuşlar, otel rezervasyonları ve tur paketleri için iade ve iptal politikasını öğrenin."
+  },
+  "blogPage": {
+    "eyebrow": "Blog",
+    "titlePart1": "Akıllı Seyahat",
+    "titlePart2": "Rehberiniz",
+    "subtitle": "Yolculuğunuzda size yardımcı olacak seyahat uzmanlarından ipuçları ve makaleler",
+    "searchPlaceholder": "Makalelerde ara...",
+    "noResults": "Aramanızla eşleşen makale bulunamadı",
+    "placeholderArticles": [
+      {
+        "id": "1",
+        "title": "Seyahat Ederken Para Biriktirmenin 10 Sırrı",
+        "slug": "save-money-travel",
+        "coverImage": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+      },
+      {
+        "id": "2",
+        "title": "2026'da Japonya'yı Ziyaret Etmek İçin En İyi Zaman",
+        "slug": "best-time-japan",
+        "coverImage": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80"
+      },
+      {
+        "id": "3",
+        "title": "Paris'i Keşfetmek İçin Eksiksiz Rehberiniz",
+        "slug": "paris-guide",
+        "coverImage": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      },
+      {
+        "id": "4",
+        "title": "Mutlaka Görmeniz Gereken En Güzel Maldiv Plajları",
+        "slug": "maldives-beaches",
+        "coverImage": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80"
+      },
+      {
+        "id": "5",
+        "title": "Aile ve Çocuklarla Seyahat İpuçları",
+        "slug": "family-travel",
+        "coverImage": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80"
+      },
+      {
+        "id": "6",
+        "title": "2026 için Dubai'deki En İyi Restoranlar",
+        "slug": "dubai-restaurants",
+        "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80"
+      }
+    ],
+    "seoTitle": "Seyahat Blogu ve İpuçları | El Mecra El Kevniyye",
+    "seoDescription": "Bir sonraki akıllı ve unutulmaz gezinizi planlamanıza yardımcı olacak uzman seyahat ipuçlarını ve destinasyon rehberlerini okuyun."
+  },
+  "articleDetail": {
+    "notFound": "Makale bulunamadı",
+    "backToBlog": "Blog'a Dön"
+  },
+  "destinationsPage": {
+    "eyebrow": "Keşfet",
+    "titlePart1": "Destinasyonlarımız",
+    "titlePart2": "",
+    "subtitle": "Dünyanın en güzel yerleri arasından favori destinasyonunuzu seçin",
+    "searchPlaceholder": "Destinasyon ara...",
+    "noResults": "Aramanızla eşleşen sonuç bulunamadı",
+    "placeholderDestinations": [
+      {
+        "name": "Paris",
+        "country": "Fransa",
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80",
+        "slug": "paris"
+      },
+      {
+        "name": "Tokyo",
+        "country": "Japonya",
+        "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
+        "slug": "tokyo"
+      },
+      {
+        "name": "Santorini",
+        "country": "Yunanistan",
+        "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80",
+        "slug": "santorini"
+      },
+      {
+        "name": "Dubai",
+        "country": "BAE",
+        "img": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80",
+        "slug": "dubai"
+      },
+      {
+        "name": "Maldivler",
+        "country": "Maldivler",
+        "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80",
+        "slug": "maldives"
+      },
+      {
+        "name": "Roma",
+        "country": "İtalya",
+        "img": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80",
+        "slug": "rome"
+      }
+    ],
+    "seoTitle": "Seyahat Destinasyonları | El Mecra El Kevniyye",
+    "seoDescription": "Dünyanın en güzel seyahat destinasyonlarından oluşan özenle seçilmiş koleksiyonumuza göz atın ve bir sonraki unutulmaz gezinizi seçin."
+  },
+  "programsPage": {
+    "eyebrow": "Turlarımız",
+    "titlePart1": "Tur",
+    "titlePart2": "Programları",
+    "subtitle": "Her bütçe ve zevke özenle tasarlanmış geziler",
+    "searchPlaceholder": "Tur ara...",
+    "priceAll": "Tüm Fiyatlar",
+    "priceUnder5k": "5.000 SAR altı",
+    "priceUnder10k": "10.000 SAR altı",
+    "priceUnder20k": "20.000 SAR altı",
+    "durationAll": "Tüm Süreler",
+    "duration5days": "5 gün veya daha az",
+    "duration1week": "1 hafta veya daha az",
+    "duration2weeks": "2 hafta veya daha az",
+    "noneYet": "Henüz tur yok",
+    "noResults": "Aramanızla eşleşen tur bulunamadı",
+    "programWord": "tur",
+    "seoTitle": "Tur Programları | El Mecra El Kevniyye",
+    "seoDescription": "Her bütçe ve zevke uygun, şeffaf fiyatlandırma ve unutulmaz güzergahlarla eksiksiz tur programlarını keşfedin."
+  },
+  "offersPage": {
+    "eyebrow": "Özel",
+    "titlePart1": "Özel",
+    "titlePart2": "Fırsatlar",
+    "subtitle": "Özel fırsatlarımızla daha fazla tasarruf edin, daha fazla seyahat edin",
+    "typePercentage": "Yüzde İndirimi",
+    "typeFixed": "Sabit İndirim",
+    "typeBundle": "Özel Paket",
+    "typeDefault": "Fırsat",
+    "currency": "SAR",
+    "ends": "Bitiş",
+    "starts": "Başlangıç",
+    "bookViaWhatsapp": "WhatsApp ile Rezervasyon Yap",
+    "whatsappMessage": "Merhaba, \"{title}\" fırsatı hakkında bilgi almak istiyorum",
+    "placeholderOffers": [
+      {
+        "title": "Yaz Sezonu İndirimi",
+        "type": "percentage",
+        "value": 20,
+        "desc": "Sınırlı bir süre için tüm yaz gezilerinde %20 indirimden yararlanın",
+        "end": "30 Haziran 2026"
+      },
+      {
+        "title": "Balayı Paketi",
+        "type": "bundle",
+        "value": 15,
+        "desc": "Lüks konaklama ve romantik turları içeren eksiksiz balayı paketi",
+        "end": "31 Aralık 2026"
+      },
+      {
+        "title": "Erken Rezervasyon İndirimi",
+        "type": "fixed",
+        "value": 5000,
+        "desc": "Seyahat tarihinizden 3 ay önce rezervasyon yapın ve 5.000 SAR tasarruf edin",
+        "end": "31 Mayıs 2026"
+      }
+    ],
+    "seoTitle": "Özel Fırsatlar ve İndirimler | El Mecra El Kevniyye",
+    "seoDescription": "En son özel seyahat fırsatlarımızı, sezonluk indirimlerimizi ve paket tekliflerimizi keşfedin."
+  },
+  "partnersPage": {
+    "heroAlt": "İş Ortaklarımız",
+    "eyebrow": "Başarılı Ortaklık",
+    "titlePart1": "Diğer",
+    "titlePart2": "Ortaklarımız",
+    "subtitle": "Ortaklarımızı ve özel fırsatlarını tanıyın",
+    "sectionHighlight": "İş Birliği Yaptığımız Şirketler",
+    "sectionSubtitle": "Her şirket ve en son özel fırsatları",
+    "noPartners": "Henüz ortak eklenmedi",
+    "contactViaWhatsapp": "WhatsApp ile İletişime Geç",
+    "whatsappMessage": "Merhaba, {name} firmasının fırsatları hakkında bilgi almak istiyorum",
+    "noOffers": "Bu şirket için şu anda mevcut fırsat yok",
+    "close": "Kapat",
+    "prev": "Önceki",
+    "next": "Sonraki",
+    "seoTitle": "İş Ortaklarımız | El Mecra El Kevniyye",
+    "seoDescription": "İş birliği yaptığımız güvenilir şirketleri ve otelleri tanıyın, özel fırsatlarını keşfedin."
+  },
+  "destinationDetail": {
+    "whatsappMessage": "Merhaba, {name} gezisi hakkında bilgi almak ve rezervasyon yaptırmak istiyorum.",
+    "yourDestination": "destinasyonunuz",
+    "notFound": "Destinasyon bulunamadı",
+    "backToDestinations": "Destinasyonlara Dön",
+    "featured": "Öne Çıkan Destinasyon",
+    "globalDestination": "Global Destinasyon",
+    "bookViaWhatsapp": "WhatsApp ile Hemen Rezervasyon Yap",
+    "about": "Destinasyon Hakkında",
+    "quickInfo": "Hızlı Bilgi",
+    "country": "Ülke",
+    "bookNow": "Hemen Rezervasyon Yap",
+    "programs": "Turlar",
+    "tripsTo": "Gezi:",
+    "programsAvailable": "tur mevcut",
+    "browseAllPrograms": "Tüm Turlara Göz At",
+    "readyQuestion": "Gitmeye hazır mısınız?",
+    "startYourTripTo": "Şimdi gezinizi başlatın:",
+    "now": "",
+    "ctaSubtitle": "Ekibimizle iletişime geçin, sizin için unutulmaz bir gezi tasarlayalım"
+  },
+  "programDetail": {
+    "notFound": "Tur bulunamadı",
+    "backToPrograms": "Turlara Dön",
+    "whatsappMessage": "Merhaba, şu turu rezerve etmek istiyorum: {{title}}\nSüre: {{duration}} gün\nFiyat: {{price}} SAR\nBağlantı: {{link}}",
+    "days": "gün",
+    "reviews": "değerlendirme",
+    "tripPhotos": "Gezi Fotoğrafları",
+    "includes": "Tur Neleri İçerir",
+    "excludes": "Tur Neleri İçermez",
+    "noData": "Veri bulunmuyor",
+    "dailyProgram": "Günlük Program",
+    "day": "Gün",
+    "pricePerPerson": "Kişi başı fiyat",
+    "whatsappRedirectNote": "Rezervasyon talebinizi göndermek için doğrudan WhatsApp'a yönlendirileceksiniz."
+  },
+  "aboutPage": {
+    "heroTag": "Seyahatle Hikayemiz",
+    "heroTitle": "Biz Kimiz",
+    "heroTitleMark": "?",
+    "heroSubtitle": "Sadece bir seyahat acentesi değiliz — anı yaratanlarız, her maceranızda yol arkadaşınızız ve henüz keşfetmediğiniz ufuklara doğru ortağınızız",
+    "storyTag": "Hikayemiz",
+    "storyTitlePart1": "Bir",
+    "storyTitleDream": "Hayalle",
+    "storyTitlePart2": "Başladık ve Gerçeğe Dönüştürdük",
+    "storyParagraph1": "2014 yılında basit bir hayalle yola çıktık: seyahati herkes için yüksek kalite ve rekabetçi fiyatlarla erişilebilir kılmak. O günden beri, dünya çapında 1.000'den fazla aile ve bireyin güvenilir ortağı olduk.",
+    "storyParagraph2": "Arap uzmanlardan oluşan ekibimiz ihtiyaçlarınızı anlıyor, dilinizi konuşuyor ve keşif tutkunuzu yaşıyor. Tasarladığımız her gezi, hayallerinize layık kişisel bir dokunuş taşır.",
+    "factsList": [
+      "Turizmde 10 yılı aşkın deneyim",
+      "50'den fazla uzman seyahat danışmanından oluşan özel bir ekip",
+      "Dünyanın en iyi otelleriyle özel ortaklıklar",
+      "Gezi boyunca kesintisiz 7/24 destek"
+    ],
+    "satisfactionValue": "%98",
+    "satisfactionLabel": "Müşteri Memnuniyet Oranı",
+    "stats": [
+      {
+        "value": "1000+",
+        "label": "Başarıyla Tamamlanan Gezi"
+      },
+      {
+        "value": "5000+",
+        "label": "Mutlu Müşteri"
+      },
+      {
+        "value": "50+",
+        "label": "Dünya Çapında Destinasyon"
+      },
+      {
+        "value": "10+",
+        "label": "Yıllık Deneyim"
+      }
+    ],
+    "valuesTag": "Değerlerimiz",
+    "valuesTitle": "Bizi",
+    "valuesHighlight": "Farklı Kılan Nedir",
+    "valuesSubtitle": "Her detayın fark yarattığına inanıyoruz",
+    "values": [
+      {
+        "title": "Seyahat Tutkusu",
+        "desc": "Turizmde sadece çalışmıyoruz, onu yaşıyoruz. Ekibimizin her üyesi, ne aradığınızı anlayan tutkulu bir gezgindir."
+      },
+      {
+        "title": "Dürüstlük ve Şeffaflık",
+        "desc": "Gizli fiyat yok, sürpriz yok. Ödediğiniz her şey ilk andan itibaren nettir."
+      },
+      {
+        "title": "Hizmette Mükemmellik",
+        "desc": "Mükemmelden azını kabul etmiyoruz. Gezinizin her detayı, unutulmaz bir deneyim sağlamak için titizlikle incelenir."
+      },
+      {
+        "title": "Küresel Ağ",
+        "desc": "Dünyanın en iyi otelleri ve şirketleriyle olan ortaklıklarımız, size başka hiçbir yerde bulamayacağınız fiyatlar sunar."
+      },
+      {
+        "title": "Kişisel Hizmet",
+        "desc": "Sadece bir rezervasyon numarası değilsiniz. Kişisel danışmanınız planlama aşamasından eve dönene kadar sizinle ilgilenir."
+      },
+      {
+        "title": "Memnuniyet Garantisi",
+        "desc": "Hizmetimizden %100 memnun değilseniz, durumu düzeltiriz. Hiçbir soru sorulmadan."
+      }
+    ],
+    "ctaTitlePart1": "Gezinizi Başlatmaya",
+    "ctaTitlePart2": "Hazır mısınız",
+    "ctaTitleMark": "?",
+    "ctaSubtitle": "Şimdi bizimle iletişime geçin, danışmanlarımızdan biri hayalinizdeki geziyi tasarlamanıza yardımcı olsun",
+    "exploreProgramsCta": "Turları Keşfedin",
+    "seoTitle": "Hakkımızda | El Mecra El Kevniyye",
+    "seoDescription": "El Mecra El Kevniyye'nin hikayesini, değerlerini ve binlerce mutlu müşteri için unutulmaz seyahat deneyimleri yaratmadaki on yıllık deneyimimizi öğrenin."
+  },
+  "contactPage": {
+    "titlePart1": "Bize",
+    "titlePart2": "Ulaşın",
+    "subtitle": "Ekibimiz tüm sorularınızı yanıtlamaya hazır",
+    "sendRequest": "Bize Rezervasyon Talebi Gönderin",
+    "thankYou": "Teşekkür Ederiz!",
+    "received": "Talebiniz başarıyla alındı, ekibimiz 24 saat içinde sizinle iletişime geçecek",
+    "name": "Ad",
+    "namePlaceholder": "Ahmet Yılmaz",
+    "phone": "Telefon",
+    "travelersCount": "Yolcu Sayısı",
+    "durationDays": "Gezi Süresi (gün)",
+    "destination": "Destinasyon",
+    "loadingDestinations": "Destinasyonlar yükleniyor...",
+    "chooseDestination": "Bir destinasyon seçin",
+    "departureCity": "Kalkış Şehri",
+    "departureCityPlaceholder": "Mekke",
+    "travelDate": "Seyahat Tarihi",
+    "notes": "Notlar",
+    "notesPlaceholder": "Ek detayları bize bildirin",
+    "sending": "Gönderiliyor...",
+    "sendButton": "Talep Gönder",
+    "contactInfo": "İletişim Bilgileri",
+    "infoBlocks": [
+      {
+        "label": "Bizi Arayın",
+        "value": "+966 54 481 7995",
+        "sub": "Paz – Per: 09:00 – 18:00"
+      },
+      {
+        "label": "Bize E-posta Gönderin",
+        "value": "almajara.alkawnia.travel@gmail.com",
+        "sub": "24 saat içinde yanıt veriyoruz"
+      },
+      {
+        "label": "Bizi Ziyaret Edin",
+        "value": "Riyad, Es-Suveydi Bölgesi, Kral Abdülaziz bin Abdurrahman Suud Şubesi Caddesi, Bina No. 6249, Posta Kodu 13342",
+        "sub": "Suudi Arabistan Krallığı"
+      },
+      {
+        "label": "Çalışma Saatleri",
+        "value": "Paz – Per",
+        "sub": "09:00 – 18:00"
+      }
+    ],
+    "seoTitle": "Bize Ulaşın | El Mecra El Kevniyye",
+    "seoDescription": "Rezervasyon talepleri ve programlarımız hakkındaki sorularınız için El Mecra El Kevniyye seyahat danışmanlarıyla iletişime geçin."
+  },
+  "wtt": {
+    "heroTitlePart1": "Şimdi",
+    "heroTitlePart2": "İdeal Gezinizi",
+    "heroTitlePart3": "Seçin",
+    "heroSubtitle": "Sadece sizin için tasarlanmış en iyi tur programlarını keşfedin — en iyi fiyata kolayca rezervasyon yapın",
+    "question": "Soru",
+    "of": "/",
+    "tapToSelect": "Seçmek için bir karta dokunun",
+    "previous": "Önceki",
+    "restart": "Yeniden Başlat",
+    "next": "Sonraki",
+    "showResults": "Sonuçları Göster",
+    "resultsTitle": "İki İdeal Destinasyonunuz!",
+    "resultsSubtitle": "Cevaplarınıza göre mevcut olanlar arasından iki destinasyon seçtik",
+    "noMatch": "Cevaplarınıza göre güçlü bir eşleşme bulamadık.",
+    "noMatchHint": "Önerilerin doğru çalışması için her destinasyonda `tags` ayarlandığından emin olun.",
+    "retakeQuiz": "Testi Tekrar Çöz",
+    "bestChoice": "Sizin İçin En İyi Eşleşme",
+    "bestFor": "En uygun:",
+    "pricesFrom": "Fiyatlar şu tutardan başlıyor:",
+    "exploreDestination": "Destinasyonu Keşfet",
+    "ctaTitle": "Gezinizi bulamadınız mı? Sizin için özel olarak tasarlayalım",
+    "ctaSubtitle": "Şimdi bizimle iletişime geçin ve dakikalar içinde fiyat teklifi alın",
+    "exploreAllPrograms": "Tüm Turları Keşfedin",
+    "retakeFromStart": "Testi Baştan Tekrar Çözün",
+    "questions": [
+      {
+        "question": "Kiminle seyahat edeceksiniz?",
+        "options": [
+          {
+            "label": "Tek başıma",
+            "desc": "Esnek geziler ve kişisel bir deneyim"
+          },
+          {
+            "label": "Arkadaşlarla",
+            "desc": "Macera ve paylaşılan anılar"
+          },
+          {
+            "label": "Aile",
+            "desc": "Konfor ve çocuk dostu seçenekler"
+          },
+          {
+            "label": "Çift",
+            "desc": "Romantik bir deneyim ve denge"
+          },
+          {
+            "label": "Balayı",
+            "desc": "Mahremiyet ve lüks bir dinlenme"
+          }
+        ]
+      },
+      {
+        "question": "Ne tür bir gezi tercih ediyorsunuz?",
+        "options": [
+          {
+            "label": "Macera ve Doğa",
+            "desc": "Açık hava aktiviteleri ve muhteşem doğa"
+          },
+          {
+            "label": "Kültür ve Tarih",
+            "desc": "Müzeler, anıtlar ve miras"
+          },
+          {
+            "label": "Dinlenme ve Plajlar",
+            "desc": "Deniz, güneş ve konfor"
+          },
+          {
+            "label": "Şehirler ve Alışveriş",
+            "desc": "Modern yaşam ve alışveriş merkezleri"
+          }
+        ]
+      },
+      {
+        "question": "Kişi başı beklenen bütçeniz nedir?",
+        "options": [
+          {
+            "label": "Ekonomik",
+            "desc": "5.000 SAR altı"
+          },
+          {
+            "label": "Orta segment",
+            "desc": "5.000 - 15.000 SAR"
+          },
+          {
+            "label": "Lüks",
+            "desc": "15.000 SAR üzeri"
+          }
+        ]
+      },
+      {
+        "question": "İdeal gezi süreniz nedir?",
+        "options": [
+          {
+            "label": "Kısa (3-5 gün)",
+            "desc": "Hızlı, odaklı bir kaçamak"
+          },
+          {
+            "label": "Orta (7-10 gün)",
+            "desc": "Yeterli keşif ve dinlenme"
+          },
+          {
+            "label": "Uzun (2+ hafta)",
+            "desc": "Destinasyona tam anlamıyla dalış"
+          }
+        ]
+      },
+      {
+        "question": "Hangi havayı tercih edersiniz?",
+        "options": [
+          {
+            "label": "Sıcak ve Güneşli",
+            "desc": "Tüm gün güneş ve sıcaklık"
+          },
+          {
+            "label": "Ilıman",
+            "desc": "Ne çok sıcak ne çok soğuk"
+          },
+          {
+            "label": "Soğuk ve Karlı",
+            "desc": "Gerçek bir kış deneyimi"
+          },
+          {
+            "label": "Fark Etmez",
+            "desc": "Önemli olan deneyimdir"
+          }
+        ]
+      },
+      {
+        "question": "Gezi için en önemli önceliğiniz nedir?",
+        "options": [
+          {
+            "label": "Yemek Deneyimi",
+            "desc": "Yerel yemekler ve gastronomik deneyimler"
+          },
+          {
+            "label": "Fotoğrafçılık ve Manzara",
+            "desc": "Fotoğraf için muhteşem noktalar"
+          },
+          {
+            "label": "Lüks Konaklama",
+            "desc": "Üst düzey oteller ve mükemmel hizmet"
+          },
+          {
+            "label": "Aktiviteler ve Spor",
+            "desc": "Aktif, hareketli deneyimler"
+          }
+        ]
+      },
+      {
+        "question": "Ne kadar seyahat deneyiminiz var?",
+        "options": [
+          {
+            "label": "Yurt dışına ilk kez çıkıyorum",
+            "desc": "Kolay, konforlu bir destinasyon istiyorum"
+          },
+          {
+            "label": "Biraz seyahat ettim",
+            "desc": "Bir miktar önceki deneyim"
+          },
+          {
+            "label": "Deneyimli gezgin",
+            "desc": "Sıra dışı destinasyonlar arıyorum"
+          }
+        ]
+      },
+      {
+        "question": "Ne zaman seyahat etmek istiyorsunuz?",
+        "options": [
+          {
+            "label": "Bir ay içinde",
+            "desc": "Acil bir gezi"
+          },
+          {
+            "label": "3 ay içinde",
+            "desc": "Planlama için zaman"
+          },
+          {
+            "label": "6 ay veya daha fazla",
+            "desc": "Erken planlama"
+          },
+          {
+            "label": "Esnek",
+            "desc": "En iyi fırsatlara göre"
+          }
+        ]
+      }
+    ],
+    "seoTitle": "Nereye Gitmeli? | El Mecra El Kevniyye",
+    "seoDescription": "Hızlı seyahat testimizi çözün ve seyahat tarzınıza, bütçenize ve tercihlerinize en uygun destinasyonları keşfedin."
+  },
+  "homePage": {
+    "heroSlides": [
+      {
+        "label": "Maldivler",
+        "sublabel": "Turkuaz Suların Cenneti"
+      },
+      {
+        "label": "Paris",
+        "sublabel": "Aşk ve Işıklar Şehri"
+      },
+      {
+        "label": "Dubai",
+        "sublabel": "Modern Lüksün Zirvesi"
+      },
+      {
+        "label": "İsviçre",
+        "sublabel": "Nefes Kesen Doğa"
+      },
+      {
+        "label": "Endonezya",
+        "sublabel": "Tropikal Maceralar"
+      }
+    ],
+    "heroTitlePart1": "Çevrenizdeki",
+    "heroTitlePart2": "Dünyayı",
+    "heroTitlePart3": "Keşfedin",
+    "heroSubtitle": "Size ömür boyu sürecek anılar bırakmak için özenle tasarlanmış geziler",
+    "establishmentAddress": "Kuruluş Adresi",
+    "addressShort": "Riyad, Es-Suveydi Bölgesi",
+    "pageTitle": "El Mecra El Kevniyye | Turistik Geziler ve Olağanüstü Seyahat Deneyimleri",
+    "pageDescription": "El Mecra El Kevniyye, unutulmaz seyahat deneyimlerine açılan kapınızdır. Suudi Arabistan'daki gezginlere en iyi fırsatları, lüks gezileri ve dünyanın en güzel destinasyonları için hayallerinize layık bir tarzda eksiksiz programlar sunuyoruz.",
+    "destinationsHighlight": "Favori Destinasyonunuzu Seçin",
+    "destinationsSubtitle": "Maldivler'in plajlarından Alpler'in zirvelerine",
+    "viewAll": "Tümünü Gör",
+    "programsHighlight": "Öne Çıkan Geziler Sizi Bekliyor",
+    "programsSubtitle": "Rekabetçi fiyatlarla eksiksiz tur programları",
+    "placeholderPrograms": [
+      {
+        "title": "Romantik Paris Gezisi",
+        "price": 45000,
+        "days": 7,
+        "people": 2,
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      },
+      {
+        "title": "Tokyo Kültür Macerası",
+        "price": 62000,
+        "days": 10,
+        "people": 4,
+        "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
+      },
+      {
+        "title": "Rüya Gibi Maldiv Adaları",
+        "price": 89000,
+        "days": 8,
+        "people": 2,
+        "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80"
+      }
+    ],
+    "currencyShort": "SAR",
+    "peopleWord": "kişi",
+    "exclusiveOffers": "Özel Fırsatlar",
+    "defaultOfferTitle": "%30'a varan indirim",
+    "defaultOfferDesc": "Şimdi rezervasyon yapın ve öne çıkan programlarımızda en iyi fiyatların keyfini çıkarın",
+    "whyUsTag": "Neden Biz",
+    "whyUsHighlight": "Size Sadece Bir Geziden Fazlasını Sunuyoruz",
+    "whyUsSubtitle": "Her gezinin olağanüstü bir deneyim olması gerektiğine inanıyoruz",
+    "feature1Title": "Güvenli ve Garantili Rezervasyon",
+    "feature1Desc": "Esnek iptal politikası ve 7/24 destekle tamamen güvenli bir rezervasyon deneyimi garanti ediyoruz",
+    "feature2Title": "Özenle Seçilmiş Programlar",
+    "feature2Desc": "Uzman ekibimiz, zevkinize ve bütçenize uygun en iyi otelleri ve etkinlikleri seçer",
+    "feature3Title": "Uzman Rehberler",
+    "feature3Desc": "Arapça konuşan, destinasyonunuzun her köşesini bilen deneyimli tur rehberleri",
+    "service1Title": "Uçak Bileti Rezervasyonu",
+    "service1Desc": "Tüm havayollarından en iyi uçak bileti fiyatları",
+    "service2Title": "Lüks Oteller",
+    "service2Desc": "Dünyanın en iyi otellerinden seçilmiş bir koleksiyon",
+    "service3Title": "Turistik Turlar",
+    "service3Desc": "Profesyonel rehberlerle düzenlenmiş turlar",
+    "readMore": "Devamını Oku",
+    "placeholderArticles": [
+      {
+        "title": "Seyahat Ederken Para Biriktirmenin 10 Sırrı",
+        "date": "16 Nisan 2026",
+        "img": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+      },
+      {
+        "title": "2026'da Japonya'yı Ziyaret Etmek İçin En İyi Zaman",
+        "date": "10 Nisan 2026",
+        "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80"
+      },
+      {
+        "title": "Paris'i Keşfetmek İçin Eksiksiz Rehberiniz",
+        "date": "5 Nisan 2026",
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      }
+    ],
+    "bookNowTag": "Hemen Rezervasyon Yap",
+    "bookNowHighlight": "Bizimle Gezinizi",
+    "bookNowSubtitle": "Detaylarınızı bırakın, danışmanlarımızdan biri 24 saat içinde sizinle iletişime geçsin",
+    "thankYouContact": "İletişime Geçtiğiniz İçin Teşekkür Ederiz!",
+    "teamWillContact": "Ekibimiz en kısa sürede sizinle iletişime geçecek",
+    "fullName": "Ad Soyad",
+    "phoneNumber": "Telefon Numarası",
+    "email": "E-posta",
+    "cairoPlaceholder": "Kahire",
+    "destinationExamplesPlaceholder": "Paris, Tokyo, Maldivler...",
+    "tripDurationDays": "Gezi Süresi (gün)",
+    "yourMessage": "Mesajınız",
+    "dreamTripPlaceholder": "Hayalini kurduğunuz gezi hakkında bize anlatın...",
+    "sendYourRequest": "Talebinizi Gönderin",
+    "callUsAria": "Bizi Arayın"
+  },
+  "articleCard": {
+    "featuredArticle": "Seyahat blogundan öne çıkan makale"
+  },
+  "programCard": {
+    "featured": "Öne Çıkan",
+    "noImage": "Bu tur için görsel mevcut değil",
+    "maxPeople": "Maks",
+    "price": "Fiyat",
+    "learnMore": "Daha Fazla Bilgi"
+  },
+  "paymentBadge": {
+    "fillNamePhone": "Lütfen adınızı ve cep telefonu numaranızı girin",
+    "paymentFailedDetail": "Ödeme başlatılamadı: {{detail}}",
+    "paymentFailedTabby": "Tabby ile ödeme başlatılamadı, lütfen tekrar deneyin",
+    "paymentFailedTamara": "Tamara ile ödeme başlatılamadı, lütfen tekrar deneyin",
+    "installWith": "Şununla taksitlendirin:",
+    "installmentsNoInterest": "faizsiz taksit",
+    "payWithTabby": "Şimdi Tabby ile Öde",
+    "payWithTamara": "Şimdi Tamara ile Öde",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "mobileNumber": "Cep Telefonu Numarası",
+    "emailOptional": "E-posta (isteğe bağlı)",
+    "redirecting": "Yönlendiriliyor...",
+    "continuePayment": "Ödemeye Devam Et"
+  },
+  "uploadField": {
+    "invalidImage": "Lütfen geçerli bir görsel dosyası seçin",
+    "uploadError": "Görsel yüklenirken bir hata oluştu",
+    "uploadFromDevice": "Cihazdan Yükle",
+    "link": "Bağlantı",
+    "compressing": "Görsel sıkıştırılıyor...",
+    "uploadingToServer": "Görsel sunucuya yükleniyor...",
+    "clickOrDrag": "Cihazınızdan yüklemek için tıklayın veya bir görseli buraya sürükleyin",
+    "autoCompress": "Renkler değiştirilmeden otomatik olarak sıkıştırılıp yüklenecektir",
+    "compressedAndUploaded": "Sıkıştırıldı ve yüklendi",
+    "removeImage": "Görseli Kaldır",
+    "uploadImagesError": "Görseller yüklenirken bir hata oluştu",
+    "image": "Görsel",
+    "deleteImage": "Görseli Sil",
+    "uploading": "Yükleniyor...",
+    "uploadImagesFromDevice": "Cihazdan Görsel Yükle",
+    "pasteImageUrl": "Veya bir görsel bağlantısı yapıştırın...",
+    "addLink": "Bağlantı Ekle"
+  },
+  "uiCommon": {
+    "noDataYet": "Henüz veri yok",
+    "confirmDelete": "Silmek istediğinizden emin misiniz?",
+    "cancel": "İptal",
+    "delete": "Sil"
+  },
+  "adminLayout": {
+    "brandName": "Hora Tour",
+    "systemAdmin": "Sistem Yöneticisi",
+    "admin": "Yönetici",
+    "nav": {
+      "dashboard": "Kontrol Paneli",
+      "destinations": "Destinasyonlar",
+      "programs": "Turlar",
+      "articles": "Makaleler",
+      "offers": "Fırsatlar",
+      "leads": "Talepler"
+    }
+  }
+}

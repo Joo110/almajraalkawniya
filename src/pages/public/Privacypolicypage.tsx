@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import PublicLayout from '../../components/layout/PublicLayout';
 
 interface PrivacySection {
@@ -9,6 +10,7 @@ interface PrivacySection {
 
 const PrivacyPolicyPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('privacy.seoTitle'), description: t('privacy.seoDescription'), path: '/privacy' });
   const sections = t('privacy.sections', { returnObjects: true }) as PrivacySection[];
 
   return (

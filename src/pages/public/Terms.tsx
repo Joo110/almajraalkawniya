@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import PublicLayout from '../../components/layout/PublicLayout';
 
 const Terms: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('termsPage.seoTitle'), description: t('termsPage.seoDescription'), path: '/terms' });
   const termsItems = t('termsPage.items', { returnObjects: true }) as string[];
 
   return (

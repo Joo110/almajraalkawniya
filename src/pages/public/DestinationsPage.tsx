@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Search } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import DestinationCard from '../../components/ui/DestinationCard';
@@ -8,6 +9,7 @@ import { useDestinations } from '../../hooks/useDestinations';
 
 const DestinationsPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('destinationsPage.seoTitle'), description: t('destinationsPage.seoDescription'), path: '/destinations' });
   const { destinations, loading, error } = useDestinations();
   const [search, setSearch] = useState('');
 

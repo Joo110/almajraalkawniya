@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Search } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import ArticleCard from '../../components/ui/ArticleCard';
@@ -8,6 +9,7 @@ import { useArticles } from '../../hooks/useArticles';
 
 const BlogPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('blogPage.seoTitle'), description: t('blogPage.seoDescription'), path: '/blog' });
   const { articles, loading, error } = useArticles();
   const [search, setSearch] = useState('');
 

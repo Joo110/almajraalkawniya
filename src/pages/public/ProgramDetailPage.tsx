@@ -15,6 +15,7 @@ import { Spinner } from '../../components/ui/index';
 import TamaraBadge from '../../components/ui/Tamarabadge';
 import TabbyBadge from '../../components/ui/Tabbybadge';
 import { useProgramBySlug } from '../../hooks/usePrograms';
+import useSEO from '../../hooks/useSEO';
 
 type ItineraryItem = {
   day?: number | string;
@@ -80,6 +81,19 @@ const ProgramDetailPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { program, loading, error } = useProgramBySlug(slug || '');
+
+  useSEO({
+    title: program
+      ? `${program.seoTitle || program.title} | ${t('brand.name1')} ${t('brand.name2')}`
+      : t('programDetail.notFound'),
+    description:
+      program?.seoDescription ||
+      program?.includes?.slice(0, 160) ||
+      t('programsPage.seoDescription'),
+    path: `/programs/${slug || ''}`,
+    image: parseJsonArray<string>(program?.galleryJson)[0] || DEFAULT_COVER,
+    type: 'article',
+  });
 
   const gallery = useMemo(
     () => parseJsonArray<string>(program?.galleryJson),

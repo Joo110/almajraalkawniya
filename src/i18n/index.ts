@@ -4,6 +4,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import ar from './locales/ar.json';
 import en from './locales/en.json';
 import fr from './locales/fr.json';
+import tr from './locales/tr.json';
+import ru from './locales/ru.json';
 
 const applyDirection = (lng: string) => {
   const dir = lng === 'ar' ? 'rtl' : 'ltr';
@@ -19,9 +21,11 @@ i18n
       ar: { translation: ar },
       en: { translation: en },
       fr: { translation: fr },
+      tr: { translation: tr },
+      ru: { translation: ru },
     },
     fallbackLng: 'ar',
-    supportedLngs: ['ar', 'en', 'fr'],
+    supportedLngs: ['ar', 'en', 'fr', 'tr', 'ru'],
     interpolation: {
       escapeValue: false,
     },

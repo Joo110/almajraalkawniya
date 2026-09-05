@@ -13,6 +13,7 @@ import { useDestinations } from '../../hooks/useDestinations';
 import { useArticles } from '../../hooks/useArticles';
 import { useOffers } from '../../hooks/useOffers';
 import { leadsService } from '../../services/otherServices';
+import useSEO from '../../hooks/useSEO';
 
 const PHONE_NUMBER = '966544817995';
 const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}`;
@@ -203,25 +204,12 @@ const HomePage: React.FC = () => {
 
   const today = new Date().toISOString().split('T')[0];
 
-  /* ── SEO: عنوان الصفحة والوصف التعريفي ── */
- useEffect(() => {
-    // Title
-    document.title = t('homePage.pageTitle');
-
-    // Meta description
-    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = t('homePage.pageDescription');
-
-    return () => {
-      // استعادة عنوان افتراضي عند مغادرة الصفحة إن أردت
-      // document.title = 'المجرة الكونية';
-    };
-  }, [t]);
+  /* ── SEO: عنوان الصفحة والوصف التعريفي وعلامات Open Graph/hreflang ── */
+  useSEO({
+    title: t('homePage.pageTitle'),
+    description: t('homePage.pageDescription'),
+    path: '/',
+  });
   
   const [leadForm, setLeadForm] = useState({
     name: '',

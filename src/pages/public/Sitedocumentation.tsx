@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import PublicLayout from '../../components/layout/PublicLayout';
 
 const SiteDocumentation: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('siteDoc.seoTitle'), description: t('siteDoc.seoDescription'), path: '/site-documentation' });
   return (
     <PublicLayout>
       <div className="bg-white min-h-screen">

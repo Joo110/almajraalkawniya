@@ -16,20 +16,28 @@ interface ArticleFormData {
   titleEn: string;
 
   titleFr: string;
+  titleTr: string;
+  titleRu: string;
   slug: string;
   content: string;
   contentEn: string;
 
   contentFr: string;
+  contentTr: string;
+  contentRu: string;
   coverImage: string;
   seoTitle: string;
   seoTitleEn: string;
 
   seoTitleFr: string;
+  seoTitleTr: string;
+  seoTitleRu: string;
   seoDescription: string;
   seoDescriptionEn: string;
 
   seoDescriptionFr: string;
+  seoDescriptionTr: string;
+  seoDescriptionRu: string;
   publishedAt: string;
   isPublished: boolean;
 }
@@ -46,20 +54,28 @@ const EMPTY: ArticleFormData = {
   titleEn: '',
 
   titleFr: '',
+  titleTr: '',
+  titleRu: '',
   slug: '',
   content: '',
   contentEn: '',
 
   contentFr: '',
+  contentTr: '',
+  contentRu: '',
   coverImage: '',
   seoTitle: '',
   seoTitleEn: '',
 
   seoTitleFr: '',
+  seoTitleTr: '',
+  seoTitleRu: '',
   seoDescription: '',
   seoDescriptionEn: '',
 
   seoDescriptionFr: '',
+  seoDescriptionTr: '',
+  seoDescriptionRu: '',
   publishedAt: todayInput(),
   isPublished: true,
 };
@@ -94,20 +110,28 @@ const AdminArticlesPage: React.FC = () => {
       titleEn: a.titleEn || '',
 
       titleFr: a.titleFr || '',
+      titleTr: a.titleTr || '',
+      titleRu: a.titleRu || '',
       slug: a.slug,
       content: a.content || '',
       contentEn: a.contentEn || '',
 
       contentFr: a.contentFr || '',
+      contentTr: a.contentTr || '',
+      contentRu: a.contentRu || '',
       coverImage: a.coverImage || '',
       seoTitle: (a as any).seoTitle || '',
       seoTitleEn: a.seoTitleEn || '',
 
       seoTitleFr: a.seoTitleFr || '',
+      seoTitleTr: a.seoTitleTr || '',
+      seoTitleRu: a.seoTitleRu || '',
       seoDescription: (a as any).seoDescription || '',
       seoDescriptionEn: a.seoDescriptionEn || '',
 
       seoDescriptionFr: a.seoDescriptionFr || '',
+      seoDescriptionTr: a.seoDescriptionTr || '',
+      seoDescriptionRu: a.seoDescriptionRu || '',
       publishedAt: a.publishedAt
         ? new Date(a.publishedAt).toISOString().slice(0, 16)
         : todayInput(),
@@ -136,20 +160,28 @@ const AdminArticlesPage: React.FC = () => {
         titleEn: form.titleEn.trim() || undefined,
 
         titleFr: form.titleFr.trim() || undefined,
+        titleTr: form.titleTr.trim() || undefined,
+        titleRu: form.titleRu.trim() || undefined,
         slug: form.slug.trim(),
         content: form.content.trim(),
         contentEn: form.contentEn.trim() || undefined,
 
         contentFr: form.contentFr.trim() || undefined,
+        contentTr: form.contentTr.trim() || undefined,
+        contentRu: form.contentRu.trim() || undefined,
         coverImage: form.coverImage.trim(),
         seoTitle: form.seoTitle.trim(),
         seoTitleEn: form.seoTitleEn.trim() || undefined,
 
         seoTitleFr: form.seoTitleFr.trim() || undefined,
+        seoTitleTr: form.seoTitleTr.trim() || undefined,
+        seoTitleRu: form.seoTitleRu.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
         seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
 
         seoDescriptionFr: form.seoDescriptionFr.trim() || undefined,
+        seoDescriptionTr: form.seoDescriptionTr.trim() || undefined,
+        seoDescriptionRu: form.seoDescriptionRu.trim() || undefined,
         publishedAt: toISOLocal(form.publishedAt),
         isPublished: form.isPublished,
       };
@@ -279,6 +311,20 @@ const AdminArticlesPage: React.FC = () => {
               dir="ltr"
             />
             <InputField
+              label="Makale Başlığı (Türkçe)"
+              value={form.titleTr}
+              onChange={e => setForm({ ...form, titleTr: e.target.value })}
+              placeholder="Votre guide complet pour explorer Paris"
+              dir="ltr"
+            />
+            <InputField
+              label="Заголовок статьи (Русский)"
+              value={form.titleRu}
+              onChange={e => setForm({ ...form, titleRu: e.target.value })}
+              placeholder="Votre guide complet pour explorer Paris"
+              dir="ltr"
+            />
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -315,6 +361,22 @@ const AdminArticlesPage: React.FC = () => {
               placeholder="Rédigez le contenu de l'article ici..."
               dir="ltr"
             />
+            <TextareaField
+              label="Makale İçeriği (Türkçe)"
+              rows={8}
+              value={form.contentTr}
+              onChange={e => setForm({ ...form, contentTr: e.target.value })}
+              placeholder="Makale içeriğini buraya yazın..."
+              dir="ltr"
+            />
+            <TextareaField
+              label="Содержание статьи (Русский)"
+              rows={8}
+              value={form.contentRu}
+              onChange={e => setForm({ ...form, contentRu: e.target.value })}
+              placeholder="Напишите содержание статьи здесь..."
+              dir="ltr"
+            />
             <div className="grid grid-cols-1 gap-4">
               <InputField
                 label="عنوان SEO"
@@ -337,6 +399,20 @@ const AdminArticlesPage: React.FC = () => {
                 dir="ltr"
               />
               <InputField
+                label="SEO Başlığı (Türkçe)"
+                value={form.seoTitleTr}
+                onChange={e => setForm({ ...form, seoTitleTr: e.target.value })}
+                placeholder="Türkçe SEO başlığı"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO заголовок (Русский)"
+                value={form.seoTitleRu}
+                onChange={e => setForm({ ...form, seoTitleRu: e.target.value })}
+                placeholder="SEO-заголовок на русском"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={e => setForm({ ...form, seoDescription: e.target.value })}
@@ -354,6 +430,20 @@ const AdminArticlesPage: React.FC = () => {
                 value={form.seoDescriptionFr}
                 onChange={e => setForm({ ...form, seoDescriptionFr: e.target.value })}
                 placeholder="Description SEO en français"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO Açıklaması (Türkçe)"
+                value={form.seoDescriptionTr}
+                onChange={e => setForm({ ...form, seoDescriptionTr: e.target.value })}
+                placeholder="Türkçe SEO açıklaması"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO описание (Русский)"
+                value={form.seoDescriptionRu}
+                onChange={e => setForm({ ...form, seoDescriptionRu: e.target.value })}
+                placeholder="SEO-описание на русском"
                 dir="ltr"
               />
             </div>

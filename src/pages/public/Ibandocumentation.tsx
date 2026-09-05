@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import PublicLayout from '../../components/layout/PublicLayout';
 
 const IbanDocumentation: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('ibanDoc.seoTitle'), description: t('ibanDoc.seoDescription'), path: '/iban-documentation' });
   return (
     <PublicLayout>
       <div className="bg-white min-h-screen">

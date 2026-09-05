@@ -6,11 +6,25 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner } from '../../components/ui/index';
 import { useArticleBySlug } from '../../hooks/useArticles';
+import useSEO from '../../hooks/useSEO';
 
 export const ArticleDetailPage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { article, loading } = useArticleBySlug(slug || '');
+
+  useSEO({
+    title: article
+      ? `${article.seoTitle || article.title} | ${t('brand.name1')} ${t('brand.name2')}`
+      : t('articleDetail.notFound'),
+    description:
+      article?.seoDescription ||
+      article?.content?.replace(/<[^>]+>/g, '').slice(0, 160) ||
+      t('blogPage.seoDescription'),
+    path: `/blog/${slug || ''}`,
+    image: article?.coverImage,
+    type: 'article',
+  });
 
   if (loading) {
     return (
@@ -46,7 +60,10 @@ export const ArticleDetailPage: React.FC = () => {
   return (
     <PublicLayout>
       <div className="bg-white text-stone-800 min-h-screen">
-        <article className="max-w-3xl mx-auto px-6 py-24" dir={i18n.dir()}>
+        {/* شريط غامق أعلى الصفحة عشان الـ Navbar الشفاف يبان بوضوح فوقه */}
+        <div className="h-24 bg-gradient-to-b from-charcoal-900 to-charcoal-900/0" />
+
+        <article className="max-w-3xl mx-auto px-6 pt-8 pb-24" dir={i18n.dir()}>
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-stone-500 hover:text-stone-800 text-sm font-sans mb-8 transition-colors"

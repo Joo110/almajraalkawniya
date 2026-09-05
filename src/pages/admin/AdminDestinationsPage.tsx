@@ -16,25 +16,35 @@ interface DestinationFormData {
   nameEn: string;
 
   nameFr: string;
+  nameTr: string;
+  nameRu: string;
   slug: string;
   country: string;
   countryEn: string;
 
   countryFr: string;
+  countryTr: string;
+  countryRu: string;
   coverImage: string;
   description: string;
   descriptionEn: string;
 
   descriptionFr: string;
+  descriptionTr: string;
+  descriptionRu: string;
   tags: string;
   seoTitle: string;
   seoTitleEn: string;
 
   seoTitleFr: string;
+  seoTitleTr: string;
+  seoTitleRu: string;
   seoDescription: string;
   seoDescriptionEn: string;
 
   seoDescriptionFr: string;
+  seoDescriptionTr: string;
+  seoDescriptionRu: string;
   isFeatured: boolean;
   isActive: boolean;
 }
@@ -44,25 +54,35 @@ const EMPTY_FORM: DestinationFormData = {
   nameEn: '',
 
   nameFr: '',
+  nameTr: '',
+  nameRu: '',
   slug: '',
   country: '',
   countryEn: '',
 
   countryFr: '',
+  countryTr: '',
+  countryRu: '',
   coverImage: '',
   description: '',
   descriptionEn: '',
 
   descriptionFr: '',
+  descriptionTr: '',
+  descriptionRu: '',
   tags: '',
   seoTitle: '',
   seoTitleEn: '',
 
   seoTitleFr: '',
+  seoTitleTr: '',
+  seoTitleRu: '',
   seoDescription: '',
   seoDescriptionEn: '',
 
   seoDescriptionFr: '',
+  seoDescriptionTr: '',
+  seoDescriptionRu: '',
   isFeatured: false,
   isActive: true,
 };
@@ -97,25 +117,35 @@ const AdminDestinationsPage: React.FC = () => {
       nameEn: d.nameEn || '',
 
       nameFr: d.nameFr || '',
+      nameTr: d.nameTr || '',
+      nameRu: d.nameRu || '',
       slug: d.slug,
       country: d.country || '',
       countryEn: d.countryEn || '',
 
       countryFr: d.countryFr || '',
+      countryTr: d.countryTr || '',
+      countryRu: d.countryRu || '',
       coverImage: d.coverImage || '',
       description: d.description || '',
       descriptionEn: d.descriptionEn || '',
 
       descriptionFr: d.descriptionFr || '',
+      descriptionTr: d.descriptionTr || '',
+      descriptionRu: d.descriptionRu || '',
       tags: (d as any).tags || '',
       seoTitle: (d as any).seoTitle || '',
       seoTitleEn: d.seoTitleEn || '',
 
       seoTitleFr: d.seoTitleFr || '',
+      seoTitleTr: d.seoTitleTr || '',
+      seoTitleRu: d.seoTitleRu || '',
       seoDescription: (d as any).seoDescription || '',
       seoDescriptionEn: d.seoDescriptionEn || '',
 
       seoDescriptionFr: d.seoDescriptionFr || '',
+      seoDescriptionTr: d.seoDescriptionTr || '',
+      seoDescriptionRu: d.seoDescriptionRu || '',
       isFeatured: (d as any).isFeatured ?? d.featured ?? false,
       isActive: (d as any).isActive ?? true,
     });
@@ -141,25 +171,35 @@ const AdminDestinationsPage: React.FC = () => {
         nameEn: form.nameEn.trim() || undefined,
 
         nameFr: form.nameFr.trim() || undefined,
+        nameTr: form.nameTr.trim() || undefined,
+        nameRu: form.nameRu.trim() || undefined,
         slug: form.slug.trim(),
         country: form.country.trim(),
         countryEn: form.countryEn.trim() || undefined,
 
         countryFr: form.countryFr.trim() || undefined,
+        countryTr: form.countryTr.trim() || undefined,
+        countryRu: form.countryRu.trim() || undefined,
         coverImage: form.coverImage.trim(),
         description: form.description.trim(),
         descriptionEn: form.descriptionEn.trim() || undefined,
 
         descriptionFr: form.descriptionFr.trim() || undefined,
+        descriptionTr: form.descriptionTr.trim() || undefined,
+        descriptionRu: form.descriptionRu.trim() || undefined,
         tags: form.tags.trim(),
         seoTitle: form.seoTitle.trim(),
         seoTitleEn: form.seoTitleEn.trim() || undefined,
 
         seoTitleFr: form.seoTitleFr.trim() || undefined,
+        seoTitleTr: form.seoTitleTr.trim() || undefined,
+        seoTitleRu: form.seoTitleRu.trim() || undefined,
         seoDescription: form.seoDescription.trim(),
         seoDescriptionEn: form.seoDescriptionEn.trim() || undefined,
 
         seoDescriptionFr: form.seoDescriptionFr.trim() || undefined,
+        seoDescriptionTr: form.seoDescriptionTr.trim() || undefined,
+        seoDescriptionRu: form.seoDescriptionRu.trim() || undefined,
         isFeatured: form.isFeatured,
         isActive: form.isActive,
       };
@@ -289,6 +329,20 @@ const AdminDestinationsPage: React.FC = () => {
               dir="ltr"
             />
             <InputField
+              label="İsim (Türkçe)"
+              value={form.nameTr}
+              onChange={e => setForm({ ...form, nameTr: e.target.value })}
+              placeholder="Paris"
+              dir="ltr"
+            />
+            <InputField
+              label="Название (Русский)"
+              value={form.nameRu}
+              onChange={e => setForm({ ...form, nameRu: e.target.value })}
+              placeholder="Paris"
+              dir="ltr"
+            />
+            <InputField
               label="الرابط (Slug) *"
               required
               value={form.slug}
@@ -313,6 +367,20 @@ const AdminDestinationsPage: React.FC = () => {
               label="Pays (Français)"
               value={form.countryFr}
               onChange={e => setForm({ ...form, countryFr: e.target.value })}
+              placeholder="France"
+              dir="ltr"
+            />
+            <InputField
+              label="Ülke (Türkçe)"
+              value={form.countryTr}
+              onChange={e => setForm({ ...form, countryTr: e.target.value })}
+              placeholder="France"
+              dir="ltr"
+            />
+            <InputField
+              label="Страна (Русский)"
+              value={form.countryRu}
+              onChange={e => setForm({ ...form, countryRu: e.target.value })}
               placeholder="France"
               dir="ltr"
             />
@@ -345,6 +413,22 @@ const AdminDestinationsPage: React.FC = () => {
               placeholder="Brève description de la destination..."
               dir="ltr"
             />
+            <TextareaField
+              label="Açıklama (Türkçe)"
+              rows={3}
+              value={form.descriptionTr}
+              onChange={e => setForm({ ...form, descriptionTr: e.target.value })}
+              placeholder="Destinasyonun kısa açıklaması..."
+              dir="ltr"
+            />
+            <TextareaField
+              label="Описание (Русский)"
+              rows={3}
+              value={form.descriptionRu}
+              onChange={e => setForm({ ...form, descriptionRu: e.target.value })}
+              placeholder="Краткое описание направления..."
+              dir="ltr"
+            />
             <InputField
               label="الوسوم (Tags)"
               value={form.tags}
@@ -373,6 +457,20 @@ const AdminDestinationsPage: React.FC = () => {
                 dir="ltr"
               />
               <InputField
+                label="SEO Başlığı (Türkçe)"
+                value={form.seoTitleTr}
+                onChange={e => setForm({ ...form, seoTitleTr: e.target.value })}
+                placeholder="Türkçe SEO başlığı"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO заголовок (Русский)"
+                value={form.seoTitleRu}
+                onChange={e => setForm({ ...form, seoTitleRu: e.target.value })}
+                placeholder="SEO-заголовок на русском"
+                dir="ltr"
+              />
+              <InputField
                 label="وصف SEO"
                 value={form.seoDescription}
                 onChange={e => setForm({ ...form, seoDescription: e.target.value })}
@@ -390,6 +488,20 @@ const AdminDestinationsPage: React.FC = () => {
                 value={form.seoDescriptionFr}
                 onChange={e => setForm({ ...form, seoDescriptionFr: e.target.value })}
                 placeholder="Description SEO en français"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO Açıklaması (Türkçe)"
+                value={form.seoDescriptionTr}
+                onChange={e => setForm({ ...form, seoDescriptionTr: e.target.value })}
+                placeholder="Türkçe SEO açıklaması"
+                dir="ltr"
+              />
+              <InputField
+                label="SEO описание (Русский)"
+                value={form.seoDescriptionRu}
+                onChange={e => setForm({ ...form, seoDescriptionRu: e.target.value })}
+                placeholder="SEO-описание на русском"
                 dir="ltr"
               />
             </div>

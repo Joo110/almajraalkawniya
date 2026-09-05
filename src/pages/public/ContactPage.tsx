@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Phone, Mail, MapPin, Clock, Send, Star } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { leadsService } from '../../services/otherServices';
@@ -31,6 +32,7 @@ function getTomorrowDateInputValue() {
 
 const ContactPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('contactPage.seoTitle'), description: t('contactPage.seoDescription'), path: '/contact' });
   const contactInfoIcons = [
     <Phone className="w-5 h-5" />, <Mail className="w-5 h-5" />, <MapPin className="w-5 h-5" />, <Clock className="w-5 h-5" />,
   ];

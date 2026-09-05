@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import PublicLayout from '../../components/layout/PublicLayout';
 
 const RefundPolicy: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('refundPage.seoTitle'), description: t('refundPage.seoDescription'), path: '/refund-policy' });
   const refundItems = t('refundPage.items', { returnObjects: true }) as string[];
 
   return (

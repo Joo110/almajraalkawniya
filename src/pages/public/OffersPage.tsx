@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Calendar, MessageCircle, ArrowLeft } from 'lucide-react';
 import PublicLayout from '../../components/layout/PublicLayout';
 import { Spinner, ErrorBox, Badge } from '../../components/ui/index';
@@ -39,6 +40,7 @@ const formatDate = (dateString?: string) => {
 
 const OffersPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('offersPage.seoTitle'), description: t('offersPage.seoDescription'), path: '/offers' });
   const { offers, loading, error } = useOffers();
 
   const activeOffers = offers.filter(

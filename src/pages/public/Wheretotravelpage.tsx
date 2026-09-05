@@ -1,5 +1,6 @@
 import React, {  useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -101,6 +102,7 @@ const getRecommendations = (destinations: DestinationResult[], answers: Record<n
 
 const WhereToTravelPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('wtt.seoTitle'), description: t('wtt.seoDescription'), path: '/where-to-travel' });
   const { destinations, loading } = useDestinations();
 
   const questions: Question[] = useMemo(() => {

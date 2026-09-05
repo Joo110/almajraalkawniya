@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, ChevronDown } from 'lucide-react';
 
-const LANGS: { code: 'ar' | 'en' | 'fr'; label: string; short: string }[] = [
+const LANGS: { code: 'ar' | 'en' | 'fr' | 'tr' | 'ru'; label: string; short: string }[] = [
   { code: 'ar', label: 'العربية', short: 'AR' },
   { code: 'en', label: 'English', short: 'EN' },
   { code: 'fr', label: 'Français', short: 'FR' },
+  { code: 'tr', label: 'Türkçe', short: 'TR' },
+  { code: 'ru', label: 'Русский', short: 'RU' },
 ];
 
 interface LanguageSwitcherProps {

@@ -1,5 +1,8 @@
 {
-  "brand": { "name1": "Al Majra", "name2": "Al Kawniya" },
+  "brand": {
+    "name1": "Al Majra",
+    "name2": "Al Kawniya"
+  },
   "nav": {
     "logoAlt": "Al Majra Al Kawniya Logo",
     "home": "Home",
@@ -41,17 +44,23 @@
   "bank": {
     "titlePart1": "Bank",
     "titlePart2": "Accounts",
-    "imgAlt": "Bank account"
+    "imgAlt": "Bank account",
+    "seoTitle": "Bank Accounts | Al Majra Al Kawniya",
+    "seoDescription": "Bank account details for Al Majra Al Kawniya Travel & Tourism Agency payments and transfers."
   },
   "siteDoc": {
     "titlePart1": "Site",
     "titlePart2": "Documentation",
-    "imgAlt": "E-commerce documentation certificate"
+    "imgAlt": "E-commerce documentation certificate",
+    "seoTitle": "Site Documentation | Al Majra Al Kawniya",
+    "seoDescription": "Official e-commerce documentation and certification for Al Majra Al Kawniya's website."
   },
   "ibanDoc": {
     "titlePart1": "IBAN",
     "titlePart2": "Letter",
-    "imgAlt": "IBAN letter - Saudi National Bank"
+    "imgAlt": "IBAN letter - Saudi National Bank",
+    "seoTitle": "IBAN Letter | Al Majra Al Kawniya",
+    "seoDescription": "Official IBAN letter from the Saudi National Bank for Al Majra Al Kawniya Travel & Tourism Agency."
   },
   "privacy": {
     "titlePart1": "Privacy",
@@ -93,7 +102,9 @@
         "title": "8. Contact Us",
         "body": "If you have any questions about this policy, you can contact us via:\n\n📧 Email: almajara.alkawnia.travel@gmail.com\n📞 Phone: +966 54 481 7995\n📍 Address: Makkah Al-Mukarramah, Al Tanguim District, Kingdom of Saudi Arabia\n🏢 Commercial Registration: 7053753773"
       }
-    ]
+    ],
+    "seoTitle": "Privacy Policy | Al Majra Al Kawniya",
+    "seoDescription": "Read Al Majra Al Kawniya's privacy policy to understand how we collect, use, and protect your personal data."
   },
   "termsPage": {
     "titlePart1": "Terms &",
@@ -114,7 +125,9 @@
       "Hotel rooms are provided based on hotel availability and according to priority and capacity.",
       "Hotel check-in begins after 2:00 PM.",
       "Rooms must be vacated on the last day before 12:00 PM."
-    ]
+    ],
+    "seoTitle": "Terms & Conditions | Al Majra Al Kawniya",
+    "seoDescription": "Read the terms and conditions governing bookings, flights, hotels, and tour programs with Al Majra Al Kawniya."
   },
   "refundPage": {
     "titlePart1": "Refund",
@@ -127,7 +140,9 @@
       "In case of a refund, it will be processed within 10 to 21 business days at least from the date of the cancellation request. If payment was made via electronic cards (Visa/Mastercard), amounts will be refunded to the card according to the timeframe determined by the bank.",
       "In case the traveler is returned or prevented from traveling for any reason, the office is not responsible for refunding the trip amount or any other related costs, though it may help the client book an alternative trip or reduce penalties where possible.",
       "In case of cancellation during the trip, the full amount is deducted and the client is not entitled to any refund."
-    ]
+    ],
+    "seoTitle": "Refund Policy | Al Majra Al Kawniya",
+    "seoDescription": "Learn about Al Majra Al Kawniya's refund and cancellation policy for flights, hotel bookings, and tour packages."
   },
   "blogPage": {
     "eyebrow": "Blog",
@@ -137,13 +152,45 @@
     "searchPlaceholder": "Search articles...",
     "noResults": "No articles match your search",
     "placeholderArticles": [
-      { "id": "1", "title": "10 Secrets to Saving Money While Traveling", "slug": "save-money-travel", "coverImage": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" },
-      { "id": "2", "title": "Best Time to Visit Japan in 2026", "slug": "best-time-japan", "coverImage": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" },
-      { "id": "3", "title": "Your Complete Guide to Exploring Paris", "slug": "paris-guide", "coverImage": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" },
-      { "id": "4", "title": "The Most Beautiful Maldives Beaches You Must Visit", "slug": "maldives-beaches", "coverImage": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" },
-      { "id": "5", "title": "Tips for Traveling with Family and Children", "slug": "family-travel", "coverImage": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" },
-      { "id": "6", "title": "Best Restaurants in Dubai for 2026", "slug": "dubai-restaurants", "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" }
-    ]
+      {
+        "id": "1",
+        "title": "10 Secrets to Saving Money While Traveling",
+        "slug": "save-money-travel",
+        "coverImage": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+      },
+      {
+        "id": "2",
+        "title": "Best Time to Visit Japan in 2026",
+        "slug": "best-time-japan",
+        "coverImage": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80"
+      },
+      {
+        "id": "3",
+        "title": "Your Complete Guide to Exploring Paris",
+        "slug": "paris-guide",
+        "coverImage": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      },
+      {
+        "id": "4",
+        "title": "The Most Beautiful Maldives Beaches You Must Visit",
+        "slug": "maldives-beaches",
+        "coverImage": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80"
+      },
+      {
+        "id": "5",
+        "title": "Tips for Traveling with Family and Children",
+        "slug": "family-travel",
+        "coverImage": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80"
+      },
+      {
+        "id": "6",
+        "title": "Best Restaurants in Dubai for 2026",
+        "slug": "dubai-restaurants",
+        "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80"
+      }
+    ],
+    "seoTitle": "Travel Blog & Tips | Al Majra Al Kawniya",
+    "seoDescription": "Read expert travel tips, destination guides, and inspiration to help you plan your next smart and unforgettable trip."
   },
   "articleDetail": {
     "notFound": "Article not found",
@@ -157,13 +204,45 @@
     "searchPlaceholder": "Search for a destination...",
     "noResults": "No results match your search",
     "placeholderDestinations": [
-      { "name": "Paris", "country": "France", "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80", "slug": "paris" },
-      { "name": "Tokyo", "country": "Japan", "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80", "slug": "tokyo" },
-      { "name": "Santorini", "country": "Greece", "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80", "slug": "santorini" },
-      { "name": "Dubai", "country": "UAE", "img": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80", "slug": "dubai" },
-      { "name": "Maldives", "country": "Maldives", "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80", "slug": "maldives" },
-      { "name": "Rome", "country": "Italy", "img": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80", "slug": "rome" }
-    ]
+      {
+        "name": "Paris",
+        "country": "France",
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80",
+        "slug": "paris"
+      },
+      {
+        "name": "Tokyo",
+        "country": "Japan",
+        "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
+        "slug": "tokyo"
+      },
+      {
+        "name": "Santorini",
+        "country": "Greece",
+        "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80",
+        "slug": "santorini"
+      },
+      {
+        "name": "Dubai",
+        "country": "UAE",
+        "img": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80",
+        "slug": "dubai"
+      },
+      {
+        "name": "Maldives",
+        "country": "Maldives",
+        "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80",
+        "slug": "maldives"
+      },
+      {
+        "name": "Rome",
+        "country": "Italy",
+        "img": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80",
+        "slug": "rome"
+      }
+    ],
+    "seoTitle": "Travel Destinations | Al Majra Al Kawniya",
+    "seoDescription": "Browse our curated collection of the world's most beautiful travel destinations and choose your next unforgettable trip with Al Majra Al Kawniya."
   },
   "programsPage": {
     "eyebrow": "Our Programs",
@@ -181,7 +260,9 @@
     "duration2weeks": "2 weeks or less",
     "noneYet": "No programs yet",
     "noResults": "No programs match your search",
-    "programWord": "program(s)"
+    "programWord": "program(s)",
+    "seoTitle": "Tour Programs | Al Majra Al Kawniya",
+    "seoDescription": "Explore complete tour programs for every budget and taste, with transparent pricing and unforgettable itineraries designed by our travel experts."
   },
   "offersPage": {
     "eyebrow": "Exclusive",
@@ -198,10 +279,30 @@
     "bookViaWhatsapp": "Book via WhatsApp",
     "whatsappMessage": "Hello, I'd like to inquire about the \"{title}\" offer",
     "placeholderOffers": [
-      { "title": "Summer Season Discount", "type": "percentage", "value": 20, "desc": "Enjoy a 20% discount on all summer trips for a limited time", "end": "June 30, 2026" },
-      { "title": "Honeymoon Package", "type": "bundle", "value": 15, "desc": "Complete honeymoon package including luxury accommodation and romantic tours", "end": "December 31, 2026" },
-      { "title": "Early Booking Discount", "type": "fixed", "value": 5000, "desc": "Book 3 months before your travel date and save SAR 5,000", "end": "May 31, 2026" }
-    ]
+      {
+        "title": "Summer Season Discount",
+        "type": "percentage",
+        "value": 20,
+        "desc": "Enjoy a 20% discount on all summer trips for a limited time",
+        "end": "June 30, 2026"
+      },
+      {
+        "title": "Honeymoon Package",
+        "type": "bundle",
+        "value": 15,
+        "desc": "Complete honeymoon package including luxury accommodation and romantic tours",
+        "end": "December 31, 2026"
+      },
+      {
+        "title": "Early Booking Discount",
+        "type": "fixed",
+        "value": 5000,
+        "desc": "Book 3 months before your travel date and save SAR 5,000",
+        "end": "May 31, 2026"
+      }
+    ],
+    "seoTitle": "Special Offers & Discounts | Al Majra Al Kawniya",
+    "seoDescription": "Discover our latest exclusive travel offers, seasonal discounts, and bundle packages to make your dream trip more affordable."
   },
   "partnersPage": {
     "heroAlt": "Our Partners",
@@ -217,7 +318,9 @@
     "noOffers": "No offers currently available for this company",
     "close": "Close",
     "prev": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "seoTitle": "Our Partners | Al Majra Al Kawniya",
+    "seoDescription": "Meet the trusted companies and hotels we partner with, and explore their exclusive offers for Al Majra Al Kawniya travelers."
   },
   "destinationDetail": {
     "whatsappMessage": "Hello, I'd like to inquire about a trip to {name} and I'd like to book.",
@@ -275,28 +378,60 @@
     "satisfactionValue": "98%",
     "satisfactionLabel": "Customer Satisfaction Rate",
     "stats": [
-      { "value": "1000+", "label": "Trips Successfully Completed" },
-      { "value": "5000+", "label": "Happy Clients" },
-      { "value": "50+", "label": "Destinations Worldwide" },
-      { "value": "10+", "label": "Years of Experience" }
+      {
+        "value": "1000+",
+        "label": "Trips Successfully Completed"
+      },
+      {
+        "value": "5000+",
+        "label": "Happy Clients"
+      },
+      {
+        "value": "50+",
+        "label": "Destinations Worldwide"
+      },
+      {
+        "value": "10+",
+        "label": "Years of Experience"
+      }
     ],
     "valuesTag": "Our Values",
     "valuesTitle": "What Sets",
     "valuesHighlight": "Us Apart",
     "valuesSubtitle": "We believe every detail makes the difference",
     "values": [
-      { "title": "Passion for Travel", "desc": "We don't just work in tourism, we live it. Every member of our team is a passionate traveler who understands what you're looking for." },
-      { "title": "Honesty & Transparency", "desc": "No hidden prices, no surprises. Everything you pay is clear from the very first moment." },
-      { "title": "Excellence in Service", "desc": "We accept nothing less than excellent. Every detail of your trip goes through careful review to ensure an unforgettable experience." },
-      { "title": "Global Network", "desc": "Our partnerships with the world's best hotels and companies give you prices you won't find anywhere else." },
-      { "title": "Personal Service", "desc": "You're not just a booking number. Your personal consultant follows up with you from the planning stage until you return home." },
-      { "title": "Satisfaction Guarantee", "desc": "If you're not 100% satisfied with our service, we'll make it right. No questions asked." }
+      {
+        "title": "Passion for Travel",
+        "desc": "We don't just work in tourism, we live it. Every member of our team is a passionate traveler who understands what you're looking for."
+      },
+      {
+        "title": "Honesty & Transparency",
+        "desc": "No hidden prices, no surprises. Everything you pay is clear from the very first moment."
+      },
+      {
+        "title": "Excellence in Service",
+        "desc": "We accept nothing less than excellent. Every detail of your trip goes through careful review to ensure an unforgettable experience."
+      },
+      {
+        "title": "Global Network",
+        "desc": "Our partnerships with the world's best hotels and companies give you prices you won't find anywhere else."
+      },
+      {
+        "title": "Personal Service",
+        "desc": "You're not just a booking number. Your personal consultant follows up with you from the planning stage until you return home."
+      },
+      {
+        "title": "Satisfaction Guarantee",
+        "desc": "If you're not 100% satisfied with our service, we'll make it right. No questions asked."
+      }
     ],
     "ctaTitlePart1": "Ready to Start",
     "ctaTitlePart2": "Your Trip",
     "ctaTitleMark": "?",
     "ctaSubtitle": "Contact us now and one of our consultants will help you design your dream trip",
-    "exploreProgramsCta": "Explore Programs"
+    "exploreProgramsCta": "Explore Programs",
+    "seoTitle": "About Us | Al Majra Al Kawniya",
+    "seoDescription": "Learn about Al Majra Al Kawniya's story, values, and our decade of experience creating unforgettable travel experiences for thousands of happy clients."
   },
   "contactPage": {
     "titlePart1": "Contact",
@@ -322,11 +457,29 @@
     "sendButton": "Send Request",
     "contactInfo": "Contact Information",
     "infoBlocks": [
-      { "label": "Call Us", "value": "+966 54 481 7995", "sub": "Sun – Thu: 9 AM – 6 PM" },
-      { "label": "Email Us", "value": "almajara.alkawnia.travel@gmail.com", "sub": "We reply within 24 hours" },
-      { "label": "Visit Us", "value": "Riyadh, Al Suwaidi District, King Abdulaziz bin Abdulrahman Saud Branch Street, Building No. 6249, Postal Code 13342", "sub": "Kingdom of Saudi Arabia" },
-      { "label": "Working Hours", "value": "Sun – Thu", "sub": "9:00 AM – 6:00 PM" }
-    ]
+      {
+        "label": "Call Us",
+        "value": "+966 54 481 7995",
+        "sub": "Sun – Thu: 9 AM – 6 PM"
+      },
+      {
+        "label": "Email Us",
+        "value": "almajara.alkawnia.travel@gmail.com",
+        "sub": "We reply within 24 hours"
+      },
+      {
+        "label": "Visit Us",
+        "value": "Riyadh, Al Suwaidi District, King Abdulaziz bin Abdulrahman Saud Branch Street, Building No. 6249, Postal Code 13342",
+        "sub": "Kingdom of Saudi Arabia"
+      },
+      {
+        "label": "Working Hours",
+        "value": "Sun – Thu",
+        "sub": "9:00 AM – 6:00 PM"
+      }
+    ],
+    "seoTitle": "Contact Us | Al Majra Al Kawniya",
+    "seoDescription": "Get in touch with Al Majra Al Kawniya's travel consultants for booking requests, trip planning, and any questions about our tours and offers."
   },
   "wtt": {
     "heroTitlePart1": "Choose",
@@ -357,82 +510,189 @@
       {
         "question": "Who will you be traveling with?",
         "options": [
-          { "label": "Alone", "desc": "Flexible trips and a personal experience" },
-          { "label": "Friends", "desc": "Adventure and shared memories" },
-          { "label": "Family", "desc": "Comfort and kid-friendly options" },
-          { "label": "Couple", "desc": "A romantic experience and balance" },
-          { "label": "Honeymoon", "desc": "Privacy and luxurious relaxation" }
+          {
+            "label": "Alone",
+            "desc": "Flexible trips and a personal experience"
+          },
+          {
+            "label": "Friends",
+            "desc": "Adventure and shared memories"
+          },
+          {
+            "label": "Family",
+            "desc": "Comfort and kid-friendly options"
+          },
+          {
+            "label": "Couple",
+            "desc": "A romantic experience and balance"
+          },
+          {
+            "label": "Honeymoon",
+            "desc": "Privacy and luxurious relaxation"
+          }
         ]
       },
       {
         "question": "What type of trip do you prefer?",
         "options": [
-          { "label": "Adventure & Nature", "desc": "Outdoor activities and stunning nature" },
-          { "label": "Culture & History", "desc": "Museums, monuments, and heritage" },
-          { "label": "Relaxation & Beaches", "desc": "Sea, sun, and comfort" },
-          { "label": "Cities & Shopping", "desc": "Modern life and shopping centers" }
+          {
+            "label": "Adventure & Nature",
+            "desc": "Outdoor activities and stunning nature"
+          },
+          {
+            "label": "Culture & History",
+            "desc": "Museums, monuments, and heritage"
+          },
+          {
+            "label": "Relaxation & Beaches",
+            "desc": "Sea, sun, and comfort"
+          },
+          {
+            "label": "Cities & Shopping",
+            "desc": "Modern life and shopping centers"
+          }
         ]
       },
       {
         "question": "What's your expected budget per person?",
         "options": [
-          { "label": "Budget", "desc": "Under SAR 5,000" },
-          { "label": "Mid-range", "desc": "SAR 5,000 - 15,000" },
-          { "label": "Luxury", "desc": "Over SAR 15,000" }
+          {
+            "label": "Budget",
+            "desc": "Under SAR 5,000"
+          },
+          {
+            "label": "Mid-range",
+            "desc": "SAR 5,000 - 15,000"
+          },
+          {
+            "label": "Luxury",
+            "desc": "Over SAR 15,000"
+          }
         ]
       },
       {
         "question": "What's your ideal trip length?",
         "options": [
-          { "label": "Short (3-5 days)", "desc": "A quick, focused getaway" },
-          { "label": "Medium (7-10 days)", "desc": "Enough exploration and rest" },
-          { "label": "Long (2+ weeks)", "desc": "Full immersion in the destination" }
+          {
+            "label": "Short (3-5 days)",
+            "desc": "A quick, focused getaway"
+          },
+          {
+            "label": "Medium (7-10 days)",
+            "desc": "Enough exploration and rest"
+          },
+          {
+            "label": "Long (2+ weeks)",
+            "desc": "Full immersion in the destination"
+          }
         ]
       },
       {
         "question": "Which weather do you prefer?",
         "options": [
-          { "label": "Hot & Sunny", "desc": "Sun and warmth all day" },
-          { "label": "Mild", "desc": "Neither too hot nor too cold" },
-          { "label": "Cold & Snowy", "desc": "An authentic winter experience" },
-          { "label": "Doesn't Matter", "desc": "The experience is what counts" }
+          {
+            "label": "Hot & Sunny",
+            "desc": "Sun and warmth all day"
+          },
+          {
+            "label": "Mild",
+            "desc": "Neither too hot nor too cold"
+          },
+          {
+            "label": "Cold & Snowy",
+            "desc": "An authentic winter experience"
+          },
+          {
+            "label": "Doesn't Matter",
+            "desc": "The experience is what counts"
+          }
         ]
       },
       {
         "question": "What's your top priority for the trip?",
         "options": [
-          { "label": "Food Experience", "desc": "Local dishes and food experiences" },
-          { "label": "Photography & Scenery", "desc": "Stunning spots for photos" },
-          { "label": "Luxury Stay", "desc": "Upscale hotels and excellent service" },
-          { "label": "Activities & Sports", "desc": "Active, movement-filled experiences" }
+          {
+            "label": "Food Experience",
+            "desc": "Local dishes and food experiences"
+          },
+          {
+            "label": "Photography & Scenery",
+            "desc": "Stunning spots for photos"
+          },
+          {
+            "label": "Luxury Stay",
+            "desc": "Upscale hotels and excellent service"
+          },
+          {
+            "label": "Activities & Sports",
+            "desc": "Active, movement-filled experiences"
+          }
         ]
       },
       {
         "question": "How much travel experience do you have?",
         "options": [
-          { "label": "First time traveling abroad", "desc": "I want an easy, comfortable destination" },
-          { "label": "Traveled a bit", "desc": "Some previous experience" },
-          { "label": "Experienced traveler", "desc": "Looking for unusual destinations" }
+          {
+            "label": "First time traveling abroad",
+            "desc": "I want an easy, comfortable destination"
+          },
+          {
+            "label": "Traveled a bit",
+            "desc": "Some previous experience"
+          },
+          {
+            "label": "Experienced traveler",
+            "desc": "Looking for unusual destinations"
+          }
         ]
       },
       {
         "question": "When do you want to travel?",
         "options": [
-          { "label": "Within a month", "desc": "An urgent trip" },
-          { "label": "Within 3 months", "desc": "Time to plan" },
-          { "label": "6 months or more", "desc": "Early planning" },
-          { "label": "Flexible", "desc": "Based on the best offers" }
+          {
+            "label": "Within a month",
+            "desc": "An urgent trip"
+          },
+          {
+            "label": "Within 3 months",
+            "desc": "Time to plan"
+          },
+          {
+            "label": "6 months or more",
+            "desc": "Early planning"
+          },
+          {
+            "label": "Flexible",
+            "desc": "Based on the best offers"
+          }
         ]
       }
-    ]
+    ],
+    "seoTitle": "Where to Travel? | Al Majra Al Kawniya",
+    "seoDescription": "Take our quick travel quiz and discover the destinations that best match your travel style, budget, and preferences."
   },
   "homePage": {
     "heroSlides": [
-      { "label": "Maldives", "sublabel": "Paradise of Turquoise Waters" },
-      { "label": "Paris", "sublabel": "City of Love and Lights" },
-      { "label": "Dubai", "sublabel": "Peak of Modern Luxury" },
-      { "label": "Switzerland", "sublabel": "Breathtaking Nature" },
-      { "label": "Indonesia", "sublabel": "Tropical Adventures" }
+      {
+        "label": "Maldives",
+        "sublabel": "Paradise of Turquoise Waters"
+      },
+      {
+        "label": "Paris",
+        "sublabel": "City of Love and Lights"
+      },
+      {
+        "label": "Dubai",
+        "sublabel": "Peak of Modern Luxury"
+      },
+      {
+        "label": "Switzerland",
+        "sublabel": "Breathtaking Nature"
+      },
+      {
+        "label": "Indonesia",
+        "sublabel": "Tropical Adventures"
+      }
     ],
     "heroTitlePart1": "Discover",
     "heroTitlePart2": "the World",
@@ -448,9 +708,27 @@
     "programsHighlight": "Featured Trips Await You",
     "programsSubtitle": "Comprehensive tour programs at competitive prices",
     "placeholderPrograms": [
-      { "title": "Romantic Paris Trip", "price": 45000, "days": 7, "people": 2, "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" },
-      { "title": "Tokyo Cultural Adventure", "price": 62000, "days": 10, "people": 4, "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" },
-      { "title": "Dreamy Maldives Islands", "price": 89000, "days": 8, "people": 2, "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" }
+      {
+        "title": "Romantic Paris Trip",
+        "price": 45000,
+        "days": 7,
+        "people": 2,
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      },
+      {
+        "title": "Tokyo Cultural Adventure",
+        "price": 62000,
+        "days": 10,
+        "people": 4,
+        "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
+      },
+      {
+        "title": "Dreamy Maldives Islands",
+        "price": 89000,
+        "days": 8,
+        "people": 2,
+        "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80"
+      }
     ],
     "currencyShort": "SAR",
     "peopleWord": "people",
@@ -474,9 +752,21 @@
     "service3Desc": "Organized tours with professional guides",
     "readMore": "Read More",
     "placeholderArticles": [
-      { "title": "10 Secrets to Saving Money While Traveling", "date": "April 16, 2026", "img": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" },
-      { "title": "Best Time to Visit Japan in 2026", "date": "April 10, 2026", "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" },
-      { "title": "Your Complete Guide to Exploring Paris", "date": "April 5, 2026", "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" }
+      {
+        "title": "10 Secrets to Saving Money While Traveling",
+        "date": "April 16, 2026",
+        "img": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+      },
+      {
+        "title": "Best Time to Visit Japan in 2026",
+        "date": "April 10, 2026",
+        "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80"
+      },
+      {
+        "title": "Your Complete Guide to Exploring Paris",
+        "date": "April 5, 2026",
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      }
     ],
     "bookNowTag": "Book Now",
     "bookNowHighlight": "Your Trip With Us",

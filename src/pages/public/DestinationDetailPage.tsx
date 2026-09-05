@@ -7,6 +7,7 @@ import ProgramCard from '../../components/ui/ProgramCard';
 import { Spinner } from '../../components/ui/index';
 import { useDestinationBySlug } from '../../hooks/useDestinations';
 import { usePrograms } from '../../hooks/usePrograms';
+import useSEO from '../../hooks/useSEO';
 
 const WHATSAPP_NUMBER = '966544817995';
 const DEFAULT_DESTINATION_IMAGE = 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80';
@@ -32,6 +33,17 @@ const DestinationDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { destination, loading } = useDestinationBySlug(slug || '');
   const { programs } = usePrograms();
+
+  useSEO({
+    title: destination
+      ? `${destination.name} | ${t('brand.name1')} ${t('brand.name2')}`
+      : t('destinationDetail.notFound'),
+    description:
+      destination?.description?.slice(0, 160) ||
+      t('destinationsPage.seoDescription'),
+    path: `/destinations/${slug || ''}`,
+    image: destination?.coverImage,
+  });
 
   const relatedPrograms = programs.filter(
     p => p.active && p.destinationId === destination?.id

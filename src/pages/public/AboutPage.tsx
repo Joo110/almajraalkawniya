@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import useSEO from '../../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -20,6 +21,7 @@ const WHATSAPP_URL = 'https://wa.me/966544817995';
 
 const AboutPage: React.FC = () => {
   const { t, i18n } = useTranslation();
+  useSEO({ title: t('aboutPage.seoTitle'), description: t('aboutPage.seoDescription'), path: '/about' });
   const factsList = t('aboutPage.factsList', { returnObjects: true }) as string[];
   const stats = t('aboutPage.stats', { returnObjects: true }) as { value: string; label: string }[];
   const valuesData = t('aboutPage.values', { returnObjects: true }) as { title: string; desc: string }[];

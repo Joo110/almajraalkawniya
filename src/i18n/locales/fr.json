@@ -1,5 +1,8 @@
 {
-  "brand": { "name1": "Al Majra", "name2": "Al Kawniya" },
+  "brand": {
+    "name1": "Al Majra",
+    "name2": "Al Kawniya"
+  },
   "nav": {
     "logoAlt": "Logo Al Majra Al Kawniya",
     "home": "Accueil",
@@ -41,17 +44,23 @@
   "bank": {
     "titlePart1": "Comptes",
     "titlePart2": "bancaires",
-    "imgAlt": "Compte bancaire"
+    "imgAlt": "Compte bancaire",
+    "seoTitle": "Comptes Bancaires | Al Majra Al Kawniya",
+    "seoDescription": "Coordonnées bancaires de l'agence de voyage et tourisme Al Majra Al Kawniya pour les paiements et virements."
   },
   "siteDoc": {
     "titlePart1": "Documentation",
     "titlePart2": "du site",
-    "imgAlt": "Certificat de documentation e-commerce"
+    "imgAlt": "Certificat de documentation e-commerce",
+    "seoTitle": "Documentation du Site | Al Majra Al Kawniya",
+    "seoDescription": "Documentation officielle et certification de commerce électronique du site Al Majra Al Kawniya."
   },
   "ibanDoc": {
     "titlePart1": "Lettre",
     "titlePart2": "IBAN",
-    "imgAlt": "Lettre IBAN - Banque nationale saoudienne"
+    "imgAlt": "Lettre IBAN - Banque nationale saoudienne",
+    "seoTitle": "Lettre IBAN | Al Majra Al Kawniya",
+    "seoDescription": "Lettre IBAN officielle de la Banque Nationale Saoudienne pour l'agence Al Majra Al Kawniya."
   },
   "privacy": {
     "titlePart1": "Politique de",
@@ -93,7 +102,9 @@
         "title": "8. Contactez-nous",
         "body": "Si vous avez des questions concernant cette politique, vous pouvez nous contacter via :\n\n📧 E-mail : almajara.alkawnia.travel@gmail.com\n📞 Téléphone : +966 54 481 7995\n📍 Adresse : La Mecque, quartier Al Tanguim, Royaume d'Arabie saoudite\n🏢 Registre du commerce : 7053753773"
       }
-    ]
+    ],
+    "seoTitle": "Politique de Confidentialité | Al Majra Al Kawniya",
+    "seoDescription": "Lisez la politique de confidentialité d'Al Majra Al Kawniya pour comprendre comment nous collectons et protégeons vos données personnelles."
   },
   "termsPage": {
     "titlePart1": "Conditions",
@@ -114,7 +125,9 @@
       "Les chambres d'hôtel sont attribuées selon la disponibilité de l'hôtel et selon la priorité et la capacité.",
       "L'enregistrement à l'hôtel commence après 14h00.",
       "Les chambres doivent être libérées le dernier jour avant 12h00."
-    ]
+    ],
+    "seoTitle": "Conditions Générales | Al Majra Al Kawniya",
+    "seoDescription": "Lisez les conditions générales régissant les réservations, vols, hôtels et programmes touristiques avec Al Majra Al Kawniya."
   },
   "refundPage": {
     "titlePart1": "Politique de",
@@ -127,7 +140,9 @@
       "En cas de remboursement, celui-ci sera traité dans un délai de 10 à 21 jours ouvrables au minimum à compter de la date de la demande d'annulation. Si le paiement a été effectué par carte électronique (Visa/Mastercard), les montants seront remboursés sur la carte selon le délai déterminé par la banque.",
       "En cas de retour du voyageur ou d'empêchement de voyager pour quelque raison que ce soit, l'agence n'est pas responsable du remboursement du montant du voyage ou de tout autre coût lié, bien qu'elle puisse aider le client à réserver un voyage alternatif ou à réduire les pénalités dans la mesure du possible.",
       "En cas d'annulation pendant le voyage, le montant total est déduit et le client n'a droit à aucun remboursement."
-    ]
+    ],
+    "seoTitle": "Politique de Remboursement | Al Majra Al Kawniya",
+    "seoDescription": "Découvrez la politique de remboursement et d'annulation d'Al Majra Al Kawniya pour les vols, réservations d'hôtels et forfaits touristiques."
   },
   "blogPage": {
     "eyebrow": "Blog",
@@ -137,13 +152,45 @@
     "searchPlaceholder": "Rechercher des articles...",
     "noResults": "Aucun article ne correspond à votre recherche",
     "placeholderArticles": [
-      { "id": "1", "title": "10 secrets pour économiser de l'argent en voyageant", "slug": "save-money-travel", "coverImage": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" },
-      { "id": "2", "title": "Meilleure période pour visiter le Japon en 2026", "slug": "best-time-japan", "coverImage": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" },
-      { "id": "3", "title": "Votre guide complet pour explorer Paris", "slug": "paris-guide", "coverImage": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" },
-      { "id": "4", "title": "Les plus belles plages des Maldives à ne pas manquer", "slug": "maldives-beaches", "coverImage": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" },
-      { "id": "5", "title": "Conseils pour voyager en famille avec des enfants", "slug": "family-travel", "coverImage": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80" },
-      { "id": "6", "title": "Meilleurs restaurants à Dubaï pour 2026", "slug": "dubai-restaurants", "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" }
-    ]
+      {
+        "id": "1",
+        "title": "10 secrets pour économiser de l'argent en voyageant",
+        "slug": "save-money-travel",
+        "coverImage": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+      },
+      {
+        "id": "2",
+        "title": "Meilleure période pour visiter le Japon en 2026",
+        "slug": "best-time-japan",
+        "coverImage": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80"
+      },
+      {
+        "id": "3",
+        "title": "Votre guide complet pour explorer Paris",
+        "slug": "paris-guide",
+        "coverImage": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      },
+      {
+        "id": "4",
+        "title": "Les plus belles plages des Maldives à ne pas manquer",
+        "slug": "maldives-beaches",
+        "coverImage": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80"
+      },
+      {
+        "id": "5",
+        "title": "Conseils pour voyager en famille avec des enfants",
+        "slug": "family-travel",
+        "coverImage": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=80"
+      },
+      {
+        "id": "6",
+        "title": "Meilleurs restaurants à Dubaï pour 2026",
+        "slug": "dubai-restaurants",
+        "coverImage": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80"
+      }
+    ],
+    "seoTitle": "Blog et Conseils de Voyage | Al Majra Al Kawniya",
+    "seoDescription": "Lisez des conseils de voyage d'experts, des guides de destinations et de l'inspiration pour planifier votre prochain voyage inoubliable."
   },
   "articleDetail": {
     "notFound": "Article introuvable",
@@ -157,13 +204,45 @@
     "searchPlaceholder": "Rechercher une destination...",
     "noResults": "Aucun résultat ne correspond à votre recherche",
     "placeholderDestinations": [
-      { "name": "Paris", "country": "France", "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80", "slug": "paris" },
-      { "name": "Tokyo", "country": "Japon", "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80", "slug": "tokyo" },
-      { "name": "Santorin", "country": "Grèce", "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80", "slug": "santorini" },
-      { "name": "Dubaï", "country": "É.A.U.", "img": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80", "slug": "dubai" },
-      { "name": "Maldives", "country": "Maldives", "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80", "slug": "maldives" },
-      { "name": "Rome", "country": "Italie", "img": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80", "slug": "rome" }
-    ]
+      {
+        "name": "Paris",
+        "country": "France",
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80",
+        "slug": "paris"
+      },
+      {
+        "name": "Tokyo",
+        "country": "Japon",
+        "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80",
+        "slug": "tokyo"
+      },
+      {
+        "name": "Santorin",
+        "country": "Grèce",
+        "img": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80",
+        "slug": "santorini"
+      },
+      {
+        "name": "Dubaï",
+        "country": "É.A.U.",
+        "img": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80",
+        "slug": "dubai"
+      },
+      {
+        "name": "Maldives",
+        "country": "Maldives",
+        "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80",
+        "slug": "maldives"
+      },
+      {
+        "name": "Rome",
+        "country": "Italie",
+        "img": "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=600&q=80",
+        "slug": "rome"
+      }
+    ],
+    "seoTitle": "Destinations de Voyage | Al Majra Al Kawniya",
+    "seoDescription": "Parcourez notre sélection des plus belles destinations de voyage au monde et choisissez votre prochain voyage inoubliable avec Al Majra Al Kawniya."
   },
   "programsPage": {
     "eyebrow": "Nos programmes",
@@ -181,7 +260,9 @@
     "duration2weeks": "2 semaines ou moins",
     "noneYet": "Aucun programme pour le moment",
     "noResults": "Aucun programme ne correspond à votre recherche",
-    "programWord": "programme(s)"
+    "programWord": "programme(s)",
+    "seoTitle": "Programmes Touristiques | Al Majra Al Kawniya",
+    "seoDescription": "Découvrez des programmes touristiques complets pour tous les budgets et tous les goûts, avec des prix transparents et des itinéraires inoubliables."
   },
   "offersPage": {
     "eyebrow": "Exclusif",
@@ -198,10 +279,30 @@
     "bookViaWhatsapp": "Réserver via WhatsApp",
     "whatsappMessage": "Bonjour, je souhaite me renseigner sur l'offre « {title} »",
     "placeholderOffers": [
-      { "title": "Remise saison d'été", "type": "percentage", "value": 20, "desc": "Profitez de 20% de réduction sur tous les voyages d'été pour une durée limitée", "end": "30 juin 2026" },
-      { "title": "Forfait lune de miel", "type": "bundle", "value": 15, "desc": "Forfait complet lune de miel incluant hébergement de luxe et circuits romantiques", "end": "31 décembre 2026" },
-      { "title": "Remise réservation anticipée", "type": "fixed", "value": 5000, "desc": "Réservez 3 mois avant votre date de voyage et économisez 5 000 SAR", "end": "31 mai 2026" }
-    ]
+      {
+        "title": "Remise saison d'été",
+        "type": "percentage",
+        "value": 20,
+        "desc": "Profitez de 20% de réduction sur tous les voyages d'été pour une durée limitée",
+        "end": "30 juin 2026"
+      },
+      {
+        "title": "Forfait lune de miel",
+        "type": "bundle",
+        "value": 15,
+        "desc": "Forfait complet lune de miel incluant hébergement de luxe et circuits romantiques",
+        "end": "31 décembre 2026"
+      },
+      {
+        "title": "Remise réservation anticipée",
+        "type": "fixed",
+        "value": 5000,
+        "desc": "Réservez 3 mois avant votre date de voyage et économisez 5 000 SAR",
+        "end": "31 mai 2026"
+      }
+    ],
+    "seoTitle": "Offres Spéciales et Réductions | Al Majra Al Kawniya",
+    "seoDescription": "Découvrez nos dernières offres de voyage exclusives, réductions saisonnières et forfaits pour rendre votre voyage de rêve plus abordable."
   },
   "partnersPage": {
     "heroAlt": "Nos partenaires",
@@ -217,7 +318,9 @@
     "noOffers": "Aucune offre actuellement disponible pour cette entreprise",
     "close": "Fermer",
     "prev": "Précédent",
-    "next": "Suivant"
+    "next": "Suivant",
+    "seoTitle": "Nos Partenaires | Al Majra Al Kawniya",
+    "seoDescription": "Découvrez les entreprises et hôtels de confiance avec lesquels nous collaborons, et explorez leurs offres exclusives."
   },
   "destinationDetail": {
     "whatsappMessage": "Bonjour, je souhaite me renseigner sur un voyage à {name} et je souhaite réserver.",
@@ -275,28 +378,60 @@
     "satisfactionValue": "98%",
     "satisfactionLabel": "Taux de satisfaction client",
     "stats": [
-      { "value": "1000+", "label": "Voyages réalisés avec succès" },
-      { "value": "5000+", "label": "Clients satisfaits" },
-      { "value": "50+", "label": "Destinations à travers le monde" },
-      { "value": "10+", "label": "Années d'expérience" }
+      {
+        "value": "1000+",
+        "label": "Voyages réalisés avec succès"
+      },
+      {
+        "value": "5000+",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "50+",
+        "label": "Destinations à travers le monde"
+      },
+      {
+        "value": "10+",
+        "label": "Années d'expérience"
+      }
     ],
     "valuesTag": "Nos valeurs",
     "valuesTitle": "Ce qui nous",
     "valuesHighlight": "distingue",
     "valuesSubtitle": "Nous croyons que chaque détail fait la différence",
     "values": [
-      { "title": "Passion pour le voyage", "desc": "Nous ne travaillons pas seulement dans le tourisme, nous le vivons. Chaque membre de notre équipe est un voyageur passionné qui comprend ce que vous recherchez." },
-      { "title": "Honnêteté et transparence", "desc": "Aucun prix caché, aucune surprise. Tout ce que vous payez est clair dès le premier instant." },
-      { "title": "Excellence du service", "desc": "Nous n'acceptons rien de moins que l'excellence. Chaque détail de votre voyage fait l'objet d'un examen minutieux pour garantir une expérience inoubliable." },
-      { "title": "Réseau mondial", "desc": "Nos partenariats avec les meilleurs hôtels et entreprises du monde vous offrent des prix que vous ne trouverez nulle part ailleurs." },
-      { "title": "Service personnalisé", "desc": "Vous n'êtes pas juste un numéro de réservation. Votre conseiller personnel vous suit depuis la phase de planification jusqu'à votre retour à la maison." },
-      { "title": "Garantie de satisfaction", "desc": "Si vous n'êtes pas satisfait à 100% de notre service, nous ferons le nécessaire pour y remédier. Sans poser de questions." }
+      {
+        "title": "Passion pour le voyage",
+        "desc": "Nous ne travaillons pas seulement dans le tourisme, nous le vivons. Chaque membre de notre équipe est un voyageur passionné qui comprend ce que vous recherchez."
+      },
+      {
+        "title": "Honnêteté et transparence",
+        "desc": "Aucun prix caché, aucune surprise. Tout ce que vous payez est clair dès le premier instant."
+      },
+      {
+        "title": "Excellence du service",
+        "desc": "Nous n'acceptons rien de moins que l'excellence. Chaque détail de votre voyage fait l'objet d'un examen minutieux pour garantir une expérience inoubliable."
+      },
+      {
+        "title": "Réseau mondial",
+        "desc": "Nos partenariats avec les meilleurs hôtels et entreprises du monde vous offrent des prix que vous ne trouverez nulle part ailleurs."
+      },
+      {
+        "title": "Service personnalisé",
+        "desc": "Vous n'êtes pas juste un numéro de réservation. Votre conseiller personnel vous suit depuis la phase de planification jusqu'à votre retour à la maison."
+      },
+      {
+        "title": "Garantie de satisfaction",
+        "desc": "Si vous n'êtes pas satisfait à 100% de notre service, nous ferons le nécessaire pour y remédier. Sans poser de questions."
+      }
     ],
     "ctaTitlePart1": "Prêt à commencer",
     "ctaTitlePart2": "votre voyage",
     "ctaTitleMark": "?",
     "ctaSubtitle": "Contactez-nous maintenant et l'un de nos conseillers vous aidera à concevoir le voyage de vos rêves",
-    "exploreProgramsCta": "Découvrir les programmes"
+    "exploreProgramsCta": "Découvrir les programmes",
+    "seoTitle": "À Propos de Nous | Al Majra Al Kawniya",
+    "seoDescription": "Découvrez l'histoire d'Al Majra Al Kawniya, nos valeurs et notre décennie d'expérience dans la création d'expériences de voyage inoubliables."
   },
   "contactPage": {
     "titlePart1": "Contactez",
@@ -322,11 +457,29 @@
     "sendButton": "Envoyer la demande",
     "contactInfo": "Coordonnées",
     "infoBlocks": [
-      { "label": "Appelez-nous", "value": "+966 54 481 7995", "sub": "Dim – Jeu : 9h – 18h" },
-      { "label": "Écrivez-nous", "value": "almajara.alkawnia.travel@gmail.com", "sub": "Nous répondons sous 24 heures" },
-      { "label": "Rendez-nous visite", "value": "Riyad, quartier Al Suwaidi, rue de la branche King Abdulaziz bin Abdulrahman Saud, bâtiment n° 6249, code postal 13342", "sub": "Royaume d'Arabie saoudite" },
-      { "label": "Heures d'ouverture", "value": "Dim – Jeu", "sub": "9h00 – 18h00" }
-    ]
+      {
+        "label": "Appelez-nous",
+        "value": "+966 54 481 7995",
+        "sub": "Dim – Jeu : 9h – 18h"
+      },
+      {
+        "label": "Écrivez-nous",
+        "value": "almajara.alkawnia.travel@gmail.com",
+        "sub": "Nous répondons sous 24 heures"
+      },
+      {
+        "label": "Rendez-nous visite",
+        "value": "Riyad, quartier Al Suwaidi, rue de la branche King Abdulaziz bin Abdulrahman Saud, bâtiment n° 6249, code postal 13342",
+        "sub": "Royaume d'Arabie saoudite"
+      },
+      {
+        "label": "Heures d'ouverture",
+        "value": "Dim – Jeu",
+        "sub": "9h00 – 18h00"
+      }
+    ],
+    "seoTitle": "Contactez-Nous | Al Majra Al Kawniya",
+    "seoDescription": "Contactez les conseillers voyage d'Al Majra Al Kawniya pour vos demandes de réservation et toute question sur nos programmes et offres."
   },
   "wtt": {
     "heroTitlePart1": "Choisissez",
@@ -357,82 +510,189 @@
       {
         "question": "Avec qui allez-vous voyager ?",
         "options": [
-          { "label": "Seul(e)", "desc": "Voyages flexibles et expérience personnelle" },
-          { "label": "Amis", "desc": "Aventure et souvenirs partagés" },
-          { "label": "Famille", "desc": "Confort et options adaptées aux enfants" },
-          { "label": "En couple", "desc": "Une expérience romantique et équilibrée" },
-          { "label": "Lune de miel", "desc": "Intimité et détente luxueuse" }
+          {
+            "label": "Seul(e)",
+            "desc": "Voyages flexibles et expérience personnelle"
+          },
+          {
+            "label": "Amis",
+            "desc": "Aventure et souvenirs partagés"
+          },
+          {
+            "label": "Famille",
+            "desc": "Confort et options adaptées aux enfants"
+          },
+          {
+            "label": "En couple",
+            "desc": "Une expérience romantique et équilibrée"
+          },
+          {
+            "label": "Lune de miel",
+            "desc": "Intimité et détente luxueuse"
+          }
         ]
       },
       {
         "question": "Quel type de voyage préférez-vous ?",
         "options": [
-          { "label": "Aventure et nature", "desc": "Activités de plein air et nature à couper le souffle" },
-          { "label": "Culture et histoire", "desc": "Musées, monuments et patrimoine" },
-          { "label": "Détente et plages", "desc": "Mer, soleil et confort" },
-          { "label": "Villes et shopping", "desc": "Vie moderne et centres commerciaux" }
+          {
+            "label": "Aventure et nature",
+            "desc": "Activités de plein air et nature à couper le souffle"
+          },
+          {
+            "label": "Culture et histoire",
+            "desc": "Musées, monuments et patrimoine"
+          },
+          {
+            "label": "Détente et plages",
+            "desc": "Mer, soleil et confort"
+          },
+          {
+            "label": "Villes et shopping",
+            "desc": "Vie moderne et centres commerciaux"
+          }
         ]
       },
       {
         "question": "Quel est votre budget prévu par personne ?",
         "options": [
-          { "label": "Économique", "desc": "Moins de 5 000 SAR" },
-          { "label": "Intermédiaire", "desc": "5 000 - 15 000 SAR" },
-          { "label": "Luxe", "desc": "Plus de 15 000 SAR" }
+          {
+            "label": "Économique",
+            "desc": "Moins de 5 000 SAR"
+          },
+          {
+            "label": "Intermédiaire",
+            "desc": "5 000 - 15 000 SAR"
+          },
+          {
+            "label": "Luxe",
+            "desc": "Plus de 15 000 SAR"
+          }
         ]
       },
       {
         "question": "Quelle est la durée idéale de votre voyage ?",
         "options": [
-          { "label": "Court (3-5 jours)", "desc": "Une escapade rapide et ciblée" },
-          { "label": "Moyen (7-10 jours)", "desc": "Suffisamment d'exploration et de repos" },
-          { "label": "Long (2 semaines et plus)", "desc": "Immersion complète dans la destination" }
+          {
+            "label": "Court (3-5 jours)",
+            "desc": "Une escapade rapide et ciblée"
+          },
+          {
+            "label": "Moyen (7-10 jours)",
+            "desc": "Suffisamment d'exploration et de repos"
+          },
+          {
+            "label": "Long (2 semaines et plus)",
+            "desc": "Immersion complète dans la destination"
+          }
         ]
       },
       {
         "question": "Quel climat préférez-vous ?",
         "options": [
-          { "label": "Chaud et ensoleillé", "desc": "Soleil et chaleur toute la journée" },
-          { "label": "Tempéré", "desc": "Ni trop chaud ni trop froid" },
-          { "label": "Froid et enneigé", "desc": "Une expérience hivernale authentique" },
-          { "label": "Peu importe", "desc": "C'est l'expérience qui compte" }
+          {
+            "label": "Chaud et ensoleillé",
+            "desc": "Soleil et chaleur toute la journée"
+          },
+          {
+            "label": "Tempéré",
+            "desc": "Ni trop chaud ni trop froid"
+          },
+          {
+            "label": "Froid et enneigé",
+            "desc": "Une expérience hivernale authentique"
+          },
+          {
+            "label": "Peu importe",
+            "desc": "C'est l'expérience qui compte"
+          }
         ]
       },
       {
         "question": "Quelle est votre priorité principale pour le voyage ?",
         "options": [
-          { "label": "Expérience culinaire", "desc": "Plats locaux et expériences gastronomiques" },
-          { "label": "Photographie et paysages", "desc": "Des lieux magnifiques pour les photos" },
-          { "label": "Séjour de luxe", "desc": "Hôtels haut de gamme et service excellent" },
-          { "label": "Activités et sports", "desc": "Des expériences actives et dynamiques" }
+          {
+            "label": "Expérience culinaire",
+            "desc": "Plats locaux et expériences gastronomiques"
+          },
+          {
+            "label": "Photographie et paysages",
+            "desc": "Des lieux magnifiques pour les photos"
+          },
+          {
+            "label": "Séjour de luxe",
+            "desc": "Hôtels haut de gamme et service excellent"
+          },
+          {
+            "label": "Activités et sports",
+            "desc": "Des expériences actives et dynamiques"
+          }
         ]
       },
       {
         "question": "Quelle est votre expérience de voyage ?",
         "options": [
-          { "label": "Premier voyage à l'étranger", "desc": "Je veux une destination facile et confortable" },
-          { "label": "Un peu voyagé", "desc": "Quelque expérience préalable" },
-          { "label": "Voyageur expérimenté", "desc": "À la recherche de destinations insolites" }
+          {
+            "label": "Premier voyage à l'étranger",
+            "desc": "Je veux une destination facile et confortable"
+          },
+          {
+            "label": "Un peu voyagé",
+            "desc": "Quelque expérience préalable"
+          },
+          {
+            "label": "Voyageur expérimenté",
+            "desc": "À la recherche de destinations insolites"
+          }
         ]
       },
       {
         "question": "Quand souhaitez-vous voyager ?",
         "options": [
-          { "label": "Dans un mois", "desc": "Un voyage urgent" },
-          { "label": "Dans 3 mois", "desc": "Le temps de planifier" },
-          { "label": "6 mois ou plus", "desc": "Planification anticipée" },
-          { "label": "Flexible", "desc": "Selon les meilleures offres" }
+          {
+            "label": "Dans un mois",
+            "desc": "Un voyage urgent"
+          },
+          {
+            "label": "Dans 3 mois",
+            "desc": "Le temps de planifier"
+          },
+          {
+            "label": "6 mois ou plus",
+            "desc": "Planification anticipée"
+          },
+          {
+            "label": "Flexible",
+            "desc": "Selon les meilleures offres"
+          }
         ]
       }
-    ]
+    ],
+    "seoTitle": "Où Voyager ? | Al Majra Al Kawniya",
+    "seoDescription": "Répondez à notre quiz de voyage rapide et découvrez les destinations qui correspondent le mieux à votre style, budget et préférences."
   },
   "homePage": {
     "heroSlides": [
-      { "label": "Maldives", "sublabel": "Paradis aux eaux turquoise" },
-      { "label": "Paris", "sublabel": "Ville de l'amour et des lumières" },
-      { "label": "Dubaï", "sublabel": "Sommet du luxe moderne" },
-      { "label": "Suisse", "sublabel": "Nature à couper le souffle" },
-      { "label": "Indonésie", "sublabel": "Aventures tropicales" }
+      {
+        "label": "Maldives",
+        "sublabel": "Paradis aux eaux turquoise"
+      },
+      {
+        "label": "Paris",
+        "sublabel": "Ville de l'amour et des lumières"
+      },
+      {
+        "label": "Dubaï",
+        "sublabel": "Sommet du luxe moderne"
+      },
+      {
+        "label": "Suisse",
+        "sublabel": "Nature à couper le souffle"
+      },
+      {
+        "label": "Indonésie",
+        "sublabel": "Aventures tropicales"
+      }
     ],
     "heroTitlePart1": "Découvrez",
     "heroTitlePart2": "le monde",
@@ -448,9 +708,27 @@
     "programsHighlight": "Des voyages exceptionnels vous attendent",
     "programsSubtitle": "Programmes de voyage complets à des prix compétitifs",
     "placeholderPrograms": [
-      { "title": "Voyage romantique à Paris", "price": 45000, "days": 7, "people": 2, "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" },
-      { "title": "Aventure culturelle à Tokyo", "price": 62000, "days": 10, "people": 4, "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" },
-      { "title": "Îles de rêve des Maldives", "price": 89000, "days": 8, "people": 2, "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80" }
+      {
+        "title": "Voyage romantique à Paris",
+        "price": 45000,
+        "days": 7,
+        "people": 2,
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      },
+      {
+        "title": "Aventure culturelle à Tokyo",
+        "price": 62000,
+        "days": 10,
+        "people": 4,
+        "img": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80"
+      },
+      {
+        "title": "Îles de rêve des Maldives",
+        "price": 89000,
+        "days": 8,
+        "people": 2,
+        "img": "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600&q=80"
+      }
     ],
     "currencyShort": "SAR",
     "peopleWord": "personnes",
@@ -474,9 +752,21 @@
     "service3Desc": "Circuits organisés avec des guides professionnels",
     "readMore": "Lire la suite",
     "placeholderArticles": [
-      { "title": "10 secrets pour économiser de l'argent en voyageant", "date": "16 avril 2026", "img": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80" },
-      { "title": "Meilleure période pour visiter le Japon en 2026", "date": "10 avril 2026", "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" },
-      { "title": "Votre guide complet pour explorer Paris", "date": "5 avril 2026", "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" }
+      {
+        "title": "10 secrets pour économiser de l'argent en voyageant",
+        "date": "16 avril 2026",
+        "img": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+      },
+      {
+        "title": "Meilleure période pour visiter le Japon en 2026",
+        "date": "10 avril 2026",
+        "img": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80"
+      },
+      {
+        "title": "Votre guide complet pour explorer Paris",
+        "date": "5 avril 2026",
+        "img": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80"
+      }
     ],
     "bookNowTag": "Réserver maintenant",
     "bookNowHighlight": "Votre voyage avec nous",
