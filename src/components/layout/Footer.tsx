@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
           <p className="font-sans text-white/40 text-xs text-center leading-relaxed">
             {t('footer.travelAgency')} — {t('footer.crNumber')}: <span dir="ltr" className="inline-block">7053753773</span>
             {' '}|{' '}
-            {t('footer.taxNumber')}: <span dir="ltr" className="inline-block">314643915700003</span>
+            {t('footer.taxNumber')}: <span dir="ltr" className="inline-block">314653915700003</span>
           </p>
         </div>
 

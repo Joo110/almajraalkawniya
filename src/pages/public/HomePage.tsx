@@ -154,7 +154,7 @@ const HERO_SLIDES = heroSlides;
             <div className="text-right">
               <p className="font-sans text-white/50 text-[10px] uppercase tracking-widest leading-none mb-0.5">{t('footer.taxNumber')}</p>
               <p className="font-sans text-white text-sm font-medium leading-tight tracking-wider" dir="ltr">
-                314643915700003
+                314653915700003
               </p>
             </div>
           </div>

@@ -355,7 +355,7 @@ const ContactPage: React.FC = () => {
                       {t('footer.taxNumber')}
                     </span>
                     <span className="font-sans text-stone-900 font-medium text-sm" dir="ltr">
-                      314643915700003
+                      314653915700003
                     </span>
                   </div>
                   <div className="border-t border-stone-200" />
