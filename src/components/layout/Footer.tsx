@@ -10,10 +10,8 @@ const Footer: React.FC = () => {
     <footer className="bg-charcoal-800 border-t border-white/10 pt-14 pb-6">
       <div className="max-w-7xl mx-auto px-5">
 
-        {/* Grid: 2 cols on mobile, 2 on md, 3 on lg */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 mb-12">
 
-          {/* Brand — full width on mobile */}
           <div className="col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
               <img
@@ -30,7 +28,6 @@ const Footer: React.FC = () => {
               {t('footer.tagline')}
             </p>
 
-            {/* روابط السوشيال ميديا */}
             <div className="flex items-center gap-3 flex-wrap">
               <a
                 href="https://www.instagram.com/almajraalkawniya2026?igsh=MTlzMWRmaGY3MTZzOA=="
@@ -82,7 +79,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* روابط الموقع */}
           <div dir={dir}>
             <h4 className="font-sans font-semibold text-white text-xs uppercase tracking-widest mb-4">
               {t('footer.siteLinks')}
@@ -96,6 +92,7 @@ const Footer: React.FC = () => {
                 { to: '/terms', label: t('footer.linkTerms') },
                 { to: '/refund-policy', label: t('footer.linkRefund') },
                 { to: '/bank-accounts', label: t('footer.linkBank') },
+                { to: '/licenses', label: t('footer.linkLicenses') },
                 { to: '/site-documentation', label: t('footer.linkSiteDoc') },
                 { to: '/iban-documentation', label: t('footer.linkIban') },
                 { to: '/blog', label: t('nav.blog') },
@@ -112,7 +109,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* تواصل معنا — full width on mobile */}
           <div className="col-span-2 md:col-span-1" dir={dir}>
             <h4 className="font-sans font-semibold text-white text-xs uppercase tracking-widest mb-4">
               {t('footer.contactUs')}
@@ -165,7 +161,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* وسائل الدفع المتاحة */}
         <div className="border-t border-white/10 pt-6 pb-6" dir={dir}>
           <p className="font-sans text-white/40 text-xs text-center uppercase tracking-widest mb-4">
             {t('footer.paymentMethods')}
@@ -181,7 +176,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* الترخيص والسجل التجاري */}
         <div className="border-t border-white/10 pt-6 pb-6" dir={dir}>
           <p className="font-sans text-white/40 text-xs text-center leading-relaxed">
             {t('footer.travelAgency')} — {t('footer.crNumber')}: <span dir="ltr" className="inline-block">7053753773</span>
@@ -190,7 +184,6 @@ const Footer: React.FC = () => {
           </p>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col-reverse md:flex-row items-center justify-between gap-3">
           <p className="font-sans text-white/30 text-xs text-center md:text-right" dir={dir}>
             © {new Date().getFullYear()} {t('footer.copyright')}
