@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-sand-500 flex-shrink-0" />
                 <a
-                  href="tel:+966544817995"
+                  href="tel:+966560888987"
                   className="font-sans text-white/60 hover:text-sand-400 text-sm transition-colors duration-200"
                   dir="ltr"
                 >
@@ -138,13 +138,25 @@ const Footer: React.FC = () => {
               <li className="flex items-center gap-3">
                 <Send className="w-4 h-4 text-sand-500 flex-shrink-0" />
                 <a
-                  href="https://wa.me/966544817995"
+                  href="https://wa.me/966560888987"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-white/60 hover:text-sand-400 text-sm transition-colors duration-200"
                   dir="ltr"
                 >
                   +966 56 088 8987
+                </a>
+              </li>
+                 <li className="flex items-center gap-3">
+                <Send className="w-4 h-4 text-sand-500 flex-shrink-0" />
+                <a
+                  href="https://wa.me/966544817995"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-white/60 hover:text-sand-400 text-sm transition-colors duration-200"
+                  dir="ltr"
+                >
+                  +966 54 481 7995
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -155,6 +167,13 @@ const Footer: React.FC = () => {
                   dir="ltr"
                 >
                   almajraalkawniya1@gmail.com
+                </a>
+                <a
+                  href="mailto:almajara.alkawnia.travel@gmail.com"
+                  className="font-sans text-white/60 hover:text-sand-400 text-xs break-all transition-colors duration-200"
+                  dir="ltr"
+                >
+                  almajara.alkawnia.travel@gmail.com
                 </a>
               </li>
             </ul>
